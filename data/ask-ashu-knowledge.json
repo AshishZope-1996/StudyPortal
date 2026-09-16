@@ -1,0 +1,92 @@
+[
+  {
+    "patterns": ["sql", "what is sql", "sql basics", "explain sql"],
+    "keywords": ["sql", "database", "query", "select", "join", "table"],
+    "topicId": "sql-basics",
+    "category": "SQL",
+    "response": "SQL is the standard language for querying and managing relational databases. It helps you read data, filter records, join tables, aggregate metrics, and update business data in a structured way.",
+    "relatedPosts": ["sql-joins", "postgresql-indexing"],
+    "relatedQuizzes": ["sql-fundamentals", "sql-joins"],
+    "suggestedActions": ["Learn SQL Basics", "Open SQL Joins", "Start SQL Fundamentals Quiz"]
+  },
+  {
+    "patterns": ["python", "what is python", "python basics", "explain python"],
+    "keywords": ["python", "syntax", "list", "dictionary", "function", "pandas"],
+    "topicId": "python-fundamentals",
+    "category": "Python",
+    "response": "Python is a readable, high-level programming language used heavily in data engineering, automation, analytics, and scripting. It is valued for its simple syntax and strong ecosystem for ETL, APIs, and data processing.",
+    "relatedPosts": ["python-data-engineering", "pyspark-transformations"],
+    "relatedQuizzes": ["python-fundamentals", "python-data-engineering"],
+    "suggestedActions": ["Learn Python Fundamentals", "Open Python for Data Engineers", "Start Python Quiz"]
+  },
+  {
+    "patterns": ["join", "joins", "sql joins", "explain joins"],
+    "keywords": ["join", "inner join", "left join", "right join", "full join"],
+    "topicId": "sql-joins",
+    "category": "SQL",
+    "response": "A SQL join combines rows from two or more tables based on a matching key. Common types include INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN, each with different rules for preserving rows from either side.",
+    "relatedPosts": ["sql-joins"],
+    "relatedQuizzes": ["sql-joins"],
+    "suggestedActions": ["Read SQL Joins", "Compare join types", "Start SQL Joins Quiz"]
+  },
+  {
+    "patterns": ["pyspark", "what is pyspark", "explain pyspark"],
+    "keywords": ["pyspark", "spark", "dataframe", "transformation", "action", "lazy evaluation"],
+    "topicId": "pyspark-fundamentals",
+    "category": "PySpark",
+    "response": "PySpark is the Python API for Apache Spark. It enables distributed data processing across clusters using DataFrames, transformations, actions, and Spark SQL while keeping the code familiar to Python developers.",
+    "relatedPosts": ["pyspark-transformations"],
+    "relatedQuizzes": ["pyspark-fundamentals", "spark-transformations-actions"],
+    "suggestedActions": ["Learn PySpark Basics", "Open Spark Transformations", "Start PySpark Quiz"]
+  },
+  {
+    "patterns": ["databricks", "what is databricks", "explain databricks"],
+    "keywords": ["databricks", "delta lake", "unity catalog", "notebook", "cluster", "warehouse"],
+    "topicId": "databricks-fundamentals",
+    "category": "Databricks",
+    "response": "Databricks is a unified analytics platform built on Apache Spark. It gives teams a collaborative environment for notebooks, jobs, SQL warehouses, Delta Lake, and production data workflows in one place.",
+    "relatedPosts": ["databricks-medallion"],
+    "relatedQuizzes": ["databricks-fundamentals"],
+    "suggestedActions": ["Read Databricks Fundamentals", "Explore Medallion Architecture", "Start Databricks Quiz"]
+  },
+  {
+    "patterns": ["azure", "what is azure", "azure data engineering", "explain azure"],
+    "keywords": ["azure", "adf", "adls", "synapse", "fabric", "data factory"],
+    "topicId": "azure-fundamentals",
+    "category": "Azure",
+    "response": "Azure provides a broad set of managed cloud services for storage, compute, analytics, data movement, security, and orchestration. In data engineering, Azure Data Factory, ADLS Gen2, Synapse, and Fabric are often used together.",
+    "relatedPosts": ["etl-vs-elt"],
+    "relatedQuizzes": ["azure-data-factory"],
+    "suggestedActions": ["Learn Azure Fundamentals", "Open ADF topic", "Start Azure Quiz"]
+  },
+  {
+    "patterns": ["data engineering", "what is data engineering", "explain data engineering"],
+    "keywords": ["data engineering", "pipeline", "ingestion", "etl", "elt", "lakehouse"],
+    "topicId": "data-engineering-fundamentals",
+    "category": "Data Engineering",
+    "response": "Data engineering is the practice of building reliable systems that collect, process, store, and move data for analytics and operational use. It focuses on pipelines, quality, governance, orchestration, and making data usable at scale.",
+    "relatedPosts": ["etl-vs-elt", "databricks-medallion"],
+    "relatedQuizzes": ["data-engineering-fundamentals", "etl-vs-elt"],
+    "suggestedActions": ["Learn Data Engineering Fundamentals", "Open ETL vs ELT", "Start Data Engineering Quiz"]
+  },
+  {
+    "patterns": ["etl", "elt", "etl vs elt", "explain etl"],
+    "keywords": ["etl", "elt", "extract", "transform", "load"],
+    "topicId": "etl-fundamentals",
+    "category": "ETL",
+    "response": "ETL and ELT are two common data movement patterns. ETL transforms before loading, while ELT loads raw data first and transforms it in the target system, often when using modern data warehouses or lakehouses.",
+    "relatedPosts": ["etl-vs-elt"],
+    "relatedQuizzes": ["etl-vs-elt"],
+    "suggestedActions": ["Read ETL vs ELT", "Start ETL Quiz", "Learn ELT Patterns"]
+  },
+  {
+    "patterns": ["system design", "data engineering system design", "explain system design"],
+    "keywords": ["system design", "scalability", "reliability", "architecture", "pipeline"],
+    "topicId": "data-engineering-system-design",
+    "category": "System Design",
+    "response": "System design in data engineering focuses on building scalable, reliable, observable, and cost-aware data platforms. Common concerns include ingestion, storage choice, partitioning, orchestration, fault tolerance, and data quality.",
+    "relatedPosts": ["databricks-medallion", "etl-vs-elt"],
+    "relatedQuizzes": ["system-design"],
+    "suggestedActions": ["Learn System Design", "Open Data Engineering System Design", "Practice a design quiz"]
+  }
+]

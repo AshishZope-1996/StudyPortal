@@ -1,44 +1,44 @@
 {
   "SQL": [
-    {"title":"SQL Basics","url":"search.html?q=SQL%20Basics"},
+    {"title":"SQL Basics","url":"topic.html?topic=sql-basics"},
     {"title":"SQL Joins","url":"topic.html?topic=sql-joins"},
+    {"title":"SQL Window Functions","url":"topic.html?topic=sql-window-functions"},
     {"title":"Advanced SQL","url":"search.html?q=Advanced%20SQL"},
-    {"title":"SQL Interview Questions","url":"search.html?q=SQL%20Interview%20Questions"},
-    {"title":"SQL Quizzes","url":"quizzes.html"}
+    {"title":"SQL Interview Questions","url":"search.html?q=SQL%20Interview%20Questions"}
   ],
   "PostgreSQL": [
     {"title":"PostgreSQL","url":"topic.html?topic=postgresql"},
     {"title":"Indexes and Performance","url":"search.html?q=PostgreSQL%20Performance"},
-    {"title":"PostgreSQL Quizzes","url":"quizzes.html"}
+    {"title":"Transactions","url":"search.html?q=PostgreSQL%20Transactions"}
   ],
   "Python": [
+    {"title":"Python Fundamentals","url":"topic.html?topic=python-fundamentals"},
     {"title":"Python for Data Engineers","url":"topic.html?topic=python-data"},
     {"title":"Advanced Python","url":"search.html?q=Advanced%20Python"},
-    {"title":"Python Quizzes","url":"quizzes.html"}
+    {"title":"Python Interview Questions","url":"search.html?q=Python%20Interview%20Questions"}
   ],
   "PySpark": [
     {"title":"PySpark","url":"topic.html?topic=pyspark"},
+    {"title":"Spark Architecture","url":"topic.html?topic=apache-spark"},
     {"title":"Transformations and Actions","url":"search.html?q=PySpark%20Transformations"},
-    {"title":"PySpark Quizzes","url":"quizzes.html"}
+    {"title":"Spark SQL","url":"search.html?q=Spark%20SQL"}
   ],
   "Databricks": [
-    {"title":"Databricks","url":"search.html?q=Databricks"},
-    {"title":"Delta Lake","url":"search.html?q=Delta%20Lake"},
-    {"title":"Databricks Quizzes","url":"quizzes.html"}
+    {"title":"Databricks","url":"topic.html?topic=databricks"},
+    {"title":"Delta Lake","url":"topic.html?topic=delta-lake"},
+    {"title":"Unity Catalog","url":"search.html?q=Unity%20Catalog"}
   ],
   "Azure": [
-    {"title":"Azure Data Factory","url":"search.html?q=Azure%20Data%20Factory"},
-    {"title":"ADLS and Synapse","url":"search.html?q=Azure"},
-    {"title":"Azure Quizzes","url":"quizzes.html"}
+    {"title":"Azure Fundamentals","url":"topic.html?topic=azure-fundamentals"},
+    {"title":"Azure Data Factory","url":"topic.html?topic=azure-data-factory"},
+    {"title":"ADLS Gen2","url":"topic.html?topic=adls-gen2"},
+    {"title":"Azure Synapse","url":"topic.html?topic=azure-synapse"}
   ],
   "Data Engineering": [
-    {"title":"Data Engineering System Design","url":"topic.html?topic=system-design"},
-    {"title":"ETL and ELT","url":"search.html?q=ETL"},
-    {"title":"Data Engineering Quizzes","url":"quizzes.html"}
-  ],
-  "Interview Questions": [
-    {"title":"SQL Interview Questions","url":"search.html?q=SQL%20Interview%20Questions"},
-    {"title":"Data Engineering Interview Questions","url":"search.html?q=Interview%20Questions"},
-    {"title":"Interview Quizzes","url":"quizzes.html"}
+    {"title":"Data Engineering Fundamentals","url":"topic.html?topic=data-engineering-fundamentals"},
+    {"title":"ETL Fundamentals","url":"topic.html?topic=etl-fundamentals"},
+    {"title":"ELT Fundamentals","url":"topic.html?topic=elt-fundamentals"},
+    {"title":"Data Engineering System Design","url":"topic.html?topic=data-engineering-system-design"},
+    {"title":"Interview Questions","url":"search.html?q=Data%20Engineering%20Interview%20Questions"}
   ]
 }

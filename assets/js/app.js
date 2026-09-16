@@ -33,9 +33,9 @@ function setupMobileNavigation() {
 function renderShell(site) {
   const links = [['index.html','Home','home'],['study-notes.html','Study Notes','posts'],['quizzes.html','Quizzes','quizzes'],['categories.html','Categories','categories'],['resources.html','Resources','resources'],['about.html','About','about']];
   document.querySelector('#site-header').innerHTML = `<header class="site-header"><div class="header-inner"><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><a class="brand" href="index.html"><span class="brand-mark">SN</span><span>${esc(site.name)}</span></a><nav class="nav-links" aria-label="Primary navigation">${links.map(([href,label,id]) => `<a href="${href}" ${page === id ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav><div class="header-actions"><a class="icon-button" href="search.html" aria-label="Search">⌕</a><select class="theme-select" aria-label="Color theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></header>`;
-  document.querySelector('#site-footer').innerHTML = `<footer class="footer"><div class="footer-inner"><div><strong>StudyNotes</strong><div>Learn. Practice. Prepare.</div></div><div class="footer-links"><a href="study-notes.html">Study Notes</a><a href="quizzes.html">Quizzes</a><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="about.html">About</a></div><div>© 2026 StudyNotes</div></div></footer>`;
+  document.querySelector('#site-footer').innerHTML = `<footer class="footer"><div class="footer-inner"><div><strong>StudyNotes</strong><div>Learn. Practice. Prepare.</div></div><div class="footer-links"><a href="study-notes.html">Study Notes</a><a href="quizzes.html">Quizzes</a><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="about.html">About</a><a href="https://github.com/" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a></div><div>© 2026 StudyNotes</div></div></footer>`;
   document.querySelector('.header-actions').insertAdjacentHTML('beforeend', '<button type="button" class="header-ashu" aria-label="Open Ask Ashu">✦</button>');
-  document.querySelector('#site-header').insertAdjacentHTML('beforeend', '<div class="category-bar" aria-label="Topic navigation"><div id="topic-menu-items" class="category-bar-inner"><span class="topic-loading">Loading topics...</span></div></div>');
+  if (page !== 'home') document.querySelector('#site-header').insertAdjacentHTML('beforeend', '<div class="category-bar" aria-label="Topic navigation"><div id="topic-menu-items" class="category-bar-inner"><span class="topic-loading">Loading topics...</span></div></div>');
   document.body.insertAdjacentHTML('beforeend', `<nav class="mobile-bottom-nav" aria-label="Mobile navigation"><a class="${page === 'home' ? 'active' : ''}" href="index.html"><span aria-hidden="true">⌂</span><span>Home</span></a><a class="${['posts','post','topic','category'].includes(page) ? 'active' : ''}" href="study-notes.html"><span aria-hidden="true">▤</span><span>Study</span></a><a class="${['quizzes','quiz','result'].includes(page) ? 'active' : ''}" href="quizzes.html"><span aria-hidden="true">▣</span><span>Quiz</span></a><button id="mobile-more" type="button" aria-expanded="false"><span aria-hidden="true">☰</span><span>More</span></button></nav><div id="mobile-more-sheet" class="more-sheet" hidden><section class="more-panel" role="dialog" aria-modal="true" aria-labelledby="more-title"><button type="button" class="icon-button more-close" data-close-more aria-label="Close more menu">×</button><h2 id="more-title">More StudyNotes</h2><div class="more-links"><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="search.html?q=Interview%20Questions">Interview Questions</a><a href="search.html?q=Competitive%20Exams">Competitive Exams</a><a href="search.html">Search</a><a href="about.html">About</a></div></section></div>`);
   setupTopicNavigation(); setupMobileNavigation();
   initTheme(); setupNavigation();
@@ -46,11 +46,29 @@ function quizCard(quiz) { const score = getScores()[quiz.id]; return `<article c
 function categoryCard(category) { return `<article class="card category-card"><div class="card-top"><span class="badge ${category.accent === 'coral' ? 'coral' : category.accent === 'gold' ? 'gold' : ''}">${category.topics} topics</span><span class="meta-row">${category.quizzes} quizzes</span></div><h3>${esc(category.name)}</h3><p>${esc(category.description)}</p><a class="text-link" href="category.html?id=${category.id}">Explore category →</a></article>`; }
 function resourceCard(item) { return `<article class="card"><div class="card-top"><span class="badge">${esc(item.type)}</span><span class="badge gold">${esc(item.access)}</span></div><h3>${esc(item.title)}</h3><p>${esc(item.description)}</p><div class="meta-row"><span>${item.pages} pages</span><span>${item.fileSize}</span></div><div style="margin-top:18px">${button('View resource →', `resource.html?id=${item.id}`, 'button-secondary')}</div></article>`; }
 
-async function renderHome() {
+async function renderLegacyHome() {
   const [site, categories, posts, quizzes, resources] = await Promise.all([getSite(), getCategories(), getPosts(), getQuizzes(), getResources()]);
   app.innerHTML = `<section class="hero"><div class="hero-copy"><div class="eyebrow">A practical study desk for technical minds</div><h1>${esc(site.tagline)}</h1><p class="lede">${esc(site.description)}</p><div class="hero-actions">${button('Explore study notes', 'study-notes.html')}${button('Start a quiz', 'quizzes.html', 'button-secondary')}</div></div><div class="hero-art"><div class="notebook"><div class="notebook-top"><span>Field notes / 01</span><span>2026</span></div><h3>Make the hard parts familiar.</h3><div class="study-lines"><span></span><span></span><span></span><span></span></div></div></div></section><div class="search-bar" role="search"><input id="home-search" placeholder="Search notes, quizzes, topics..." aria-label="Search StudyNotes"><button id="home-search-button">Search</button></div><section class="section"><div class="section-heading"><div><div class="eyebrow">Start somewhere useful</div><h2>Explore categories</h2></div><a class="text-link" href="categories.html">View all categories →</a></div><div class="grid grid-3">${categories.map(categoryCard).join('')}</div></section><section class="section"><div class="section-heading"><div><div class="eyebrow">Fresh from the desk</div><h2>Latest study notes</h2></div><a class="text-link" href="study-notes.html">All study notes →</a></div><div class="grid grid-3">${posts.slice(0, 3).map(noteCard).join('')}</div></section><section class="section"><div class="section-heading"><div><div class="eyebrow">Practice with intent</div><h2>Popular quizzes</h2></div><a class="text-link" href="quizzes.html">All quizzes →</a></div><div class="grid grid-3">${[...quizzes].sort((a,b) => b.attempts - a.attempts).slice(0, 3).map(quizCard).join('')}</div></section><section class="section"><div class="section-heading"><div><div class="eyebrow">A simple rhythm</div><h2>How StudyNotes works</h2></div></div><div class="steps"><div class="step"><div class="step-number">01</div><h3>Choose a topic</h3><p>Start with the problem you want to solve.</p></div><div class="step"><div class="step-number">02</div><h3>Read & learn</h3><p>Use short, focused notes with working examples.</p></div><div class="step"><div class="step-number">03</div><h3>Take the quiz</h3><p>Turn recognition into recall with practice.</p></div><div class="step"><div class="step-number">04</div><h3>Check & improve</h3><p>Review every answer and try again.</p></div></div></section><section class="section"><div class="section-heading"><div><div class="eyebrow">Keep a useful copy</div><h2>Featured resources</h2></div><a class="text-link" href="resources.html">Browse resources →</a></div><div class="grid grid-3">${resources.map(resourceCard).join('')}</div></section><section class="section profile-band"><div><div class="eyebrow">Made by a working engineer</div><h3>StudyNotes is a quiet place to get better at the technical details.</h3><p>Created by Ashish Zope for students and professionals building their data engineering practice.</p></div>${button('About the project →', 'about.html', 'button-secondary')}</section>`;
   document.querySelector('#home-search-button').addEventListener('click', () => location.href = `search.html?q=${encodeURIComponent(document.querySelector('#home-search').value)}`);
   document.querySelector('#home-search').addEventListener('keydown', event => { if (event.key === 'Enter') document.querySelector('#home-search-button').click(); });
+}
+
+async function renderHome() {
+  const [site, categories, posts, quizzes] = await Promise.all([getSite(), getCategories(), getPosts(), getQuizzes()]);
+  const popularIds = ['sql', 'python', 'postgresql', 'pyspark', 'databricks', 'azure', 'data-engineering', 'system-design'];
+  const popular = popularIds.map(id => categories.find(category => category.id === id)).filter(Boolean);
+  const latest = [...posts].sort((a, b) => b.publishedDate.localeCompare(a.publishedDate)).slice(0, 4);
+  const popularQuizzes = [...quizzes].sort((a, b) => b.attempts - a.attempts).slice(0, 3);
+  const scores = getScores();
+  const activeQuiz = popularQuizzes.find(quiz => scores[quiz.id]?.attempts) || quizzes.find(quiz => scores[quiz.id]?.attempts);
+  const activeScore = activeQuiz ? scores[activeQuiz.id] : null;
+  const progress = activeQuiz && activeScore ? Math.round((activeScore.bestScore / activeScore.bestTotal) * 100) : 0;
+  const continueLearning = activeQuiz ? `<section class="section continue-learning"><div class="section-heading"><div><div class="eyebrow">Pick up where you left off</div><h2>Continue learning</h2></div></div><div class="continue-card"><div><h3>${esc(activeQuiz.title)}</h3><p>${progress}% best score · ${activeScore.attempts} local attempt${activeScore.attempts === 1 ? '' : 's'}</p><div class="progress" aria-label="${progress}% completed"><span style="width:${progress}%"></span></div></div>${button('Continue →', `quiz.html?id=${encodeURIComponent(activeQuiz.id)}`)}</div></section>` : '';
+
+  app.innerHTML = `<section class="home-hero"><div class="eyebrow">StudyNotes</div><h1>Learn. Practice. Prepare.</h1><p class="lede">Study Data Engineering, practice technical questions, and prepare for interviews.</p><div class="search-bar home-search" role="search"><input id="home-search" placeholder="What do you want to learn?" aria-label="What do you want to learn? Example: SQL, Python, PySpark, PostgreSQL"><button id="home-search-button">Search</button></div><div class="hero-actions">${button('Explore Study Notes', 'study-notes.html')}${button('Practice Quizzes', 'quizzes.html', 'button-secondary')}</div></section><section class="section popular-technologies"><div class="section-heading"><div><div class="eyebrow">Start with a subject</div><h2>Popular technologies</h2></div><a class="text-link" href="categories.html">View all technologies →</a></div><div class="technology-grid">${popular.map(category => `<a class="technology-chip" href="category.html?id=${encodeURIComponent(category.id)}"><strong>${esc(category.name)}</strong><span>${category.topics} topics</span></a>`).join('')}</div></section>${continueLearning}<section class="section"><div class="section-heading"><div><div class="eyebrow">Fresh from the desk</div><h2>Latest study notes</h2></div><a class="text-link" href="study-notes.html">View all study notes →</a></div><div class="grid grid-2 home-notes">${latest.map(noteCard).join('')}</div></section><section class="section"><div class="section-heading"><div><div class="eyebrow">Practice with intent</div><h2>Popular quizzes</h2></div><a class="text-link" href="quizzes.html">View all quizzes →</a></div><div class="grid grid-3">${popularQuizzes.map(quizCard).join('')}</div></section><section class="section ask-ashu-home"><div><div class="eyebrow">Your learning assistant</div><h2>Ask Ashu</h2><p>Ask me about SQL, Python, PySpark, Databricks, Azure or start a quiz.</p></div><button class="button button-secondary" type="button" data-open-ashu>Ask Ashu →</button></section><section class="section home-cta"><h2>Ready to start learning?</h2><p>Explore study material, practice quizzes and prepare for technical interviews.</p>${button('Explore Study Notes', 'study-notes.html')}</section><section class="section home-about"><div><div class="eyebrow">About StudyNotes</div><h2>Technical learning, made practical.</h2><p>StudyNotes is a technical learning platform for study material, interview preparation and practice.</p><p class="meta-row">Created by Ashish Zope.</p></div><a class="text-link" href="about.html">About →</a></section>`;
+  document.querySelector('#home-search-button').addEventListener('click', () => location.href = `search.html?q=${encodeURIComponent(document.querySelector('#home-search').value)}`);
+  document.querySelector('#home-search').addEventListener('keydown', event => { if (event.key === 'Enter') document.querySelector('#home-search-button').click(); });
+  document.querySelector('[data-open-ashu]')?.addEventListener('click', () => document.querySelector('.header-ashu')?.click());
 }
 
 async function renderPosts() {
@@ -175,12 +193,20 @@ function assistantContext() {
   return { title, category };
 }
 
-const assistantIndexPromise = Promise.all([getPosts(), getTopics(), getQuizzes(), getResources(), getCategories(), fetch('./data/ask-ashu-normal.json').then(response => response.ok ? response.json() : [])]).then(async ([posts, topics, quizzes, resources, categories, normal]) => {
+const assistantIndexPromise = Promise.all([
+  getPosts(),
+  getTopics(),
+  getQuizzes(),
+  getResources(),
+  getCategories(),
+  fetch('./data/ask-ashu-normal.json').then(response => response.ok ? response.json() : []),
+  fetch('./data/ask-ashu-knowledge.json').then(response => response.ok ? response.json() : [])
+]).then(async ([posts, topics, quizzes, resources, categories, normal, knowledge]) => {
   const content = await Promise.all(posts.map(async post => {
     try { const response = await fetch(post.contentFile); return response.ok ? await response.text() : ''; } catch (error) { return ''; }
   }));
-  return { posts: posts.map((post, index) => ({ ...post, content: content[index] })), topics, quizzes, resources, categories, normal };
-}).catch(() => ({ posts: [], topics: [], quizzes: [], resources: [], categories: [], normal: [] }));
+  return { posts: posts.map((post, index) => ({ ...post, content: content[index] })), topics, quizzes, resources, categories, normal, knowledge };
+}).catch(() => ({ posts: [], topics: [], quizzes: [], resources: [], categories: [], normal: [], knowledge: [] }));
 let askAshuQuizState = null;
 
 function askAshuQuestion(quiz, index) {
@@ -213,6 +239,25 @@ async function assistantAnswer(prompt) {
   const context = assistantContext();
   const lower = prompt.toLowerCase().trim();
   const index = await assistantIndexPromise;
+
+  const knowledge = index.knowledge?.find(entry => {
+    const patterns = entry.patterns || [];
+    const keywords = entry.keywords || [];
+    const patternMatch = patterns.some(pattern => lower === pattern || lower.includes(pattern) || pattern.includes(lower));
+    const keywordMatch = keywords.some(keyword => lower.includes(keyword.toLowerCase()));
+    return patternMatch || keywordMatch;
+  });
+
+  if (knowledge) {
+    const relatedActions = [];
+    const topic = index.topics.find(item => item.id === knowledge.topicId) || index.topics.find(item => item.name?.toLowerCase() === knowledge.category?.toLowerCase());
+    if (topic) relatedActions.push({ label: `Open ${topic.name || knowledge.category}`, href: `topic.html?topic=${encodeURIComponent(topic.id)}` });
+    const relatedQuiz = (knowledge.relatedQuizzes || []).map(id => index.quizzes.find(quiz => quiz.id === id)).find(Boolean);
+    if (relatedQuiz) relatedActions.push({ label: `Practice ${relatedQuiz.title}`, href: `quiz.html?id=${encodeURIComponent(relatedQuiz.id)}` });
+    const summary = `${knowledge.response}\n\nTry next:\n• ${knowledge.suggestedActions?.slice(0, 3).join('\n• ') || 'Review the related study notes and quiz'}`;
+    return { text: summary, actions: relatedActions };
+  }
+
   const normal = index.normal?.find(entry => entry.patterns.some(pattern => lower === pattern || lower.includes(pattern)));
   if (normal) return { text: normal.responses[Math.floor(Math.random() * normal.responses.length)], actions: [] };
   if (askAshuQuizState && /^[a-d1-4]$/.test(lower)) {

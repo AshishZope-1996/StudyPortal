@@ -1,0 +1,22 @@
+{
+  "positive": [
+    "Ahh, correct! 🔥",
+    "Nice one! 💯",
+    "Excellent!",
+    "Great job!",
+    "You nailed it!",
+    "Perfect! Keep the momentum going."
+  ],
+  "corrective": [
+    "Almost! Keep going.",
+    "Good attempt. Let’s learn this one.",
+    "Close — review the concept and try the next one.",
+    "Nice try. The explanation will help you lock it in.",
+    "Not quite this time, but you’re learning the right patterns."
+  ],
+  "neutral": [
+    "Review the explanation and try the next question.",
+    "This one is a good revision point.",
+    "A useful concept to revisit before moving on."
+  ]
+}
