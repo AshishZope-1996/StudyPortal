@@ -15,6 +15,7 @@ function renderShell(site) {
   const links = [['index.html','Home','home'],['study-notes.html','Study Notes','posts'],['quizzes.html','Quizzes','quizzes'],['categories.html','Categories','categories'],['resources.html','Resources','resources'],['about.html','About','about']];
   document.querySelector('#site-header').innerHTML = `<header class="site-header"><div class="header-inner"><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><a class="brand" href="index.html"><span class="brand-mark">SN</span><span>${esc(site.name)}</span></a><nav class="nav-links" aria-label="Primary navigation">${links.map(([href,label,id]) => `<a href="${href}" ${page === id ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav><div class="header-actions"><a class="icon-button" href="search.html" aria-label="Search">⌕</a><select class="theme-select" aria-label="Color theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></header>`;
   document.querySelector('#site-footer').innerHTML = `<footer class="footer"><div class="footer-inner"><div><strong>StudyNotes</strong><div>Learn. Practice. Prepare.</div></div><div class="footer-links"><a href="study-notes.html">Study Notes</a><a href="quizzes.html">Quizzes</a><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="about.html">About</a></div><div>© 2026 StudyNotes</div></div></footer>`;
+  document.querySelector('.header-actions').insertAdjacentHTML('beforeend', '<button type="button" class="header-ashu" aria-label="Open Ask Ashu">✦</button>');
   document.querySelector('#site-header').insertAdjacentHTML('beforeend', `<div class="category-bar" aria-label="Popular topics"><div class="category-bar-inner">${['SQL', 'PostgreSQL', 'Python', 'PySpark', 'Databricks', 'Azure', 'Data Engineering', 'ETL', 'System Design', 'Interview Questions'].map(item => `<a href="search.html?q=${encodeURIComponent(item)}">${esc(item)}</a>`).join('')}</div></div>`);
   initTheme(); setupNavigation();
 }
@@ -91,7 +92,7 @@ function startQuizModern(quiz) {
     mount.querySelectorAll('input[name="answer"]').forEach(input => input.addEventListener('change', event => { answers[current] = Number(event.target.value); review.delete(current); renderQuestion(); }));
     mount.querySelectorAll('.question-dot').forEach(dot => dot.addEventListener('click', () => { current = Number(dot.dataset.index); document.querySelector('#quiz-sidebar')?.classList.remove('open'); renderQuestion(); }));
     mount.querySelector('#previous')?.addEventListener('click', () => { if (current > 0) { current -= 1; renderQuestion(); } });
-    mount.querySelector('#next')?.addEventListener('click', () => { if (current === questions.length - 1) { if (window.confirm(`Submit quiz?\n\nAnswered: ${answered()}\nUnanswered: ${questions.length - answered()}\nMarked for review: ${review.size}`)) finish(); } else { current += 1; renderQuestion(); } });
+    mount.querySelector('#next')?.addEventListener('click', () => { if (current === questions.length - 1) { showSubmitModal({ answered: answered(), total: questions.length, review: review.size, onSubmit: finish }); } else { current += 1; renderQuestion(); } });
     mount.querySelector('#mark-review')?.addEventListener('click', () => { review.has(current) ? review.delete(current) : review.add(current); renderQuestion(); });
     mount.querySelector('#clear-answer')?.addEventListener('click', () => { answers[current] = null; renderQuestion(); });
     mount.querySelector('#open-questions')?.addEventListener('click', () => document.querySelector('#quiz-sidebar')?.classList.add('open'));
@@ -118,5 +119,137 @@ async function renderSearch() { const [posts, quizzes, categories, topics, resou
 function renderAbout() { app.innerHTML = `<div class="page-intro"><div class="eyebrow">A small project with a useful ambition</div><h1>About StudyNotes</h1><p class="lede">StudyNotes is a technical study and MCQ practice portal, not a personal portfolio.</p></div><div class="grid grid-2"><section class="card"><h2>About Ashish Zope</h2><p>Ashish Zope is a Senior Data Engineer with 5+ years of experience in data engineering, cloud data platforms and enterprise-scale data systems.</p><p>StudyNotes was created to share practical technical knowledge, interview preparation material and learning resources.</p></section><section class="card"><h2>Technical focus</h2><div class="filters"><span class="badge">SQL</span><span class="badge">PostgreSQL</span><span class="badge">Python</span><span class="badge">PySpark</span><span class="badge">Databricks</span><span class="badge">Azure</span><span class="badge">ETL</span></div><p class="meta-row">Local quiz identity and scores stay in your browser. There is no registered account or global leaderboard.</p></section></div>`; }
 function renderNotFound(message = 'The page you are looking for is not here.') { app.innerHTML = `<div class="empty-state"><div class="eyebrow">404</div><h1>Keep exploring.</h1><p>${esc(message)}</p>${button('Back home', 'index.html')}</div>`; }
 
+function showToast(message, type = 'info') {
+  const region = document.querySelector('#toast-region');
+  if (!region) return;
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.setAttribute('role', type === 'error' ? 'alert' : 'status');
+  toast.innerHTML = `<span>${esc(message)}</span><button type="button" aria-label="Dismiss notification">×</button>`;
+  region.append(toast);
+  const dismiss = () => toast.remove();
+  toast.querySelector('button').addEventListener('click', dismiss);
+  window.setTimeout(dismiss, 4200);
+}
+
+function showSubmitModal({ answered, total, review, onSubmit }) {
+  document.querySelector('#submit-modal')?.remove();
+  const modal = document.createElement('div');
+  modal.id = 'submit-modal';
+  modal.className = 'modal-backdrop';
+  modal.innerHTML = `<section class="modal" role="dialog" aria-modal="true" aria-labelledby="submit-title"><button type="button" class="modal-close" aria-label="Close submit dialog">×</button><div class="eyebrow">Ready to review?</div><h2 id="submit-title">Submit quiz?</h2><p>You are about to finish this practice session.</p><div class="modal-stats"><span><strong>${answered}</strong>Answered</span><span><strong>${total - answered}</strong>Unanswered</span><span><strong>${review}</strong>Review</span></div><div class="modal-actions"><button type="button" class="button button-secondary" id="continue-quiz">Continue quiz</button><button type="button" class="button button-primary" id="confirm-submit">Submit quiz</button></div></section>`;
+  document.body.append(modal);
+  const close = () => modal.remove();
+  modal.querySelector('.modal-close').addEventListener('click', close);
+  modal.querySelector('#continue-quiz').addEventListener('click', close);
+  modal.querySelector('#confirm-submit').addEventListener('click', () => { close(); showToast('Quiz submitted. Preparing your review.', 'success'); onSubmit(); });
+  modal.addEventListener('click', event => { if (event.target === modal) close(); });
+  modal.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
+  modal.querySelector('#continue-quiz').focus();
+}
+
+function assistantContext() {
+  const title = document.querySelector('h1')?.textContent?.trim() || 'technical learning';
+  const category = document.querySelector('.eyebrow')?.textContent?.split('·')[0]?.trim() || 'StudyNotes';
+  return { title, category };
+}
+
+const assistantIndexPromise = Promise.all([getPosts(), getTopics(), getQuizzes(), getResources(), getCategories()]).then(async ([posts, topics, quizzes, resources, categories]) => {
+  const content = await Promise.all(posts.map(async post => {
+    try { const response = await fetch(post.contentFile); return response.ok ? await response.text() : ''; } catch (error) { return ''; }
+  }));
+  return { posts: posts.map((post, index) => ({ ...post, content: content[index] })), topics, quizzes, resources, categories };
+}).catch(() => ({ posts: [], topics: [], quizzes: [], resources: [], categories: [] }));
+
+async function assistantAnswer(prompt) {
+  const context = assistantContext();
+  const lower = prompt.toLowerCase().trim();
+  const index = await assistantIndexPromise;
+  const normalized = lower.replace(/[^a-z0-9 ]/g, ' ');
+  const tokens = normalized.split(/\s+/).filter(token => token.length > 2 && !['what', 'this', 'that', 'tell', 'about', 'give', 'with', 'from'].includes(token));
+  const score = item => {
+    const haystack = `${item.title || item.name || ''} ${item.topic || ''} ${item.category || ''} ${(item.tags || []).join(' ')} ${item.description || ''} ${item.content || ''}`.toLowerCase();
+    return tokens.reduce((total, token) => total + (haystack.includes(token) ? (haystack.startsWith(token) ? 4 : 1) : 0), 0);
+  };
+  const rankedPosts = index.posts.map(item => ({ item, rank: score(item) })).filter(result => result.rank).sort((a, b) => b.rank - a.rank);
+  const rankedTopics = index.topics.map(item => ({ item, rank: score(item) })).filter(result => result.rank).sort((a, b) => b.rank - a.rank);
+  const isQuizCommand = /\b(start|take|launch|give me|quiz me)\b.*\bquiz\b|\bquiz me\b/.test(lower);
+  if (isQuizCommand) {
+    const candidates = index.quizzes.map(item => ({ item, rank: score(item) })).filter(result => result.rank).sort((a, b) => b.rank - a.rank).slice(0, 4);
+    if (candidates.length > 1) return { text: 'I found several relevant practice sessions. Which one would you like to attempt?', actions: candidates.map(({ item }) => ({ label: `${item.title} · ${item.questions || item.questionsData?.length || 0} questions`, href: `quiz.html?id=${encodeURIComponent(item.id)}` })) };
+    if (candidates.length) return { text: `Sure. Let’s test your ${candidates[0].item.category} knowledge with ${candidates[0].item.title}.`, actions: [{ label: `Start ${candidates[0].item.title}`, href: `quiz.html?id=${encodeURIComponent(candidates[0].item.id)}` }] };
+  }
+  const current = rankedPosts[0]?.item || rankedTopics[0]?.item;
+  if (/\b(open|show)\b.*\b(notes?|resources?)\b/.test(lower)) {
+    const post = rankedPosts[0]?.item;
+    return { text: post ? `Here is the most relevant StudyNote I found: ${post.title}.` : 'Browse the Study Notes collection for the closest match.', actions: [{ label: post ? `Read ${post.title}` : 'Open Study Notes', href: post ? `post.html?id=${encodeURIComponent(post.id)}` : 'study-notes.html' }] };
+  }
+  if (current) {
+    const title = current.title || current.name;
+    const excerpt = (current.description || current.content || 'A focused StudyNotes topic.').replace(/\s+/g, ' ').slice(0, 420);
+    const actions = [];
+    if (current.id && current.content) actions.push({ label: `Read ${title}`, href: `post.html?id=${encodeURIComponent(current.id)}` });
+    const relatedQuiz = index.quizzes.find(quiz => score(quiz) > 0 && (quiz.category === current.category || quiz.topic === current.topic));
+    if (relatedQuiz) actions.push({ label: `Practice ${relatedQuiz.title}`, href: `quiz.html?id=${encodeURIComponent(relatedQuiz.id)}` });
+    return { text: `### ${title}\n\n${excerpt}\n\nAsk me for a simple explanation, an example, interview questions, or a quick revision of this topic.`, actions };
+  }
+  if (lower.includes('interview')) return { text: `For an interview-ready answer on ${context.title}, define the concept, show a small example, then explain one trade-off or common mistake.`, actions: [{ label: 'Open Interview Search', href: 'search.html?q=Interview%20Questions' }] };
+  return { text: `I could not find a close match yet. Try a topic such as SQL, joins, Python, PySpark, Databricks, or ask “start SQL quiz”.`, actions: [] };
+}
+
+function setupAssistant() {
+  if (document.querySelector('#ask-ashu')) return;
+  document.body.insertAdjacentHTML('beforeend', `<div id="toast-region" class="toast-region" aria-live="polite"></div><button id="ask-ashu" class="ask-ashu" type="button" aria-expanded="false" aria-controls="ashu-panel"><span aria-hidden="true">✦</span><span>Ask Ashu</span></button><aside id="ashu-panel" class="ashu-panel" aria-label="Ask Ashu assistant" hidden><div class="ashu-header"><div><strong>✦ Ask Ashu</strong><small>StudyNotes learning guide</small></div><button type="button" class="icon-button" id="close-ashu" aria-label="Close Ask Ashu">×</button></div><div id="ashu-messages" class="ashu-messages"><div class="ashu-message assistant">Hi, I’m Ashu. Ask about the page you’re reading, or choose a prompt to get moving.</div></div><div class="ashu-prompts"><button type="button">Explain this simply</button><button type="button">Give me an example</button><button type="button">Give me interview questions</button><button type="button">Quiz me on this topic</button></div><form id="ashu-form" class="ashu-form"><input id="ashu-input" type="text" placeholder="Ask something..." aria-label="Ask Ashu a question"><button class="button button-primary" type="submit">Send</button></form></aside>`);
+  const trigger = document.querySelector('#ask-ashu');
+  const panel = document.querySelector('#ashu-panel');
+  const input = document.querySelector('#ashu-input');
+  const messages = document.querySelector('#ashu-messages');
+  const open = () => { panel.hidden = false; trigger.setAttribute('aria-expanded', 'true'); input.focus(); };
+  const close = () => { panel.hidden = true; trigger.setAttribute('aria-expanded', 'false'); };
+  const ask = async value => { const prompt = value.trim(); if (!prompt) return; messages.insertAdjacentHTML('beforeend', `<div class="ashu-message user">${esc(prompt)}</div><div class="ashu-message assistant" data-typing="true">Searching StudyNotes...</div>`); messages.scrollTop = messages.scrollHeight; const response = await assistantAnswer(prompt); const reply = messages.querySelector('[data-typing="true"]'); if (reply) { reply.removeAttribute('data-typing'); reply.innerHTML = `<div>${esc(response.text).replace(/\n/g, '<br>')}</div>${response.actions?.length ? `<div class="ashu-actions">${response.actions.map(action => `<a href="${esc(action.href)}">${esc(action.label)}</a>`).join('')}</div>` : ''}`; } messages.scrollTop = messages.scrollHeight; };
+  trigger.addEventListener('click', () => panel.hidden ? open() : close());
+  document.querySelector('.header-ashu')?.addEventListener('click', () => panel.hidden ? open() : close());
+  document.querySelector('#close-ashu').addEventListener('click', close);
+  document.querySelector('#ashu-form').addEventListener('submit', event => { event.preventDefault(); ask(input.value); input.value = ''; });
+  document.querySelectorAll('.ashu-prompts button').forEach(buttonEl => buttonEl.addEventListener('click', () => ask(buttonEl.textContent)));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) close(); });
+}
+
+async function renderPostsEnhanced() {
+  const [posts, topics] = await Promise.all([getPosts(), getTopics()]);
+  const groups = [...new Set(posts.map(post => post.category))];
+  app.innerHTML = `<div class="page-intro"><div class="eyebrow">Notes you can return to</div><h1>Study notes</h1><p class="lede">Clear explanations for SQL, Python, cloud data platforms and the systems around them.</p></div><div class="docs-layout"><aside class="docs-sidebar card"><div class="sidebar-heading"><strong>Topics</strong><input id="topic-filter" type="search" placeholder="Filter topics" aria-label="Filter study note topics"></div><div id="topic-tree">${groups.map(group => `<details open><summary>${esc(group)}</summary><div class="sidebar-links">${topics.filter(topic => topic.name.includes(group) || posts.some(post => post.category === group && post.topic === topic.name)).map(topic => `<a href="topic.html?topic=${encodeURIComponent(topic.id)}">${esc(topic.name)}</a>`).join('') || `<a href="search.html?q=${encodeURIComponent(group)}">Explore ${esc(group)}</a>`}</div></details>`).join('')}</div></aside><section><div class="filters"><input id="post-filter" placeholder="Search study notes..." aria-label="Search study notes"><select id="difficulty-filter" aria-label="Filter by difficulty"><option value="">All difficulty levels</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select><select id="sort-posts" aria-label="Sort notes"><option value="latest">Latest</option><option value="views">Most viewed</option></select></div><div id="post-grid" class="grid grid-3"></div></section></div>`;
+  app.insertAdjacentHTML('afterbegin', '<button type="button" class="button button-secondary mobile-topic-toggle" id="open-topic-sidebar">☰ Topics</button>');
+  document.querySelector('.docs-sidebar').insertAdjacentHTML('afterbegin', '<button type="button" class="icon-button sidebar-close" id="close-topic-sidebar" aria-label="Close topic navigation">×</button>');
+  const topicSidebar = document.querySelector('.docs-sidebar');
+  document.querySelector('#open-topic-sidebar').addEventListener('click', () => { topicSidebar.classList.add('open'); document.body.classList.add('drawer-open'); });
+  document.querySelector('#close-topic-sidebar').addEventListener('click', () => { topicSidebar.classList.remove('open'); document.body.classList.remove('drawer-open'); });
+  document.querySelectorAll('.docs-sidebar details').forEach(section => { const key = `studyNotesTopic_${section.querySelector('summary').textContent}`; section.open = localStorage.getItem(key) !== 'closed'; section.addEventListener('toggle', () => localStorage.setItem(key, section.open ? 'open' : 'closed')); });
+  const draw = () => { const query = document.querySelector('#post-filter').value.toLowerCase(); const difficulty = document.querySelector('#difficulty-filter').value; const sort = document.querySelector('#sort-posts').value; const items = posts.filter(post => (!difficulty || post.difficulty === difficulty) && `${post.title} ${post.category} ${(post.tags || []).join(' ')}`.toLowerCase().includes(query)).sort((a, b) => sort === 'views' ? b.views - a.views : b.publishedDate.localeCompare(a.publishedDate)); document.querySelector('#post-grid').innerHTML = items.length ? items.map(noteCard).join('') : '<div class="empty-state">No notes match that search.</div>'; };
+  ['post-filter', 'difficulty-filter', 'sort-posts'].forEach(id => document.querySelector(`#${id}`).addEventListener('input', draw));
+  document.querySelector('#topic-filter').addEventListener('input', event => document.querySelectorAll('#topic-tree a').forEach(link => { link.hidden = !link.textContent.toLowerCase().includes(event.target.value.toLowerCase()); }));
+  draw();
+}
+
+async function renderQuizzesEnhanced() {
+  const quizzes = await getQuizzes();
+  const categories = [...new Set(quizzes.map(quiz => quiz.category))].sort();
+  const counts = [...new Set(quizzes.map(quiz => Number(quiz.questions || quiz.questionsData?.length || 0)))].sort((a, b) => a - b);
+  app.innerHTML = `<div class="page-intro"><div class="eyebrow">Practice, then inspect the why</div><h1>Practice quizzes</h1><p class="lede">Find a focused session by category, difficulty, topic, size, or time limit.</p></div><button type="button" class="button button-secondary mobile-filter-toggle" id="open-quiz-filters">☰ Filters</button><div class="quiz-list-layout"><aside class="card filter-sidebar" id="quiz-filters"><div class="sidebar-heading"><strong>Filter quizzes</strong><button type="button" class="icon-button" id="close-quiz-filters" aria-label="Close quiz filters">×</button></div><label>Search<input id="quiz-filter" placeholder="Search quizzes..." aria-label="Search quizzes"></label><label>Category<select id="quiz-category"><option value="">All categories</option>${categories.map(category => `<option>${esc(category)}</option>`).join('')}</select></label><label>Topic<select id="quiz-topic"><option value="">All topics</option>${[...new Set(quizzes.map(quiz => quiz.topic).filter(Boolean))].sort().map(topic => `<option>${esc(topic)}</option>`).join('')}</select></label><fieldset><legend>Difficulty</legend>${['Beginner', 'Intermediate', 'Advanced'].map(value => `<label class="check-row"><input type="checkbox" name="quiz-difficulty" value="${value}">${value}</label>`).join('')}</fieldset><fieldset><legend>Question count</legend>${counts.map(count => `<label class="check-row"><input type="checkbox" name="quiz-count" value="${count}">${count} questions</label>`).join('')}</fieldset><button type="button" class="button button-secondary" id="clear-quiz-filters">Clear filters</button></aside><section><div class="quiz-results-toolbar"><input id="quiz-sort-search" type="search" placeholder="Search within results" aria-label="Search within quiz results"><select id="quiz-sort"><option value="popular">Most popular</option><option value="questions">Most questions</option><option value="difficulty">Difficulty</option></select></div><div id="quiz-grid" class="grid grid-3"></div></section></div>`;
+  const filterSidebar = document.querySelector('#quiz-filters');
+  const draw = () => { const term = document.querySelector('#quiz-filter').value.toLowerCase(); const search = document.querySelector('#quiz-sort-search').value.toLowerCase(); const category = document.querySelector('#quiz-category').value; const topic = document.querySelector('#quiz-topic').value; const difficulties = [...document.querySelectorAll('input[name="quiz-difficulty"]:checked')].map(input => input.value); const countsSelected = [...document.querySelectorAll('input[name="quiz-count"]:checked')].map(input => Number(input.value)); const sort = document.querySelector('#quiz-sort').value; let items = quizzes.filter(quiz => { const haystack = `${quiz.title} ${quiz.topic} ${quiz.category}`.toLowerCase(); const count = Number(quiz.questions || quiz.questionsData?.length || 0); return (!term || haystack.includes(term)) && (!search || haystack.includes(search)) && (!category || quiz.category === category) && (!topic || quiz.topic === topic) && (!difficulties.length || difficulties.includes(quiz.difficulty)) && (!countsSelected.length || countsSelected.includes(count)); }); items.sort((a, b) => sort === 'questions' ? Number(b.questions || b.questionsData?.length || 0) - Number(a.questions || a.questionsData?.length || 0) : sort === 'difficulty' ? ['Beginner', 'Intermediate', 'Advanced'].indexOf(a.difficulty) - ['Beginner', 'Intermediate', 'Advanced'].indexOf(b.difficulty) : (b.attempts || 0) - (a.attempts || 0)); document.querySelector('#quiz-grid').innerHTML = items.length ? items.map(quizCard).join('') : '<div class="empty-state"><h3>No quizzes found</h3><p>Try another keyword or clear a filter.</p><button type="button" class="button button-secondary" id="empty-clear-filters">Clear filters</button></div>'; document.querySelector('#empty-clear-filters')?.addEventListener('click', clear); };
+  const clear = () => { document.querySelector('#quiz-filter').value = ''; document.querySelector('#quiz-sort-search').value = ''; document.querySelector('#quiz-category').value = ''; document.querySelector('#quiz-topic').value = ''; document.querySelectorAll('#quiz-filters input[type="checkbox"]').forEach(input => { input.checked = false; }); draw(); };
+  ['quiz-filter', 'quiz-sort-search', 'quiz-category', 'quiz-topic', 'quiz-sort'].forEach(id => document.querySelector(`#${id}`).addEventListener('input', draw));
+  document.querySelectorAll('#quiz-filters input[type="checkbox"]').forEach(input => input.addEventListener('change', draw));
+  document.querySelector('#clear-quiz-filters').addEventListener('click', clear);
+  document.querySelector('#open-quiz-filters').addEventListener('click', () => { filterSidebar.classList.add('open'); document.body.classList.add('drawer-open'); });
+  document.querySelector('#close-quiz-filters').addEventListener('click', () => { filterSidebar.classList.remove('open'); document.body.classList.remove('drawer-open'); });
+  draw();
+}
+
+renderPosts = renderPostsEnhanced;
+renderQuizzes = renderQuizzesEnhanced;
+
 async function render() { try { const site = await getSite(); renderShell(site); const pages = {home:renderHome,posts:renderPosts,post:renderPost,categories:renderCategories,category:renderCategory,topic:renderTopic,quizzes:renderQuizzes,quiz:renderQuiz,result:renderResult,resources:renderResources,resource:renderResource,search:renderSearch,about:renderAbout,'404':() => renderNotFound()}; await (pages[page] || pages['404'])(); } catch (error) { console.error(error); renderShell({name:'StudyNotes'}); app.innerHTML = '<div class="error-box">Unable to load StudyNotes right now. Please refresh the page.</div>'; } }
+setupAssistant();
 render();
