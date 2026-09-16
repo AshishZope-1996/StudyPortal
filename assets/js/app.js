@@ -15,6 +15,7 @@ function renderShell(site) {
   const links = [['index.html','Home','home'],['study-notes.html','Study Notes','posts'],['quizzes.html','Quizzes','quizzes'],['categories.html','Categories','categories'],['resources.html','Resources','resources'],['about.html','About','about']];
   document.querySelector('#site-header').innerHTML = `<header class="site-header"><div class="header-inner"><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><a class="brand" href="index.html"><span class="brand-mark">SN</span><span>${esc(site.name)}</span></a><nav class="nav-links" aria-label="Primary navigation">${links.map(([href,label,id]) => `<a href="${href}" ${page === id ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav><div class="header-actions"><a class="icon-button" href="search.html" aria-label="Search">⌕</a><select class="theme-select" aria-label="Color theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></header>`;
   document.querySelector('#site-footer').innerHTML = `<footer class="footer"><div class="footer-inner"><div><strong>StudyNotes</strong><div>Learn. Practice. Prepare.</div></div><div class="footer-links"><a href="study-notes.html">Study Notes</a><a href="quizzes.html">Quizzes</a><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="about.html">About</a></div><div>© 2026 StudyNotes</div></div></footer>`;
+  document.querySelector('#site-header').insertAdjacentHTML('beforeend', `<div class="category-bar" aria-label="Popular topics"><div class="category-bar-inner">${['SQL', 'PostgreSQL', 'Python', 'PySpark', 'Databricks', 'Azure', 'Data Engineering', 'ETL', 'System Design', 'Interview Questions'].map(item => `<a href="search.html?q=${encodeURIComponent(item)}">${esc(item)}</a>`).join('')}</div></div>`);
   initTheme(); setupNavigation();
 }
 
@@ -56,6 +57,58 @@ async function renderQuiz() { const quizzes = await getQuizzes(); const quiz = q
 function startQuiz(quiz) { let current = 0; const answers = Array(quiz.questionsData.length).fill(null); let remaining = quiz.timeLimit; let interval; const renderQuestion = () => { const item = quiz.questionsData[current]; document.querySelector('#quiz-mount').innerHTML = `<div class="progress" aria-label="Quiz progress"><span style="width:${((current + 1) / quiz.questionsData.length) * 100}%"></span></div><div class="question-nav" aria-label="Question navigation">${quiz.questionsData.map((_, index) => `<button class="question-dot ${index === current ? 'current' : ''} ${answers[index] !== null ? 'answered' : ''}" data-index="${index}" aria-label="Go to question ${index + 1}">${index + 1}</button>`).join('')}</div><div class="card question-card"><div class="question-number">Question ${current + 1} of ${quiz.questionsData.length}</div><h2>${esc(item.question)}</h2><div class="options">${item.options.map((option, index) => `<label class="option"><input type="radio" name="answer" value="${index}" ${answers[current] === index ? 'checked' : ''}> <span>${esc(option)}</span></label>`).join('')}</div></div><div class="quiz-controls">${current ? '<button class="button button-secondary" id="previous">← Previous</button>' : '<span></span>'}${current === quiz.questionsData.length - 1 ? '<button class="button button-coral" id="submit">Submit quiz</button>' : '<button class="button button-primary" id="next">Next →</button>'}</div>`; document.querySelectorAll('input[name="answer"]').forEach(input => input.addEventListener('change', () => { answers[current] = Number(input.value); renderQuestion(); })); document.querySelectorAll('.question-dot').forEach(dot => dot.addEventListener('click', () => { current = Number(dot.dataset.index); renderQuestion(); })); document.querySelector('#previous')?.addEventListener('click', () => { current -= 1; renderQuestion(); }); document.querySelector('#next')?.addEventListener('click', () => { current += 1; renderQuestion(); }); document.querySelector('#submit')?.addEventListener('click', () => finish()); };
   const finish = () => { clearInterval(interval); const correct = answers.reduce((total, answer, index) => total + (answer === quiz.questionsData[index].answer ? 1 : 0), 0); const result = { quizId: quiz.id, answers, correct, total: quiz.questionsData.length, timeTaken: quiz.timeLimit ? quiz.timeLimit - remaining : 0, completedAt: Date.now() }; sessionStorage.setItem('studyNotesLastResult', JSON.stringify(result)); saveScore(quiz.id, correct, quiz.questionsData.length); location.href = `quiz-result.html?id=${quiz.id}`; };
   app.querySelector('.quiz-shell').insertAdjacentHTML('afterbegin', '<div class="timer" id="timer">--:--</div>'); const timer = document.querySelector('#timer'); if (quiz.timeLimit) { const tick = () => { timer.textContent = `${String(Math.floor(remaining / 60)).padStart(2, '0')}:${String(remaining % 60).padStart(2, '0')}`; if (remaining <= 0) finish(); remaining -= 1; }; tick(); interval = setInterval(tick, 1000); } else timer.textContent = 'No timer'; renderQuestion(); }
+
+function startQuizModern(quiz) {
+  const questions = Array.isArray(quiz.questionsData) ? quiz.questionsData : [];
+  if (!questions.length) {
+    document.querySelector('#quiz-mount').innerHTML = '<div class="empty-state">This quiz has no questions yet.</div>';
+    return;
+  }
+
+  let current = 0;
+  let remaining = Number(quiz.timeLimit) || 0;
+  let interval;
+  const answers = Array(questions.length).fill(null);
+  const review = new Set();
+  const mount = document.querySelector('#quiz-mount');
+  const formatTime = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+  const answered = () => answers.filter(answer => answer !== null).length;
+
+  const finish = () => {
+    clearInterval(interval);
+    const correct = answers.reduce((total, answer, index) => total + (answer === questions[index].answer ? 1 : 0), 0);
+    sessionStorage.setItem('studyNotesLastResult', JSON.stringify({ quizId: quiz.id, answers, correct, total: questions.length, timeTaken: quiz.timeLimit ? quiz.timeLimit - remaining : 0, completedAt: Date.now() }));
+    saveScore(quiz.id, correct, questions.length);
+    location.href = `quiz-result.html?id=${encodeURIComponent(quiz.id)}`;
+  };
+
+  const renderQuestion = () => {
+    const item = questions[current];
+    const progress = Math.round((answered() / questions.length) * 100);
+    const navigator = questions.map((_, index) => `<button type="button" class="question-dot ${index === current ? 'current' : ''} ${answers[index] !== null ? 'answered' : 'unanswered'} ${review.has(index) ? 'review' : ''}" data-index="${index}" aria-label="Go to question ${index + 1}${review.has(index) ? ', marked for review' : ''}">${index + 1}</button>`).join('');
+    mount.innerHTML = `<button type="button" class="button button-secondary quiz-mobile-toggle" id="open-questions">Questions <span>${answered()}/${questions.length}</span></button><div class="quiz-workspace"><aside class="card quiz-sidebar" id="quiz-sidebar"><div class="quiz-sidebar-heading"><div><div class="eyebrow">${esc(quiz.category)}</div><h2>${esc(quiz.title)}</h2></div><button type="button" class="icon-button" id="close-questions" aria-label="Close question navigator">×</button></div><p class="meta-row">${answered()} / ${questions.length} answered</p><div class="progress" aria-label="Quiz progress"><span style="width:${progress}%"></span></div><div class="quiz-sidebar-stats"><div><span>Answered</span><strong>${answered()}</strong></div><div><span>Open</span><strong>${questions.length - answered()}</strong></div><div><span>Review</span><strong>${review.size}</strong></div></div><div class="question-nav" aria-label="Question navigation">${navigator}</div></aside><section class="quiz-main"><div class="quiz-topbar"><div class="question-count">Question ${current + 1} of ${questions.length}</div><div class="timer ${remaining && remaining <= 60 ? 'warning' : ''}" id="timer">${quiz.timeLimit ? formatTime(remaining) : 'No timer'}</div></div><div class="progress" aria-label="Answered progress"><span style="width:${progress}%"></span></div><div class="card question-card"><div class="question-number">Question ${current + 1}</div><h2>${esc(item.question)}</h2><div class="options">${item.options.map((option, index) => `<label class="option"><input type="radio" name="answer" value="${index}" ${answers[current] === index ? 'checked' : ''}><span>${esc(option)}</span></label>`).join('')}</div></div><div class="quiz-controls"><button type="button" class="button button-secondary" id="previous" ${current === 0 ? 'disabled' : ''}>Previous</button><button type="button" class="button button-secondary" id="mark-review">${review.has(current) ? 'Unmark review' : 'Mark for review'}</button><button type="button" class="button button-secondary" id="clear-answer" ${answers[current] === null ? 'disabled' : ''}>Clear answer</button><button type="button" class="button button-primary" id="next">${current === questions.length - 1 ? 'Submit quiz' : 'Next'}</button></div></section></div>`;
+
+    mount.querySelectorAll('input[name="answer"]').forEach(input => input.addEventListener('change', event => { answers[current] = Number(event.target.value); review.delete(current); renderQuestion(); }));
+    mount.querySelectorAll('.question-dot').forEach(dot => dot.addEventListener('click', () => { current = Number(dot.dataset.index); document.querySelector('#quiz-sidebar')?.classList.remove('open'); renderQuestion(); }));
+    mount.querySelector('#previous')?.addEventListener('click', () => { if (current > 0) { current -= 1; renderQuestion(); } });
+    mount.querySelector('#next')?.addEventListener('click', () => { if (current === questions.length - 1) { if (window.confirm(`Submit quiz?\n\nAnswered: ${answered()}\nUnanswered: ${questions.length - answered()}\nMarked for review: ${review.size}`)) finish(); } else { current += 1; renderQuestion(); } });
+    mount.querySelector('#mark-review')?.addEventListener('click', () => { review.has(current) ? review.delete(current) : review.add(current); renderQuestion(); });
+    mount.querySelector('#clear-answer')?.addEventListener('click', () => { answers[current] = null; renderQuestion(); });
+    mount.querySelector('#open-questions')?.addEventListener('click', () => document.querySelector('#quiz-sidebar')?.classList.add('open'));
+    mount.querySelector('#close-questions')?.addEventListener('click', () => document.querySelector('#quiz-sidebar')?.classList.remove('open'));
+  };
+
+  const tick = () => {
+    const timer = document.querySelector('#timer');
+    if (timer) { timer.textContent = quiz.timeLimit ? formatTime(Math.max(remaining, 0)) : 'No timer'; timer.classList.toggle('warning', remaining > 0 && remaining <= 60); }
+    if (quiz.timeLimit && remaining <= 0) finish();
+    remaining -= 1;
+  };
+  renderQuestion();
+  if (quiz.timeLimit) { tick(); interval = window.setInterval(tick, 1000); }
+}
+
+startQuiz = startQuizModern;
 
 async function renderResult() { const result = JSON.parse(sessionStorage.getItem('studyNotesLastResult') || 'null'); const quizzes = await getQuizzes(); const quiz = result && quizzes.find(item => item.id === result.quizId); if (!result || !quiz) return renderNotFound('Complete a quiz to see its result.'); const percent = Math.round(result.correct / result.total * 100); const status = percent >= quiz.passingScore ? 'PASSED' : 'KEEP PRACTICING'; const score = getScores()[quiz.id]; app.innerHTML = `<div class="quiz-shell"><div class="card result-score"><div class="eyebrow">${esc(status)}</div><h1>Quiz completed</h1><div class="score-number">${percent}%</div><p class="lede">${result.correct} / ${result.total} correct · ${result.total - result.correct} to revisit</p><div class="meta-row" style="justify-content:center;gap:20px"><span>Best score: ${score.bestScore}/${score.bestTotal}</span><span>${score.attempts} local attempt${score.attempts === 1 ? '' : 's'}</span></div><div class="hero-actions" style="justify-content:center">${button('Retry quiz', `quiz.html?id=${quiz.id}`)}${button('Back to quizzes', 'quizzes.html', 'button-secondary')}</div></div><section class="section"><div class="section-heading"><h2>Review answers</h2></div>${quiz.questionsData.map((item, index) => { const answer = result.answers[index]; const kind = answer === null ? 'unanswered' : answer === item.answer ? 'correct' : 'incorrect'; return `<article class="card review-item ${kind}"><div class="question-number">Question ${index + 1}</div><h3>${esc(item.question)}</h3><div class="answer-line ${kind === 'correct' ? 'answer-good' : kind === 'incorrect' ? 'answer-bad' : ''}">Your answer: ${answer === null ? 'Not answered' : esc(item.options[answer])}</div><div class="answer-line answer-good">Correct answer: ${esc(item.options[item.answer])}</div><p>${esc(item.explanation)}</p></article>`; }).join('')}</section></div>`; }
 
