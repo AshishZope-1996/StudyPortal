@@ -1,0 +1,44 @@
+{
+  "SQL": [
+    {"title":"SQL Basics","url":"search.html?q=SQL%20Basics"},
+    {"title":"SQL Joins","url":"topic.html?topic=sql-joins"},
+    {"title":"Advanced SQL","url":"search.html?q=Advanced%20SQL"},
+    {"title":"SQL Interview Questions","url":"search.html?q=SQL%20Interview%20Questions"},
+    {"title":"SQL Quizzes","url":"quizzes.html"}
+  ],
+  "PostgreSQL": [
+    {"title":"PostgreSQL","url":"topic.html?topic=postgresql"},
+    {"title":"Indexes and Performance","url":"search.html?q=PostgreSQL%20Performance"},
+    {"title":"PostgreSQL Quizzes","url":"quizzes.html"}
+  ],
+  "Python": [
+    {"title":"Python for Data Engineers","url":"topic.html?topic=python-data"},
+    {"title":"Advanced Python","url":"search.html?q=Advanced%20Python"},
+    {"title":"Python Quizzes","url":"quizzes.html"}
+  ],
+  "PySpark": [
+    {"title":"PySpark","url":"topic.html?topic=pyspark"},
+    {"title":"Transformations and Actions","url":"search.html?q=PySpark%20Transformations"},
+    {"title":"PySpark Quizzes","url":"quizzes.html"}
+  ],
+  "Databricks": [
+    {"title":"Databricks","url":"search.html?q=Databricks"},
+    {"title":"Delta Lake","url":"search.html?q=Delta%20Lake"},
+    {"title":"Databricks Quizzes","url":"quizzes.html"}
+  ],
+  "Azure": [
+    {"title":"Azure Data Factory","url":"search.html?q=Azure%20Data%20Factory"},
+    {"title":"ADLS and Synapse","url":"search.html?q=Azure"},
+    {"title":"Azure Quizzes","url":"quizzes.html"}
+  ],
+  "Data Engineering": [
+    {"title":"Data Engineering System Design","url":"topic.html?topic=system-design"},
+    {"title":"ETL and ELT","url":"search.html?q=ETL"},
+    {"title":"Data Engineering Quizzes","url":"quizzes.html"}
+  ],
+  "Interview Questions": [
+    {"title":"SQL Interview Questions","url":"search.html?q=SQL%20Interview%20Questions"},
+    {"title":"Data Engineering Interview Questions","url":"search.html?q=Interview%20Questions"},
+    {"title":"Interview Quizzes","url":"quizzes.html"}
+  ]
+}

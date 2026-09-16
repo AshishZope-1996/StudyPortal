@@ -11,12 +11,33 @@ const fmt = value => new Intl.NumberFormat('en-US', { notation: value > 999 ? 'c
 const date = value => new Date(`${value}T00:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 const button = (label, href, className = 'button-primary') => `<a class="button ${className}" href="${href}">${label}</a>`;
 
+function setupTopicNavigation() {
+  fetch('./data/topic-menu.json').then(response => response.ok ? response.json() : {}).then(menu => {
+    const target = document.querySelector('#topic-menu-items');
+    if (!target) return;
+    target.innerHTML = Object.entries(menu).map(([label, items]) => `<details class="topic-menu-group"><summary>${esc(label)}</summary><div>${items.map(item => `<a href="${esc(item.url)}">${esc(item.title)}</a>`).join('')}</div></details>`).join('');
+  }).catch(() => {});
+}
+
+function setupMobileNavigation() {
+  const more = document.querySelector('#mobile-more');
+  const sheet = document.querySelector('#mobile-more-sheet');
+  if (!more || !sheet) return;
+  const close = () => { sheet.hidden = true; document.body.classList.remove('drawer-open'); more.setAttribute('aria-expanded', 'false'); };
+  more.addEventListener('click', () => { sheet.hidden = false; document.body.classList.add('drawer-open'); more.setAttribute('aria-expanded', 'true'); sheet.querySelector('button')?.focus(); });
+  sheet.querySelector('[data-close-more]')?.addEventListener('click', close);
+  sheet.addEventListener('click', event => { if (event.target === sheet) close(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !sheet.hidden) close(); });
+}
+
 function renderShell(site) {
   const links = [['index.html','Home','home'],['study-notes.html','Study Notes','posts'],['quizzes.html','Quizzes','quizzes'],['categories.html','Categories','categories'],['resources.html','Resources','resources'],['about.html','About','about']];
   document.querySelector('#site-header').innerHTML = `<header class="site-header"><div class="header-inner"><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><a class="brand" href="index.html"><span class="brand-mark">SN</span><span>${esc(site.name)}</span></a><nav class="nav-links" aria-label="Primary navigation">${links.map(([href,label,id]) => `<a href="${href}" ${page === id ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav><div class="header-actions"><a class="icon-button" href="search.html" aria-label="Search">⌕</a><select class="theme-select" aria-label="Color theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></header>`;
   document.querySelector('#site-footer').innerHTML = `<footer class="footer"><div class="footer-inner"><div><strong>StudyNotes</strong><div>Learn. Practice. Prepare.</div></div><div class="footer-links"><a href="study-notes.html">Study Notes</a><a href="quizzes.html">Quizzes</a><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="about.html">About</a></div><div>© 2026 StudyNotes</div></div></footer>`;
   document.querySelector('.header-actions').insertAdjacentHTML('beforeend', '<button type="button" class="header-ashu" aria-label="Open Ask Ashu">✦</button>');
-  document.querySelector('#site-header').insertAdjacentHTML('beforeend', `<div class="category-bar" aria-label="Popular topics"><div class="category-bar-inner">${['SQL', 'PostgreSQL', 'Python', 'PySpark', 'Databricks', 'Azure', 'Data Engineering', 'ETL', 'System Design', 'Interview Questions'].map(item => `<a href="search.html?q=${encodeURIComponent(item)}">${esc(item)}</a>`).join('')}</div></div>`);
+  document.querySelector('#site-header').insertAdjacentHTML('beforeend', '<div class="category-bar" aria-label="Topic navigation"><div id="topic-menu-items" class="category-bar-inner"><span class="topic-loading">Loading topics...</span></div></div>');
+  document.body.insertAdjacentHTML('beforeend', `<nav class="mobile-bottom-nav" aria-label="Mobile navigation"><a class="${page === 'home' ? 'active' : ''}" href="index.html"><span aria-hidden="true">⌂</span><span>Home</span></a><a class="${['posts','post','topic','category'].includes(page) ? 'active' : ''}" href="study-notes.html"><span aria-hidden="true">▤</span><span>Study</span></a><a class="${['quizzes','quiz','result'].includes(page) ? 'active' : ''}" href="quizzes.html"><span aria-hidden="true">▣</span><span>Quiz</span></a><button id="mobile-more" type="button" aria-expanded="false"><span aria-hidden="true">☰</span><span>More</span></button></nav><div id="mobile-more-sheet" class="more-sheet" hidden><section class="more-panel" role="dialog" aria-modal="true" aria-labelledby="more-title"><button type="button" class="icon-button more-close" data-close-more aria-label="Close more menu">×</button><h2 id="more-title">More StudyNotes</h2><div class="more-links"><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="search.html?q=Interview%20Questions">Interview Questions</a><a href="search.html?q=Competitive%20Exams">Competitive Exams</a><a href="search.html">Search</a><a href="about.html">About</a></div></section></div>`);
+  setupTopicNavigation(); setupMobileNavigation();
   initTheme(); setupNavigation();
 }
 
@@ -154,17 +175,60 @@ function assistantContext() {
   return { title, category };
 }
 
-const assistantIndexPromise = Promise.all([getPosts(), getTopics(), getQuizzes(), getResources(), getCategories()]).then(async ([posts, topics, quizzes, resources, categories]) => {
+const assistantIndexPromise = Promise.all([getPosts(), getTopics(), getQuizzes(), getResources(), getCategories(), fetch('./data/ask-ashu-normal.json').then(response => response.ok ? response.json() : [])]).then(async ([posts, topics, quizzes, resources, categories, normal]) => {
   const content = await Promise.all(posts.map(async post => {
     try { const response = await fetch(post.contentFile); return response.ok ? await response.text() : ''; } catch (error) { return ''; }
   }));
-  return { posts: posts.map((post, index) => ({ ...post, content: content[index] })), topics, quizzes, resources, categories };
-}).catch(() => ({ posts: [], topics: [], quizzes: [], resources: [], categories: [] }));
+  return { posts: posts.map((post, index) => ({ ...post, content: content[index] })), topics, quizzes, resources, categories, normal };
+}).catch(() => ({ posts: [], topics: [], quizzes: [], resources: [], categories: [], normal: [] }));
+let askAshuQuizState = null;
+
+function askAshuQuestion(quiz, index) {
+  const question = quiz.questionsData[index];
+  return `### Question ${index + 1} of ${quiz.questionsData.length}\n\n${question.question}\n\n${question.options.map((option, optionIndex) => `${String.fromCharCode(65 + optionIndex)}. ${option}`).join('\n')}`;
+}
+
+function renderAskAshuResponse(value) {
+  const escaped = esc(value || '');
+  const lines = escaped.split('\n');
+  let html = '';
+  let list = '';
+  let code = false;
+  lines.forEach(line => {
+    if (line.trim().startsWith('```')) { code = !code; if (!code) html += '</code></pre>'; else html += '<pre><code>'; return; }
+    if (code) { html += `${line}\n`; return; }
+    if (!line.trim()) { if (list) { html += `</ul>`; list = ''; } return; }
+    const formatted = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>');
+    if (/^###\s+/.test(formatted)) { if (list) { html += '</ul>'; list = ''; } html += `<h3>${formatted.replace(/^###\s+/, '')}</h3>`; }
+    else if (/^[-*]\s+/.test(formatted)) { if (!list) { html += '<ul>'; list = 'ul'; } html += `<li>${formatted.replace(/^[-*]\s+/, '')}</li>`; }
+    else if (/^\d+\.\s+/.test(formatted)) { if (!list) { html += '<ol>'; list = 'ol'; } html += `<li>${formatted.replace(/^\d+\.\s+/, '')}</li>`; }
+    else { if (list) { html += `</${list}>`; list = ''; } html += `<p>${formatted}</p>`; }
+  });
+  if (list) html += `</${list}>`;
+  if (code) html += '</code></pre>';
+  return html;
+}
 
 async function assistantAnswer(prompt) {
   const context = assistantContext();
   const lower = prompt.toLowerCase().trim();
   const index = await assistantIndexPromise;
+  const normal = index.normal?.find(entry => entry.patterns.some(pattern => lower === pattern || lower.includes(pattern)));
+  if (normal) return { text: normal.responses[Math.floor(Math.random() * normal.responses.length)], actions: [] };
+  if (askAshuQuizState && /^[a-d1-4]$/.test(lower)) {
+    const answerIndex = /^[1-4]$/.test(lower) ? Number(lower) - 1 : lower.charCodeAt(0) - 97;
+    const question = askAshuQuizState.quiz.questionsData[askAshuQuizState.index];
+    const correct = answerIndex === question.answer;
+    const feedback = correct ? 'Nice one! Correct.' : `Good attempt. The correct answer is ${question.options[question.answer]}.`;
+    const explanation = question.explanation || 'Review the related StudyNote for more detail.';
+    askAshuQuizState.index += 1;
+    if (askAshuQuizState.index >= askAshuQuizState.quiz.questionsData.length) {
+      const quizId = askAshuQuizState.quiz.id;
+      askAshuQuizState = null;
+      return { text: `### ${feedback}\n\n${explanation}\n\nThat was the last question. Open the full quiz when you want to complete a scored attempt.`, actions: [{ label: 'Start full quiz', href: `quiz.html?id=${encodeURIComponent(quizId)}` }] };
+    }
+    return { text: `### ${feedback}\n\n${explanation}\n\n${askAshuQuestion(askAshuQuizState.quiz, askAshuQuizState.index)}`, actions: [] };
+  }
   const normalized = lower.replace(/[^a-z0-9 ]/g, ' ');
   const tokens = normalized.split(/\s+/).filter(token => token.length > 2 && !['what', 'this', 'that', 'tell', 'about', 'give', 'with', 'from'].includes(token));
   const score = item => {
@@ -177,7 +241,11 @@ async function assistantAnswer(prompt) {
   if (isQuizCommand) {
     const candidates = index.quizzes.map(item => ({ item, rank: score(item) })).filter(result => result.rank).sort((a, b) => b.rank - a.rank).slice(0, 4);
     if (candidates.length > 1) return { text: 'I found several relevant practice sessions. Which one would you like to attempt?', actions: candidates.map(({ item }) => ({ label: `${item.title} · ${item.questions || item.questionsData?.length || 0} questions`, href: `quiz.html?id=${encodeURIComponent(item.id)}` })) };
-    if (candidates.length) return { text: `Sure. Let’s test your ${candidates[0].item.category} knowledge with ${candidates[0].item.title}.`, actions: [{ label: `Start ${candidates[0].item.title}`, href: `quiz.html?id=${encodeURIComponent(candidates[0].item.id)}` }] };
+    if (candidates.length) {
+      const quiz = candidates[0].item;
+      if (Array.isArray(quiz.questionsData) && quiz.questionsData.length) { askAshuQuizState = { quiz, index: 0 }; return { text: `Let’s test your ${quiz.category} knowledge. Reply with A, B, C, or D.\n\n${askAshuQuestion(quiz, 0)}`, actions: [{ label: `Open full ${quiz.title} quiz`, href: `quiz.html?id=${encodeURIComponent(quiz.id)}` }] }; }
+      return { text: `Sure. Let’s test your ${quiz.category} knowledge with ${quiz.title}.`, actions: [{ label: `Start ${quiz.title}`, href: `quiz.html?id=${encodeURIComponent(quiz.id)}` }] };
+    }
   }
   const current = rankedPosts[0]?.item || rankedTopics[0]?.item;
   if (/\b(open|show)\b.*\b(notes?|resources?)\b/.test(lower)) {
@@ -206,7 +274,7 @@ function setupAssistant() {
   const messages = document.querySelector('#ashu-messages');
   const open = () => { panel.hidden = false; trigger.setAttribute('aria-expanded', 'true'); input.focus(); };
   const close = () => { panel.hidden = true; trigger.setAttribute('aria-expanded', 'false'); };
-  const ask = async value => { const prompt = value.trim(); if (!prompt) return; messages.insertAdjacentHTML('beforeend', `<div class="ashu-message user">${esc(prompt)}</div><div class="ashu-message assistant" data-typing="true">Searching StudyNotes...</div>`); messages.scrollTop = messages.scrollHeight; const response = await assistantAnswer(prompt); const reply = messages.querySelector('[data-typing="true"]'); if (reply) { reply.removeAttribute('data-typing'); reply.innerHTML = `<div>${esc(response.text).replace(/\n/g, '<br>')}</div>${response.actions?.length ? `<div class="ashu-actions">${response.actions.map(action => `<a href="${esc(action.href)}">${esc(action.label)}</a>`).join('')}</div>` : ''}`; } messages.scrollTop = messages.scrollHeight; };
+  const ask = async value => { const prompt = value.trim(); if (!prompt) return; messages.insertAdjacentHTML('beforeend', `<div class="ashu-message user">${esc(prompt)}</div><div class="ashu-message assistant" data-typing="true">Ask Ashu is thinking...</div>`); messages.scrollTop = messages.scrollHeight; const response = await assistantAnswer(prompt); const reply = messages.querySelector('[data-typing="true"]'); if (reply) { reply.removeAttribute('data-typing'); reply.innerHTML = `${renderAskAshuResponse(response.text)}${response.actions?.length ? `<div class="ashu-actions">${response.actions.map(action => `<a href="${esc(action.href)}">${esc(action.label)}</a>`).join('')}</div>` : ''}`; } messages.scrollTop = messages.scrollHeight; };
   trigger.addEventListener('click', () => panel.hidden ? open() : close());
   document.querySelector('.header-ashu')?.addEventListener('click', () => panel.hidden ? open() : close());
   document.querySelector('#close-ashu').addEventListener('click', close);
@@ -250,6 +318,44 @@ async function renderQuizzesEnhanced() {
 renderPosts = renderPostsEnhanced;
 renderQuizzes = renderQuizzesEnhanced;
 
-async function render() { try { const site = await getSite(); renderShell(site); const pages = {home:renderHome,posts:renderPosts,post:renderPost,categories:renderCategories,category:renderCategory,topic:renderTopic,quizzes:renderQuizzes,quiz:renderQuiz,result:renderResult,resources:renderResources,resource:renderResource,search:renderSearch,about:renderAbout,'404':() => renderNotFound()}; await (pages[page] || pages['404'])(); } catch (error) { console.error(error); renderShell({name:'StudyNotes'}); app.innerHTML = '<div class="error-box">Unable to load StudyNotes right now. Please refresh the page.</div>'; } }
-setupAssistant();
+function printDocument(title) {
+  const previousTitle = document.title;
+  document.title = title;
+  document.body.classList.add('printing');
+  window.print();
+  window.setTimeout(() => { document.title = previousTitle; document.body.classList.remove('printing'); }, 500);
+}
+
+async function renderPostEnhanced() {
+  const posts = await getPosts();
+  const post = posts.find(item => item.id === params.get('id'));
+  if (!post) return renderNotFound('That study note does not exist.');
+  let content = '<div class="error-box">Unable to load study content. Please refresh the page.</div>';
+  try { const response = await fetch(post.contentFile); if (response.ok) content = await response.text(); } catch (error) { content = '<div class="error-box">Unable to load study content.</div>'; }
+  const related = posts.filter(item => item.id !== post.id && item.category === post.category).slice(0, 2);
+  const bookmarked = JSON.parse(localStorage.getItem('studyNotesBookmarks') || '[]').includes(post.id);
+  app.innerHTML = `<div class="article-layout"><aside class="toc"><strong>On this page</strong><a href="#article">Article</a><a href="#takeaways">Key takeaways</a><a href="#related">Related notes</a></aside><article class="article print-note" id="article"><div class="print-brand">STUDYNOTES</div><div class="eyebrow">${esc(post.category)} · ${esc(post.difficulty)}</div><h1>${esc(post.title)}</h1><p class="lede">${esc(post.description)}</p><div class="meta-row article-meta"><span>${date(post.publishedDate)}</span><span>${esc(post.readingTime)} read</span><span>${fmt(post.views)} views</span></div><div class="note-actions"><button type="button" class="button button-secondary" id="bookmark-note">${bookmarked ? '★ Bookmarked' : '☆ Bookmark'}</button><button type="button" class="button button-secondary" id="export-note">Export PDF</button><button type="button" class="button button-secondary" id="share-note">Share</button></div><div class="reading-progress" aria-label="Reading progress"><span></span></div><div class="article-body">${content}</div><div id="takeaways" class="tip-box"><strong>Key takeaways</strong><p>Practice the idea while it is still warm, then test yourself with a related quiz.</p></div><section id="related" class="section"><div class="section-heading"><h2>Related notes</h2></div><div class="grid grid-2">${related.map(noteCard).join('')}</div></section><footer class="print-footer">StudyNotes | Learn. Practice. Prepare.</footer></article></div>`;
+  document.querySelector('#export-note').addEventListener('click', () => { printDocument(`StudyNotes_${post.title.replace(/[^a-z0-9]+/gi, '-')}`); showToast('Print dialog opened. Choose Save as PDF to export your note.', 'success'); });
+  document.querySelector('#share-note').addEventListener('click', async () => { try { await navigator.clipboard.writeText(location.href); showToast('Note link copied.', 'success'); } catch (error) { showToast('Copy is unavailable. Share the page URL from your browser.', 'info'); } });
+  document.querySelector('#bookmark-note').addEventListener('click', event => { const bookmarks = JSON.parse(localStorage.getItem('studyNotesBookmarks') || '[]'); const next = bookmarks.includes(post.id) ? bookmarks.filter(id => id !== post.id) : [...bookmarks, post.id]; localStorage.setItem('studyNotesBookmarks', JSON.stringify(next)); event.target.textContent = next.includes(post.id) ? '★ Bookmarked' : '☆ Bookmark'; showToast(next.includes(post.id) ? 'Note bookmarked.' : 'Bookmark removed.', 'success'); });
+  window.addEventListener('scroll', () => { const progress = document.querySelector('.reading-progress span'); if (!progress) return; const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = `${max > 0 ? Math.round((window.scrollY / max) * 100) : 0}%`; }, { passive: true });
+}
+
+async function renderResultEnhanced() {
+  const result = JSON.parse(sessionStorage.getItem('studyNotesLastResult') || 'null');
+  const quizzes = await getQuizzes();
+  const quiz = result && quizzes.find(item => item.id === result.quizId);
+  if (!result || !quiz) return renderNotFound('Complete a quiz to see its result.');
+  const questions = Array.isArray(quiz.questionsData) ? quiz.questionsData : [];
+  const percent = Math.round((result.correct / result.total) * 100);
+  const skipped = result.answers.filter(answer => answer === null).length;
+  const score = getScores()[quiz.id] || { bestScore: result.correct, bestTotal: result.total, attempts: 1 };
+  app.innerHTML = `<div class="quiz-shell print-result"><div class="card result-score"><div class="print-brand">STUDYNOTES</div><div class="eyebrow">${percent >= quiz.passingScore ? 'PASSED' : 'KEEP PRACTICING'}</div><h1>Quiz Result</h1><h2>${esc(quiz.title)}</h2><div class="score-number">${result.correct}/${result.total}</div><p class="lede">${percent}% · ${quiz.category} · ${quiz.difficulty}</p><div class="stat-grid result-grid"><div class="stat-box"><span>Correct</span><strong>${result.correct}</strong></div><div class="stat-box"><span>Incorrect</span><strong>${result.total - result.correct - skipped}</strong></div><div class="stat-box"><span>Skipped</span><strong>${skipped}</strong></div><div class="stat-box"><span>Best score</span><strong>${score.bestScore}/${score.bestTotal}</strong></div><div class="stat-box"><span>Time taken</span><strong>${Math.floor((result.timeTaken || 0) / 60)}:${String((result.timeTaken || 0) % 60).padStart(2, '0')}</strong></div></div><div class="hero-actions result-actions"><button type="button" class="button button-primary" id="export-result">Export Quiz Result</button><a href="quiz.html?id=${encodeURIComponent(quiz.id)}" class="button button-secondary">Retry Quiz</a><a href="quizzes.html" class="button button-secondary">Back to Quizzes</a></div></div><section class="section review-panel"><div class="section-heading"><h2>Question review</h2></div>${questions.map((item, index) => { const answer = result.answers[index]; const correct = answer === item.answer; const skippedAnswer = answer === null; return `<article class="card review-item ${skippedAnswer ? 'unanswered' : correct ? 'correct' : 'incorrect'}"><div class="question-number">Question ${index + 1} · ${skippedAnswer ? 'Skipped' : correct ? 'Correct' : 'Incorrect'}</div><h3>${esc(item.question)}</h3><p><strong>Your answer:</strong> ${skippedAnswer ? 'Not answered' : esc(item.options[answer])}</p><p><strong>Correct answer:</strong> ${esc(item.options[item.answer])}</p><p><strong>Explanation:</strong> ${esc(item.explanation || 'Review the related StudyNote for more detail.')}</p></article>`; }).join('')}</section><footer class="print-footer">StudyNotes | Learn. Practice. Prepare.</footer></div>`;
+  document.querySelector('#export-result').addEventListener('click', () => { printDocument(`StudyNotes_${quiz.title.replace(/[^a-z0-9]+/gi, '-')}_Result_${new Date().toISOString().slice(0, 10)}`); showToast('Print dialog opened. Choose Save as PDF to export your result.', 'success'); });
+}
+
+renderPost = renderPostEnhanced;
+renderResult = renderResultEnhanced;
+
+async function render() { try { const site = await getSite(); renderShell(site); const pages = {home:renderHome,posts:renderPosts,post:renderPost,categories:renderCategories,category:renderCategory,topic:renderTopic,quizzes:renderQuizzes,quiz:renderQuiz,result:renderResult,resources:renderResources,resource:renderResource,search:renderSearch,about:renderAbout,'404':() => renderNotFound()}; await (pages[page] || pages['404'])(); setupAssistant(); } catch (error) { console.error(error); renderShell({name:'StudyNotes'}); app.innerHTML = '<div class="error-box">Unable to load StudyNotes right now. Please refresh the page.</div>'; setupAssistant(); } }
 render();

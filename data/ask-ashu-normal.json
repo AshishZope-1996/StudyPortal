@@ -1,0 +1,3395 @@
+[
+    {
+        "patterns": [
+            "hi",
+            "hello",
+            "hey",
+            "hii",
+            "hiii",
+            "hello ashu",
+            "hi ashu"
+        ],
+        "responses": [
+            "Hey! 👋 Welcome to StudyNotes. What would you like to learn today?",
+            "Hi! 👋 Ask me about SQL, Python, PySpark, Databricks, Azure, quizzes, or interview preparation.",
+            "Hello! I’m Ask Ashu. I can help you learn, revise, practise, and prepare."
+        ]
+    },
+    {
+        "patterns": [
+            "good morning",
+            "gm",
+            "morning",
+            "good mrng"
+        ],
+        "responses": [
+            "Good morning! ☀️ Ready for a focused study session?",
+            "Good morning! Pick a topic and let's make some progress today.",
+            "Morning! 🚀 What would you like to study?"
+        ]
+    },
+    {
+        "patterns": [
+            "good afternoon",
+            "good noon",
+            "afternoon"
+        ],
+        "responses": [
+            "Good afternoon! What should we explore today?",
+            "Good afternoon! 📚 Ready for some learning?",
+            "Good afternoon. Notes, quiz, or interview preparation?"
+        ]
+    },
+    {
+        "patterns": [
+            "good evening",
+            "evening",
+            "good eve"
+        ],
+        "responses": [
+            "Good evening! 🌆 A short revision session can go a long way.",
+            "Good evening! What would you like to learn?",
+            "Good evening. Ready for notes, practice, or a quiz?"
+        ]
+    },
+    {
+        "patterns": [
+            "good night",
+            "gn",
+            "night",
+            "good n8"
+        ],
+        "responses": [
+            "Good night! 🌙 Rest well and keep learning tomorrow.",
+            "Good night! See you in the next study session.",
+            "Sleep well! 📚 Tomorrow is another chance to learn something new."
+        ]
+    },
+    {
+        "patterns": [
+            "how are you",
+            "how are u",
+            "how r u",
+            "how are you doing"
+        ],
+        "responses": [
+            "I’m doing great and ready to help you learn something.",
+            "I'm good! 😊 What topic should we explore?",
+            "Doing great! Ask me anything related to StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "what are you doing",
+            "what r u doing",
+            "what are u doing"
+        ],
+        "responses": [
+            "I'm here waiting for your next study question. 😄",
+            "I'm ready to search StudyNotes and help you learn.",
+            "Just waiting for you to ask something interesting!"
+        ]
+    },
+    {
+        "patterns": [
+            "who are you",
+            "what is ask ashu",
+            "who is ashu",
+            "tell me about yourself"
+        ],
+        "responses": [
+            "I'm Ask Ashu, your StudyNotes learning assistant. 🤖",
+            "I'm Ask Ashu. I can search StudyNotes, explain topics, start quizzes, and help with interview preparation.",
+            "Think of me as your study companion inside StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "what can you do",
+            "what can u do",
+            "what do you do",
+            "features"
+        ],
+        "responses": [
+            "I can search StudyNotes, explain topics, find related notes, start quizzes, answer quiz questions, and guide your learning.",
+            "I can help with SQL, PostgreSQL, Python, PySpark, Databricks, Azure, Data Engineering, ETL, System Design, and Interview Questions.",
+            "You can ask me a question, search a topic, start a quiz, or ask for study recommendations."
+        ]
+    },
+    {
+        "patterns": [
+            "help",
+            "help me",
+            "i need help",
+            "can you help me"
+        ],
+        "responses": [
+            "Of course! 😊 Try asking: What is SQL?, Explain joins, Start SQL quiz, or Give me Python interview questions.",
+            "Sure! Ask me about any StudyNotes topic or tell me what you want to practise.",
+            "I'm ready. Tell me what you're trying to learn."
+        ]
+    },
+    {
+        "patterns": [
+            "thank you",
+            "thanks",
+            "thank u",
+            "thx",
+            "thanx",
+            "thanks ashu"
+        ],
+        "responses": [
+            "You're welcome! 😊",
+            "Anytime! Keep learning and practising.",
+            "Happy to help! 🚀",
+            "You're most welcome!"
+        ]
+    },
+    {
+        "patterns": [
+            "welcome",
+            "you're welcome",
+            "you are welcome"
+        ],
+        "responses": [
+            "Thank you! 😊 Let's keep learning.",
+            "Absolutely! What should we explore next?",
+            "Ready whenever you are."
+        ]
+    },
+    {
+        "patterns": [
+            "bye",
+            "goodbye",
+            "see you",
+            "see ya",
+            "byee",
+            "bye bye"
+        ],
+        "responses": [
+            "See you! Keep learning and practising. 🚀",
+            "Bye! Come back whenever you want to revise.",
+            "Take care! Keep learning.",
+            "See you in the next study session!"
+        ]
+    },
+    {
+        "patterns": [
+            "nice",
+            "great",
+            "awesome",
+            "cool",
+            "wow",
+            "amazing",
+            "excellent"
+        ],
+        "responses": [
+            "Glad you liked it! 😄",
+            "Awesome! Let's keep the momentum going.",
+            "Great! What should we learn next?",
+            "Nice! Ready for the next challenge?"
+        ]
+    },
+    {
+        "patterns": [
+            "haha",
+            "hahaha",
+            "lol",
+            "hehe",
+            "lmao"
+        ],
+        "responses": [
+            "😄 Glad that made you smile!",
+            "Haha! Ready to get back to learning?",
+            "😄 Let's keep the study session fun."
+        ]
+    },
+    {
+        "patterns": [
+            "okay",
+            "ok",
+            "okk",
+            "okay bro",
+            "ok bro"
+        ],
+        "responses": [
+            "Got it! 👍",
+            "Sounds good.",
+            "Perfect. What's next?",
+            "Alright! Let's continue."
+        ]
+    },
+    {
+        "patterns": [
+            "yes",
+            "yeah",
+            "yep",
+            "yup",
+            "haan",
+            "ha",
+            "ji haan"
+        ],
+        "responses": [
+            "Great! 👍 Let's continue.",
+            "Perfect! What would you like to do next?",
+            "Awesome. Let's move ahead."
+        ]
+    },
+    {
+        "patterns": [
+            "no",
+            "nah",
+            "nope",
+            "nahi",
+            "na"
+        ],
+        "responses": [
+            "No problem. 😊",
+            "That's okay. What would you like instead?",
+            "Got it. Let's try something else."
+        ]
+    },
+    {
+        "patterns": [
+            "what is sql",
+            "sql kya hai",
+            "sql kya hota hai",
+            "sql kya he"
+        ],
+        "responses": [
+            "SQL stands for Structured Query Language. It is used to interact with relational databases by querying and managing data. 📚",
+            "SQL is the standard language used to read, insert, update, delete, and analyse data in relational databases.",
+            "SQL helps you communicate with relational databases such as PostgreSQL, MySQL, SQL Server, and Oracle."
+        ]
+    },
+    {
+        "patterns": [
+            "what is python",
+            "python kya hai",
+            "python kya hota hai"
+        ],
+        "responses": [
+            "Python is a high-level, general-purpose programming language widely used in Data Engineering, automation, analytics, AI, and web development.",
+            "Python is popular in Data Engineering because of its readability and ecosystem of libraries."
+        ]
+    },
+    {
+        "patterns": [
+            "what is postgresql",
+            "postgres kya hai",
+            "postgresql kya hai"
+        ],
+        "responses": [
+            "PostgreSQL is a powerful open-source relational database system known for reliability, SQL support, extensibility, and advanced database features.",
+            "PostgreSQL is commonly used for transactional systems, analytics workloads, APIs, and enterprise applications."
+        ]
+    },
+    {
+        "patterns": [
+            "what is pyspark",
+            "pyspark kya hai",
+            "spark kya hai"
+        ],
+        "responses": [
+            "PySpark is the Python API for Apache Spark. It allows you to process large datasets in a distributed environment.",
+            "PySpark is widely used in Data Engineering for distributed transformations, aggregations, joins, and ETL workloads."
+        ]
+    },
+    {
+        "patterns": [
+            "what is databricks",
+            "databricks kya hai"
+        ],
+        "responses": [
+            "Databricks is a cloud data and AI platform built around Apache Spark and commonly used for data engineering, analytics, and machine learning.",
+            "Databricks provides capabilities for notebooks, Spark processing, Delta Lake, workflows, governance, and analytics."
+        ]
+    },
+    {
+        "patterns": [
+            "what is azure",
+            "azure kya hai",
+            "microsoft azure kya hai"
+        ],
+        "responses": [
+            "Microsoft Azure is a cloud computing platform offering services for compute, storage, databases, networking, analytics, AI, and more.",
+            "Azure provides many services commonly used in Data Engineering, including ADLS, ADF, Synapse, Event Hubs, and Databricks."
+        ]
+    },
+    {
+        "patterns": [
+            "what is data engineering",
+            "data engineering kya hai",
+            "data engineer kya karta hai"
+        ],
+        "responses": [
+            "Data Engineering focuses on building systems that collect, transform, store, and deliver reliable data for analytics and applications.",
+            "A Data Engineer designs pipelines, manages data platforms, builds ETL or ELT workflows, and ensures data is available and trustworthy."
+        ]
+    },
+    {
+        "patterns": [
+            "what is etl",
+            "etl kya hai",
+            "etl kya hota hai"
+        ],
+        "responses": [
+            "ETL stands for Extract, Transform, Load. Data is extracted from sources, transformed according to business rules, and loaded into a target system.",
+            "ETL is a common data integration pattern used to move and transform data between systems."
+        ]
+    },
+    {
+        "patterns": [
+            "what is elt",
+            "elt kya hai"
+        ],
+        "responses": [
+            "ELT stands for Extract, Load, Transform. Data is first loaded into the target platform and transformed there.",
+            "ELT is common in modern cloud data platforms where storage and compute can scale independently."
+        ]
+    },
+    {
+        "patterns": [
+            "what is a database",
+            "database kya hai",
+            "db kya hai"
+        ],
+        "responses": [
+            "A database is an organized system for storing and retrieving data.",
+            "Databases allow applications and users to efficiently store, query, update, and manage information."
+        ]
+    },
+    {
+        "patterns": [
+            "what is table",
+            "table kya hai",
+            "database table kya hai"
+        ],
+        "responses": [
+            "A table stores data in rows and columns inside a relational database.",
+            "Rows generally represent records, while columns represent attributes of those records."
+        ]
+    },
+    {
+        "patterns": [
+            "what is primary key",
+            "primary key kya hai"
+        ],
+        "responses": [
+            "A primary key uniquely identifies each row in a table.",
+            "A primary key should uniquely identify records and normally cannot contain NULL values."
+        ]
+    },
+    {
+        "patterns": [
+            "what is foreign key",
+            "foreign key kya hai"
+        ],
+        "responses": [
+            "A foreign key creates a relationship between tables by referencing a key in another table.",
+            "Foreign keys help maintain referential integrity between related tables."
+        ]
+    },
+    {
+        "patterns": [
+            "what is join",
+            "join kya hai",
+            "sql join kya hai"
+        ],
+        "responses": [
+            "A SQL JOIN combines rows from two or more tables based on a related condition.",
+            "Common joins include INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN."
+        ]
+    },
+    {
+        "patterns": [
+            "what is inner join",
+            "inner join kya hai"
+        ],
+        "responses": [
+            "INNER JOIN returns rows where the join condition matches in both tables.",
+            "It returns only matching records from the joined tables."
+        ]
+    },
+    {
+        "patterns": [
+            "what is left join",
+            "left join kya hai",
+            "left outer join kya hai"
+        ],
+        "responses": [
+            "LEFT JOIN returns all rows from the left table and matching rows from the right table.",
+            "If no matching row exists on the right side, the right-side columns contain NULL."
+        ]
+    },
+    {
+        "patterns": [
+            "what is window function",
+            "window function kya hai"
+        ],
+        "responses": [
+            "A window function performs calculations across related rows without collapsing them into a single row.",
+            "Examples include ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, and SUM OVER."
+        ]
+    },
+    {
+        "patterns": [
+            "what is cte",
+            "cte kya hai",
+            "common table expression kya hai"
+        ],
+        "responses": [
+            "A CTE, or Common Table Expression, is a temporary named result set defined using WITH.",
+            "CTEs can make complex SQL queries easier to read, structure, and maintain."
+        ]
+    },
+    {
+        "patterns": [
+            "what is index",
+            "index kya hai",
+            "database index kya hai"
+        ],
+        "responses": [
+            "A database index is a data structure that can improve query performance by helping the database locate rows efficiently.",
+            "Indexes can speed up reads but may add storage requirements and write overhead."
+        ]
+    },
+    {
+        "patterns": [
+            "explain sql",
+            "sql explain karo",
+            "sql samjhao",
+            "sql explain kar"
+        ],
+        "responses": [
+            "Sure! SQL is used to interact with relational databases. You can use it to retrieve, insert, update, delete, and analyse data.",
+            "Let's break SQL into practical areas: SELECT, filtering, grouping, joins, subqueries, CTEs, window functions, and optimisation."
+        ]
+    },
+    {
+        "patterns": [
+            "explain joins",
+            "joins explain karo",
+            "joins samjhao",
+            "join samjha"
+        ],
+        "responses": [
+            "Sure! SQL joins combine data from multiple tables. The most important ones are INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.",
+            "Think of a JOIN as connecting related records from different tables using a common key."
+        ]
+    },
+    {
+        "patterns": [
+            "give sql example",
+            "sql example do",
+            "sql ka example",
+            "example of sql"
+        ],
+        "responses": [
+            "For example, SELECT * FROM employees; retrieves all rows from the employees table.",
+            "A simple SQL example is: SELECT name, salary FROM employees WHERE salary > 50000;"
+        ]
+    },
+    {
+        "patterns": [
+            "show me sql",
+            "sql dikhao",
+            "sql query dikhao"
+        ],
+        "responses": [
+            "Sure! Here's a simple query: SELECT * FROM employees WHERE department = 'IT';",
+            "Try this: SELECT department, COUNT(*) FROM employees GROUP BY department;"
+        ]
+    },
+    {
+        "patterns": [
+            "start quiz",
+            "start a quiz",
+            "quiz start karo",
+            "quiz chalu karo",
+            "quiz shuru karo"
+        ],
+        "responses": [
+            "🔥 Sure! Tell me the topic, for example: Start SQL Quiz.",
+            "Let's go! 🚀 Tell me which topic you want to practise."
+        ]
+    },
+    {
+        "patterns": [
+            "start sql quiz",
+            "sql quiz start",
+            "sql quiz chalu karo",
+            "sql ka quiz start karo"
+        ],
+        "responses": [
+            "🔥 Ahha! Let's test your SQL skills. Starting an SQL quiz now.",
+            "Ready? 🚀 Starting the SQL quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "start python quiz",
+            "python quiz start",
+            "python quiz chalu karo"
+        ],
+        "responses": [
+            "🐍 Great! Starting your Python quiz.",
+            "Let's test your Python skills! 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "start postgresql quiz",
+            "postgres quiz start",
+            "postgresql quiz chalu karo"
+        ],
+        "responses": [
+            "🐘 Ready! Starting your PostgreSQL quiz.",
+            "Let's test your PostgreSQL knowledge!"
+        ]
+    },
+    {
+        "patterns": [
+            "start pyspark quiz",
+            "spark quiz start",
+            "pyspark quiz chalu karo"
+        ],
+        "responses": [
+            "⚡ Let's test your PySpark skills!",
+            "Ready for distributed data processing questions? Starting PySpark quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "start databricks quiz",
+            "databricks quiz start",
+            "databricks quiz chalu karo"
+        ],
+        "responses": [
+            "🔥 Databricks challenge coming up! Starting the quiz.",
+            "Let's test your Databricks knowledge!"
+        ]
+    },
+    {
+        "patterns": [
+            "start azure quiz",
+            "azure quiz start",
+            "azure quiz chalu karo"
+        ],
+        "responses": [
+            "☁️ Ready for Azure questions? Let's begin!",
+            "Starting your Azure quiz. 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "quiz me",
+            "test me",
+            "mujhe test karo",
+            "mera test lo",
+            "quiz lelo"
+        ],
+        "responses": [
+            "Absolutely! Which topic should I quiz you on?",
+            "Let's do it! Pick a topic such as SQL, Python, PySpark, PostgreSQL, Databricks, or Azure."
+        ]
+    },
+    {
+        "patterns": [
+            "ask me sql questions",
+            "sql questions pucho",
+            "sql ke questions pucho"
+        ],
+        "responses": [
+            "Sure! 🔥 I'll test you with SQL questions.",
+            "Let's practise SQL. Ready for question one?"
+        ]
+    },
+    {
+        "patterns": [
+            "give interview questions",
+            "interview questions do",
+            "interview questions pucho"
+        ],
+        "responses": [
+            "Sure! Tell me the technology, for example SQL interview questions or Python interview questions.",
+            "Absolutely. I can find interview questions from StudyNotes by topic."
+        ]
+    },
+    {
+        "patterns": [
+            "sql interview questions",
+            "sql interview questions do",
+            "sql interview preparation"
+        ],
+        "responses": [
+            "I can help you practise SQL interview questions covering joins, window functions, CTEs, subqueries, optimisation, and advanced SQL.",
+            "Let's prepare for SQL interviews. I can find the relevant StudyNotes content and questions."
+        ]
+    },
+    {
+        "patterns": [
+            "python interview questions",
+            "python interview preparation"
+        ],
+        "responses": [
+            "I can help you practise Python interview questions covering fundamentals, OOP, functions, collections, exceptions, and Data Engineering scenarios.",
+            "Let's prepare Python interview questions from StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "give me notes",
+            "notes do",
+            "notes dikhao",
+            "study material do"
+        ],
+        "responses": [
+            "Sure! Tell me the topic and I'll find relevant StudyNotes material.",
+            "What would you like to study? SQL, Python, PySpark, PostgreSQL, Databricks, Azure, or Data Engineering?"
+        ]
+    },
+    {
+        "patterns": [
+            "show study material",
+            "study material dikhao",
+            "study material chahiye"
+        ],
+        "responses": [
+            "Absolutely. Tell me the topic you're interested in.",
+            "Sure! Give me a topic and I'll search the StudyNotes material."
+        ]
+    },
+    {
+        "patterns": [
+            "show sql notes",
+            "sql notes do",
+            "sql notes dikhao"
+        ],
+        "responses": [
+            "Sure! I'll search StudyNotes for SQL notes and related material.",
+            "Let's find the SQL study material available in StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "show python notes",
+            "python notes do",
+            "python notes dikhao"
+        ],
+        "responses": [
+            "Sure! I'll find Python study material from StudyNotes.",
+            "Let's explore the available Python notes."
+        ]
+    },
+    {
+        "patterns": [
+            "show postgres notes",
+            "postgres notes do",
+            "postgresql notes dikhao"
+        ],
+        "responses": [
+            "Sure! I'll find PostgreSQL study material.",
+            "Let's explore PostgreSQL notes from StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "show pyspark notes",
+            "pyspark notes do"
+        ],
+        "responses": [
+            "Sure! I'll find PySpark study material.",
+            "Let's explore PySpark notes from StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "show databricks notes",
+            "databricks notes do"
+        ],
+        "responses": [
+            "Sure! I'll find Databricks study material.",
+            "Let's explore Databricks notes from StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "show azure notes",
+            "azure notes do"
+        ],
+        "responses": [
+            "Sure! I'll find Azure study material.",
+            "Let's explore Azure notes from StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "what should i learn",
+            "what should i study",
+            "mujhe kya padhna chahiye"
+        ],
+        "responses": [
+            "If you're preparing for Data Engineering, a practical path is SQL → Python → ETL → PySpark → Cloud → Databricks → System Design.",
+            "Start with SQL fundamentals, then move to Python, ETL, PySpark, cloud platforms, and system design."
+        ]
+    },
+    {
+        "patterns": [
+            "where should i start",
+            "where do i start",
+            "kaha se start karu",
+            "kahan se shuru karu"
+        ],
+        "responses": [
+            "Start with the fundamentals of your chosen topic, then practise with quizzes and interview questions.",
+            "For Data Engineering, start with SQL and gradually move toward Python, ETL, PySpark, Cloud, and System Design."
+        ]
+    },
+    {
+        "patterns": [
+            "i am beginner",
+            "i am a beginner",
+            "main beginner hu",
+            "mai beginner hu"
+        ],
+        "responses": [
+            "That's perfectly fine! 😊 Start with fundamentals and build step by step.",
+            "No problem. I'll keep explanations simple and practical."
+        ]
+    },
+    {
+        "patterns": [
+            "explain simply",
+            "simple explanation",
+            "simple me samjhao",
+            "easy language me samjhao"
+        ],
+        "responses": [
+            "Sure! I'll explain it in simple language with an example.",
+            "Absolutely. I'll avoid unnecessary complexity and use a practical example."
+        ]
+    },
+    {
+        "patterns": [
+            "explain like beginner",
+            "beginner level explanation",
+            "beginner ke liye samjhao"
+        ],
+        "responses": [
+            "Sure! I'll explain it from the basics and gradually build the concept.",
+            "Got it. Beginner-friendly explanation coming up."
+        ]
+    },
+    {
+        "patterns": [
+            "explain with example",
+            "example ke sath samjhao",
+            "example se samjhao"
+        ],
+        "responses": [
+            "Absolutely! I'll explain the concept first and then show a practical example.",
+            "Sure. Concept + example is usually the best way to understand it."
+        ]
+    },
+    {
+        "patterns": [
+            "difference between sql and nosql",
+            "sql vs nosql",
+            "sql aur nosql difference"
+        ],
+        "responses": [
+            "SQL databases generally use structured relational schemas, while NoSQL databases support several non-relational models such as document, key-value, column-family, and graph databases.",
+            "The main difference is the data model and typical access patterns. SQL focuses on relational structures and SQL querying, while NoSQL systems use different models designed for specific scalability and flexibility needs."
+        ]
+    },
+    {
+        "patterns": [
+            "difference between etl and elt",
+            "etl vs elt",
+            "etl aur elt difference"
+        ],
+        "responses": [
+            "ETL transforms data before loading it into the target. ELT loads data first and transforms it inside the target platform.",
+            "ETL and ELT mainly differ in where transformation occurs."
+        ]
+    },
+    {
+        "patterns": [
+            "difference between rank and dense rank",
+            "rank vs dense rank"
+        ],
+        "responses": [
+            "RANK can produce gaps after ties, while DENSE_RANK does not produce gaps after tied values.",
+            "For example, tied values may receive ranks 1,1,3 with RANK but 1,1,2 with DENSE_RANK."
+        ]
+    },
+    {
+        "patterns": [
+            "what is normalization",
+            "normalization kya hai"
+        ],
+        "responses": [
+            "Database normalization organizes data to reduce redundancy and improve data integrity.",
+            "Normalization usually involves structuring tables and relationships to avoid unnecessary duplication."
+        ]
+    },
+    {
+        "patterns": [
+            "what is denormalization",
+            "denormalization kya hai"
+        ],
+        "responses": [
+            "Denormalization intentionally introduces some redundancy to improve read performance or simplify querying.",
+            "It is commonly considered when read performance is more important than minimizing duplication."
+        ]
+    },
+    {
+        "patterns": [
+            "what is acid",
+            "acid properties kya hai"
+        ],
+        "responses": [
+            "ACID stands for Atomicity, Consistency, Isolation, and Durability. These properties help databases maintain reliable transactions.",
+            "ACID describes important transaction guarantees in relational database systems."
+        ]
+    },
+    {
+        "patterns": [
+            "what is transaction",
+            "transaction kya hai"
+        ],
+        "responses": [
+            "A transaction is a logical unit of database work that should be completed according to defined consistency rules.",
+            "Transactions commonly involve operations that either succeed together or are rolled back."
+        ]
+    },
+    {
+        "patterns": [
+            "what is commit",
+            "commit kya hai"
+        ],
+        "responses": [
+            "COMMIT permanently saves the changes made by the current transaction.",
+            "After a successful COMMIT, the transaction's changes become persistent."
+        ]
+    },
+    {
+        "patterns": [
+            "what is rollback",
+            "rollback kya hai"
+        ],
+        "responses": [
+            "ROLLBACK reverses uncommitted changes in the current transaction.",
+            "It is useful when a transaction needs to be cancelled or an error occurs."
+        ]
+    },
+    {
+        "patterns": [
+            "what is group by",
+            "group by kya hai"
+        ],
+        "responses": [
+            "GROUP BY groups rows with the same values so aggregate calculations can be performed for each group.",
+            "For example, GROUP BY department can be used with COUNT or SUM."
+        ]
+    },
+    {
+        "patterns": [
+            "what is having",
+            "having kya hai"
+        ],
+        "responses": [
+            "HAVING filters groups after GROUP BY and is commonly used with aggregate conditions.",
+            "WHERE filters rows before grouping, while HAVING filters grouped results."
+        ]
+    },
+    {
+        "patterns": [
+            "what is where clause",
+            "where kya hai",
+            "where clause kya hai"
+        ],
+        "responses": [
+            "WHERE filters rows based on a condition.",
+            "It is commonly used to restrict which records participate in a query."
+        ]
+    },
+    {
+        "patterns": [
+            "what is order by",
+            "order by kya hai"
+        ],
+        "responses": [
+            "ORDER BY sorts query results in ascending or descending order.",
+            "Use ASC for ascending order and DESC for descending order."
+        ]
+    },
+    {
+        "patterns": [
+            "what is distinct",
+            "distinct kya hai"
+        ],
+        "responses": [
+            "DISTINCT removes duplicate rows from the selected result set.",
+            "It is useful when you need unique values from one or more columns."
+        ]
+    },
+    {
+        "patterns": [
+            "what is null",
+            "null kya hai",
+            "sql null kya hai"
+        ],
+        "responses": [
+            "NULL represents a missing or unknown value in SQL.",
+            "NULL is different from zero, an empty string, or false."
+        ]
+    },
+    {
+        "patterns": [
+            "what is coalesce",
+            "coalesce kya hai"
+        ],
+        "responses": [
+            "COALESCE returns the first non-NULL value from the provided expressions.",
+            "It is commonly used to provide fallback values for NULL data."
+        ]
+    },
+    {
+        "patterns": [
+            "what is case statement",
+            "case when kya hai",
+            "sql case kya hai"
+        ],
+        "responses": [
+            "CASE allows conditional logic inside SQL queries.",
+            "It is similar to if-else logic and can be used to create derived values."
+        ]
+    },
+    {
+        "patterns": [
+            "what is subquery",
+            "subquery kya hai"
+        ],
+        "responses": [
+            "A subquery is a query nested inside another SQL query.",
+            "Subqueries can be used in SELECT, FROM, WHERE, HAVING, and other SQL contexts."
+        ]
+    },
+    {
+        "patterns": [
+            "what is union",
+            "union kya hai"
+        ],
+        "responses": [
+            "UNION combines the result sets of two compatible SELECT queries and removes duplicates.",
+            "UNION ALL also combines result sets but keeps duplicates."
+        ]
+    },
+    {
+        "patterns": [
+            "what is union all",
+            "union all kya hai"
+        ],
+        "responses": [
+            "UNION ALL combines result sets without removing duplicates.",
+            "It can be faster than UNION when duplicate elimination is not required."
+        ]
+    },
+    {
+        "patterns": [
+            "what is view",
+            "view kya hai",
+            "sql view kya hai"
+        ],
+        "responses": [
+            "A view is a stored SQL query that can be accessed like a virtual table.",
+            "Views can simplify complex queries and provide controlled access to data."
+        ]
+    },
+    {
+        "patterns": [
+            "what is stored procedure",
+            "stored procedure kya hai"
+        ],
+        "responses": [
+            "A stored procedure is a reusable set of database operations stored and executed inside the database.",
+            "Stored procedures can encapsulate business logic and database operations."
+        ]
+    },
+    {
+        "patterns": [
+            "what is function in sql",
+            "sql function kya hai"
+        ],
+        "responses": [
+            "A SQL function performs an operation and returns a value or result.",
+            "Functions can be built-in or user-defined depending on the database system."
+        ]
+    },
+    {
+        "patterns": [
+            "what is trigger",
+            "trigger kya hai"
+        ],
+        "responses": [
+            "A database trigger automatically executes when specified database events occur.",
+            "Triggers can be associated with events such as INSERT, UPDATE, or DELETE."
+        ]
+    },
+    {
+        "patterns": [
+            "what is partitioning",
+            "partitioning kya hai"
+        ],
+        "responses": [
+            "Partitioning divides a large table or dataset into smaller logical pieces based on a partitioning strategy.",
+            "Partitioning can improve manageability and query performance for suitable workloads."
+        ]
+    },
+    {
+        "patterns": [
+            "what is sharding",
+            "sharding kya hai"
+        ],
+        "responses": [
+            "Sharding distributes data across multiple database servers or nodes.",
+            "It is commonly used to scale workloads horizontally."
+        ]
+    },
+    {
+        "patterns": [
+            "what is primary index",
+            "indexing kya hai"
+        ],
+        "responses": [
+            "Indexing creates additional data structures that help databases locate rows efficiently.",
+            "Good indexing can significantly improve query performance for suitable access patterns."
+        ]
+    },
+    {
+        "patterns": [
+            "how to improve sql performance",
+            "sql performance kaise improve kare"
+        ],
+        "responses": [
+            "Common approaches include appropriate indexes, efficient joins, avoiding unnecessary columns, checking execution plans, filtering early where appropriate, and maintaining statistics.",
+            "Start by examining the query plan and identifying expensive scans, joins, sorts, or repeated operations."
+        ]
+    },
+    {
+        "patterns": [
+            "what is query optimization",
+            "query optimization kya hai"
+        ],
+        "responses": [
+            "Query optimization is the process of improving a query so the database can execute it efficiently.",
+            "It involves understanding execution plans, indexes, joins, filters, statistics, and database-specific optimisations."
+        ]
+    },
+    {
+        "patterns": [
+            "what is explain plan",
+            "explain plan kya hai",
+            "sql explain plan"
+        ],
+        "responses": [
+            "An execution plan shows how the database intends to execute a query.",
+            "It can help identify scans, joins, sorts, estimated costs, and other performance characteristics."
+        ]
+    },
+    {
+        "patterns": [
+            "what is python list",
+            "python list kya hai"
+        ],
+        "responses": [
+            "A Python list is an ordered, mutable collection that can store multiple values.",
+            "Lists are commonly used when you need an ordered collection that can change."
+        ]
+    },
+    {
+        "patterns": [
+            "what is tuple",
+            "python tuple kya hai"
+        ],
+        "responses": [
+            "A tuple is an ordered collection that is generally immutable after creation.",
+            "Tuples are useful when values should not be modified."
+        ]
+    },
+    {
+        "patterns": [
+            "what is dictionary",
+            "python dictionary kya hai",
+            "dict kya hai"
+        ],
+        "responses": [
+            "A Python dictionary stores key-value pairs.",
+            "Dictionaries are useful for fast lookup using keys."
+        ]
+    },
+    {
+        "patterns": [
+            "what is set",
+            "python set kya hai"
+        ],
+        "responses": [
+            "A Python set is an unordered collection of unique elements.",
+            "Sets are useful for membership checks and removing duplicates."
+        ]
+    },
+    {
+        "patterns": [
+            "what is lambda",
+            "lambda function kya hai"
+        ],
+        "responses": [
+            "A lambda is a small anonymous function in Python.",
+            "Lambda expressions are useful for short functions, especially with functions such as map, filter, and sorted."
+        ]
+    },
+    {
+        "patterns": [
+            "what is exception handling",
+            "exception handling kya hai"
+        ],
+        "responses": [
+            "Exception handling allows a program to handle runtime errors gracefully.",
+            "Python commonly uses try, except, else, and finally for exception handling."
+        ]
+    },
+    {
+        "patterns": [
+            "what is oop",
+            "oop kya hai",
+            "object oriented programming kya hai"
+        ],
+        "responses": [
+            "Object-Oriented Programming organizes software around objects containing data and behaviour.",
+            "Common OOP concepts include classes, objects, inheritance, encapsulation, abstraction, and polymorphism."
+        ]
+    },
+    {
+        "patterns": [
+            "what is class",
+            "python class kya hai"
+        ],
+        "responses": [
+            "A class is a blueprint for creating objects in Python.",
+            "Classes can contain attributes and methods that define object state and behaviour."
+        ]
+    },
+    {
+        "patterns": [
+            "what is object",
+            "python object kya hai"
+        ],
+        "responses": [
+            "An object is an instance of a class.",
+            "Objects contain state through attributes and behaviour through methods."
+        ]
+    },
+    {
+        "patterns": [
+            "what is dataframe",
+            "dataframe kya hai",
+            "pandas dataframe kya hai"
+        ],
+        "responses": [
+            "A DataFrame is a tabular data structure with rows and columns.",
+            "Pandas DataFrames are widely used for data analysis, while Spark DataFrames support distributed data processing."
+        ]
+    },
+    {
+        "patterns": [
+            "what is pyspark dataframe",
+            "spark dataframe kya hai"
+        ],
+        "responses": [
+            "A PySpark DataFrame is a distributed collection of data organized into named columns.",
+            "It provides a structured API for processing large datasets across a Spark cluster."
+        ]
+    },
+    {
+        "patterns": [
+            "what is transformation in spark",
+            "spark transformation kya hai"
+        ],
+        "responses": [
+            "A Spark transformation creates a new dataset from an existing dataset and is generally evaluated lazily.",
+            "Examples include select, filter, groupBy, join, and withColumn."
+        ]
+    },
+    {
+        "patterns": [
+            "what is spark action",
+            "spark action kya hai"
+        ],
+        "responses": [
+            "A Spark action triggers execution of the transformations required to produce a result.",
+            "Examples include count, collect, show, and write operations."
+        ]
+    },
+    {
+        "patterns": [
+            "what is lazy evaluation",
+            "lazy evaluation kya hai",
+            "spark lazy evaluation"
+        ],
+        "responses": [
+            "Lazy evaluation means Spark delays executing transformations until an action requires the result.",
+            "This allows Spark to optimise the execution plan before running it."
+        ]
+    },
+    {
+        "patterns": [
+            "what is delta lake",
+            "delta lake kya hai"
+        ],
+        "responses": [
+            "Delta Lake is a storage layer that adds features such as ACID transactions, schema management, and versioning to data lakes.",
+            "It is widely used with Databricks and Apache Spark workloads."
+        ]
+    },
+    {
+        "patterns": [
+            "what is medallion architecture",
+            "medallion architecture kya hai"
+        ],
+        "responses": [
+            "Medallion Architecture commonly organizes data into Bronze, Silver, and Gold layers.",
+            "Bronze usually contains raw data, Silver contains cleaned or refined data, and Gold contains business-ready datasets."
+        ]
+    },
+    {
+        "patterns": [
+            "what is adf",
+            "azure data factory kya hai",
+            "adf kya hai"
+        ],
+        "responses": [
+            "Azure Data Factory is a cloud data integration service used to create pipelines for moving and transforming data.",
+            "ADF is commonly used for orchestration, ingestion, scheduling, and data integration."
+        ]
+    },
+    {
+        "patterns": [
+            "what is adls",
+            "adls gen2 kya hai"
+        ],
+        "responses": [
+            "Azure Data Lake Storage Gen2 is Microsoft's scalable cloud storage service designed for big data analytics workloads.",
+            "ADLS Gen2 provides hierarchical namespace capabilities and integrates with Azure analytics services."
+        ]
+    },
+    {
+        "patterns": [
+            "what is synapse",
+            "azure synapse kya hai"
+        ],
+        "responses": [
+            "Azure Synapse Analytics is a cloud analytics platform that combines capabilities for data warehousing, big data processing, and analytics.",
+            "It integrates with several Azure data services."
+        ]
+    },
+    {
+        "patterns": [
+            "what is kafka",
+            "kafka kya hai"
+        ],
+        "responses": [
+            "Apache Kafka is a distributed event streaming platform used to publish, consume, store, and process streams of events.",
+            "Kafka is commonly used for real-time data pipelines and event-driven architectures."
+        ]
+    },
+    {
+        "patterns": [
+            "what is event hub",
+            "azure event hub kya hai"
+        ],
+        "responses": [
+            "Azure Event Hubs is a managed service for ingesting large volumes of streaming events.",
+            "It is commonly used for telemetry, logs, application events, and real-time data ingestion."
+        ]
+    },
+    {
+        "patterns": [
+            "what is data pipeline",
+            "data pipeline kya hai"
+        ],
+        "responses": [
+            "A data pipeline moves and transforms data from source systems to target systems.",
+            "A pipeline may include ingestion, validation, transformation, storage, monitoring, and error handling."
+        ]
+    },
+    {
+        "patterns": [
+            "what is data warehouse",
+            "data warehouse kya hai"
+        ],
+        "responses": [
+            "A data warehouse is a system designed to store structured data for analytics and reporting.",
+            "Data warehouses typically support analytical queries across historical data."
+        ]
+    },
+    {
+        "patterns": [
+            "what is data lake",
+            "data lake kya hai"
+        ],
+        "responses": [
+            "A data lake stores large amounts of data in its raw or semi-processed form and can support multiple data types and workloads.",
+            "Data lakes are commonly used as scalable storage foundations for modern data platforms."
+        ]
+    },
+    {
+        "patterns": [
+            "what is data lakehouse",
+            "lakehouse kya hai"
+        ],
+        "responses": [
+            "A data lakehouse combines characteristics of data lakes and data warehouses, aiming to support scalable storage with reliable analytical capabilities.",
+            "Technologies such as Delta Lake are commonly used in lakehouse architectures."
+        ]
+    },
+    {
+        "patterns": [
+            "what is system design",
+            "system design kya hai"
+        ],
+        "responses": [
+            "System Design is the process of designing the architecture, components, data flow, scalability, reliability, and operational behaviour of a system.",
+            "For Data Engineering, system design often includes ingestion, storage, processing, orchestration, serving, monitoring, and governance."
+        ]
+    },
+    {
+        "patterns": [
+            "how to prepare for data engineer interview",
+            "data engineer interview preparation"
+        ],
+        "responses": [
+            "A strong preparation path is SQL → Python → Data Modelling → ETL/ELT → Spark/PySpark → Cloud → Databricks → System Design → Project scenarios.",
+            "Practise both coding questions and real-world Data Engineering scenarios."
+        ]
+    },
+    {
+        "patterns": [
+            "how to prepare sql interview",
+            "sql interview kaise prepare kare"
+        ],
+        "responses": [
+            "Focus on joins, aggregations, subqueries, CTEs, window functions, NULL handling, date functions, query optimisation, and real-world SQL scenarios.",
+            "Practise writing queries rather than only reading theory."
+        ]
+    },
+    {
+        "patterns": [
+            "give me sql practice",
+            "sql practice do",
+            "sql practice karna hai"
+        ],
+        "responses": [
+            "Absolutely! You can start an SQL quiz or ask me for a specific SQL topic.",
+            "Try: Start SQL Quiz or ask me to explain SQL Joins, CTEs, or Window Functions."
+        ]
+    },
+    {
+        "patterns": [
+            "give me python practice",
+            "python practice do",
+            "python practice karna hai"
+        ],
+        "responses": [
+            "Sure! Start a Python quiz or ask for Python interview questions.",
+            "Let's practise Python fundamentals and Data Engineering scenarios."
+        ]
+    },
+    {
+        "patterns": [
+            "give me challenge",
+            "challenge do",
+            "mujhe challenge do"
+        ],
+        "responses": [
+            "🔥 Challenge accepted! Pick SQL, Python, PySpark, PostgreSQL, Databricks, or Azure.",
+            "Let's challenge your skills. Choose a topic and I'll find a suitable quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "hard question",
+            "difficult question",
+            "tough question",
+            "hard quiz"
+        ],
+        "responses": [
+            "🔥 Ready for a challenge? I can help you find advanced questions.",
+            "Let's increase the difficulty. Try an advanced quiz or interview questions."
+        ]
+    },
+    {
+        "patterns": [
+            "easy question",
+            "easy quiz",
+            "beginner quiz"
+        ],
+        "responses": [
+            "Sure! Let's start with beginner-friendly questions.",
+            "No problem. I'll look for an easy quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "medium quiz",
+            "moderate quiz",
+            "intermediate quiz"
+        ],
+        "responses": [
+            "Great! Let's practise at intermediate level.",
+            "Ready for a moderate challenge? Let's find a suitable quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "advanced quiz",
+            "expert quiz",
+            "hard level quiz"
+        ],
+        "responses": [
+            "🔥 Advanced mode selected. Let's test deeper concepts.",
+            "Ready for expert-level practice!"
+        ]
+    },
+    {
+        "patterns": [
+            "show categories",
+            "categories dikhao",
+            "category dikhao"
+        ],
+        "responses": [
+            "You can explore SQL, PostgreSQL, Python, PySpark, Databricks, Azure, Data Engineering, ETL, System Design, Interview Questions, and more.",
+            "Let's explore the StudyNotes categories."
+        ]
+    },
+    {
+        "patterns": [
+            "show topics",
+            "topics dikhao",
+            "topic list dikhao"
+        ],
+        "responses": [
+            "I can help you explore topics under SQL, PostgreSQL, Python, PySpark, Databricks, Azure, ETL, Data Engineering, and System Design.",
+            "Tell me a technology and I'll help you find its topics."
+        ]
+    },
+    {
+        "patterns": [
+            "show resources",
+            "resources dikhao",
+            "resources do"
+        ],
+        "responses": [
+            "Sure! I can help you find PDFs, cheat sheets, guides, and other StudyNotes resources.",
+            "Tell me the topic and I'll look for relevant resources."
+        ]
+    },
+    {
+        "patterns": [
+            "show pdf",
+            "pdf dikhao",
+            "pdf chahiye",
+            "study pdf"
+        ],
+        "responses": [
+            "Sure! Tell me the topic and I'll help you find available PDFs or resources.",
+            "You can browse the StudyNotes Resources section for downloadable material."
+        ]
+    },
+    {
+        "patterns": [
+            "search sql",
+            "sql search karo",
+            "sql dhundo"
+        ],
+        "responses": [
+            "🔎 Searching StudyNotes for SQL content.",
+            "Sure! I'll look for SQL notes, quizzes, interview questions, and resources."
+        ]
+    },
+    {
+        "patterns": [
+            "search python",
+            "python search karo",
+            "python dhundo"
+        ],
+        "responses": [
+            "🔎 Searching StudyNotes for Python content.",
+            "I'll look for Python notes, quizzes, interview questions, and resources."
+        ]
+    },
+    {
+        "patterns": [
+            "search postgres",
+            "postgres search karo",
+            "postgres dhundo"
+        ],
+        "responses": [
+            "🔎 Searching StudyNotes for PostgreSQL content.",
+            "I'll look for PostgreSQL notes, quizzes, interview questions, and resources."
+        ]
+    },
+    {
+        "patterns": [
+            "search pyspark",
+            "pyspark search karo",
+            "pyspark dhundo"
+        ],
+        "responses": [
+            "🔎 Searching StudyNotes for PySpark content.",
+            "I'll search for PySpark notes and practice material."
+        ]
+    },
+    {
+        "patterns": [
+            "search databricks",
+            "databricks search karo"
+        ],
+        "responses": [
+            "🔎 Searching StudyNotes for Databricks content.",
+            "I'll find Databricks notes, quizzes, and resources."
+        ]
+    },
+    {
+        "patterns": [
+            "search azure",
+            "azure search karo"
+        ],
+        "responses": [
+            "🔎 Searching StudyNotes for Azure content.",
+            "I'll find Azure notes, quizzes, and resources."
+        ]
+    },
+    {
+        "patterns": [
+            "what is study notes",
+            "studynotes kya hai",
+            "study notes kya hai"
+        ],
+        "responses": [
+            "StudyNotes is a learning portal for technical study material, quizzes, interview preparation, resources, and practical Data Engineering knowledge.",
+            "StudyNotes helps you Learn, Practise, Prepare, and Improve."
+        ]
+    },
+    {
+        "patterns": [
+            "what is your purpose",
+            "your purpose kya hai"
+        ],
+        "responses": [
+            "My purpose is to make learning and practice easier inside StudyNotes.",
+            "I'm here to help you discover content, understand concepts, practise quizzes, and prepare for interviews."
+        ]
+    },
+    {
+        "patterns": [
+            "motivate me",
+            "motivation do",
+            "mujhe motivate karo"
+        ],
+        "responses": [
+            "Small progress every day compounds into strong skills. Keep going. 💪",
+            "Don't aim to master everything today. Learn one concept, practise it, and repeat.",
+            "Consistency beats intensity. Keep showing up. 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "i am tired",
+            "main thak gaya hu",
+            "mai thak gaya hu"
+        ],
+        "responses": [
+            "Take a short break. A refreshed mind learns better. 😊",
+            "No pressure. Rest for a bit and come back when you're ready."
+        ]
+    },
+    {
+        "patterns": [
+            "i am confused",
+            "main confused hu",
+            "mujhe confusion hai"
+        ],
+        "responses": [
+            "No worries. Tell me the exact concept that's confusing you and I'll break it down step by step.",
+            "Let's simplify it together. What part is confusing?"
+        ]
+    },
+    {
+        "patterns": [
+            "i don't understand",
+            "samajh nahi aa raha",
+            "samaj nahi aa raha"
+        ],
+        "responses": [
+            "No problem. I'll explain it in simpler language with a practical example.",
+            "Let's start from the basics and build the concept step by step."
+        ]
+    },
+    {
+        "patterns": [
+            "repeat",
+            "repeat it",
+            "again",
+            "fir se batao",
+            "phir se samjhao"
+        ],
+        "responses": [
+            "Sure! I'll explain it again in a simpler way.",
+            "Of course. Let's go through it once more."
+        ]
+    },
+    {
+        "patterns": [
+            "short answer",
+            "short me batao",
+            "short answer do"
+        ],
+        "responses": [
+            "Sure. I'll keep the answer concise.",
+            "Got it. I'll give you the short version."
+        ]
+    },
+    {
+        "patterns": [
+            "detailed answer",
+            "detail me batao",
+            "full explain karo"
+        ],
+        "responses": [
+            "Sure! I'll provide a detailed explanation with examples and important points.",
+            "Absolutely. Let's go deeper into the concept."
+        ]
+    },
+    {
+        "patterns": [
+            "give tips",
+            "tips do",
+            "kuch tips do",
+            "tips batao"
+        ],
+        "responses": [
+            "Sure! Tell me the topic and I'll give you practical tips.",
+            "Absolutely. Topic batao and I'll share useful tips."
+        ]
+    },
+    {
+        "patterns": [
+            "quick revision",
+            "quick revise",
+            "jaldi revision",
+            "revision karna hai"
+        ],
+        "responses": [
+            "Let's do a quick revision! Tell me the topic.",
+            "Sure. Pick SQL, Python, PySpark, PostgreSQL, Databricks, Azure, or another topic."
+        ]
+    },
+    {
+        "patterns": [
+            "revise sql",
+            "sql revision",
+            "sql revise karna hai"
+        ],
+        "responses": [
+            "🔥 SQL revision mode! Start with SELECT, WHERE, GROUP BY, HAVING, JOINs, subqueries, CTEs, and window functions.",
+            "Let's revise SQL step by step and then test yourself with a quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "revise python",
+            "python revision"
+        ],
+        "responses": [
+            "🐍 Python revision mode! Focus on data structures, functions, OOP, exceptions, comprehensions, and practical coding.",
+            "Let's revise Python fundamentals and then practise."
+        ]
+    },
+    {
+        "patterns": [
+            "revise pyspark",
+            "pyspark revision"
+        ],
+        "responses": [
+            "⚡ PySpark revision mode! Focus on DataFrames, transformations, actions, lazy evaluation, joins, partitions, and optimisation.",
+            "Let's revise PySpark concepts step by step."
+        ]
+    },
+    {
+        "patterns": [
+            "revise databricks",
+            "databricks revision"
+        ],
+        "responses": [
+            "🔥 Databricks revision mode! Focus on Spark, Delta Lake, Medallion Architecture, Workflows, optimisation, and governance.",
+            "Let's revise Databricks concepts."
+        ]
+    },
+    {
+        "patterns": [
+            "revise azure",
+            "azure revision"
+        ],
+        "responses": [
+            "☁️ Azure revision mode! Focus on ADF, ADLS, Synapse, Event Hubs, Databricks, security, and architecture.",
+            "Let's revise Azure Data Engineering concepts."
+        ]
+    },
+    {
+        "patterns": [
+            "what should i revise",
+            "kya revise karu",
+            "revision ke liye kya karu"
+        ],
+        "responses": [
+            "Review the topics where you scored lowest in recent quizzes, then revisit their study notes.",
+            "A good revision cycle is: concept → example → quiz → review incorrect answers."
+        ]
+    },
+    {
+        "patterns": [
+            "show my score",
+            "my score",
+            "mera score",
+            "mera result"
+        ],
+        "responses": [
+            "Your quiz scores are stored locally by the StudyNotes portal. Open the quiz result or attempt history to review them.",
+            "You can review your best score and previous attempts from the quiz result area."
+        ]
+    },
+    {
+        "patterns": [
+            "retry quiz",
+            "quiz retry karo",
+            "again quiz",
+            "quiz fir se"
+        ],
+        "responses": [
+            "Sure! You can retry the quiz from the result page.",
+            "Let's give it another shot. 🔥"
+        ]
+    },
+    {
+        "patterns": [
+            "show answer",
+            "answer batao",
+            "iska answer kya hai"
+        ],
+        "responses": [
+            "If this is a quiz question, submit or review the question to see the correct answer and explanation.",
+            "Send me the complete question and options if you want an explanation."
+        ]
+    },
+    {
+        "patterns": [
+            "why is this answer correct",
+            "why correct",
+            "ye answer correct kyu hai"
+        ],
+        "responses": [
+            "Share the question and options with me and I'll explain why the correct option is correct.",
+            "I'll break down the reasoning step by step."
+        ]
+    },
+    {
+        "patterns": [
+            "give me a hint",
+            "hint do",
+            "hint batao",
+            "thoda hint"
+        ],
+        "responses": [
+            "Sure! I'll give you a hint without directly revealing the answer.",
+            "Here's a small hint: focus on the key condition in the question."
+        ]
+    },
+    {
+        "patterns": [
+            "i got it",
+            "samajh gaya",
+            "samaj gaya",
+            "understood"
+        ],
+        "responses": [
+            "Awesome! 🎯 Let's move to the next concept.",
+            "Great! Now practise it once to make it stick."
+        ]
+    },
+    {
+        "patterns": [
+            "i know this",
+            "ye mujhe aata hai",
+            "mujhe pata hai"
+        ],
+        "responses": [
+            "Nice! 😎 Let's increase the difficulty.",
+            "Great. Try an advanced question next."
+        ]
+    },
+    {
+        "patterns": [
+            "next question",
+            "next",
+            "agla question",
+            "next question do"
+        ],
+        "responses": [
+            "Let's move to the next question! 🚀",
+            "Ready? Here's the next challenge."
+        ]
+    },
+    {
+        "patterns": [
+            "start over",
+            "restart",
+            "restart karo",
+            "phir se start"
+        ],
+        "responses": [
+            "Sure! Let's start fresh.",
+            "Starting over. 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "clear chat",
+            "chat clear karo",
+            "conversation clear"
+        ],
+        "responses": [
+            "You can use the clear chat option to start a fresh conversation.",
+            "Sure. Start a new conversation whenever you're ready."
+        ]
+    },
+    {
+        "patterns": [
+            "what is your name",
+            "your name",
+            "naam kya hai"
+        ],
+        "responses": [
+            "I'm Ask Ashu. 👋",
+            "You can call me Ask Ashu."
+        ]
+    },
+    {
+        "patterns": [
+            "can i ask question",
+            "question puch sakta hu",
+            "question pooch sakta hu"
+        ],
+        "responses": [
+            "Of course! Ask anything related to the StudyNotes content.",
+            "Absolutely. Go ahead and ask."
+        ]
+    },
+    {
+        "patterns": [
+            "can you explain",
+            "explain kar sakte ho",
+            "samjha sakte ho"
+        ],
+        "responses": [
+            "Absolutely! Tell me the concept.",
+            "Yes! Send me the topic and I'll explain it."
+        ]
+    },
+    {
+        "patterns": [
+            "can you quiz me",
+            "quiz karoge",
+            "test karoge"
+        ],
+        "responses": [
+            "Absolutely! Tell me the topic and difficulty.",
+            "Yes! Pick a topic and I'll help you start a quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "can you search",
+            "search kar sakte ho",
+            "dhund sakte ho"
+        ],
+        "responses": [
+            "Yes! I can search the StudyNotes repository for relevant content.",
+            "Absolutely. Tell me what you're looking for."
+        ]
+    },
+    {
+        "patterns": [
+            "find sql joins",
+            "sql joins find karo",
+            "sql joins dhundo"
+        ],
+        "responses": [
+            "🔎 I'll search StudyNotes for SQL Joins notes, quizzes, and related resources.",
+            "Searching for SQL Joins content."
+        ]
+    },
+    {
+        "patterns": [
+            "find python data engineering",
+            "python data engineering dhundo"
+        ],
+        "responses": [
+            "🔎 Searching StudyNotes for Python Data Engineering content.",
+            "I'll find relevant Python Data Engineering notes and practice material."
+        ]
+    },
+    {
+        "patterns": [
+            "show related content",
+            "related content dikhao",
+            "related notes dikhao"
+        ],
+        "responses": [
+            "Sure! I'll look for related StudyNotes content.",
+            "Let's find related notes, quizzes, and resources."
+        ]
+    },
+    {
+        "patterns": [
+            "what next",
+            "next kya",
+            "ab kya karu",
+            "ab kya padhu"
+        ],
+        "responses": [
+            "A good next step is to practise the topic you just learned with a quiz.",
+            "Try the related quiz next, then review any incorrect answers."
+        ]
+    },
+    {
+        "patterns": [
+            "how can i improve",
+            "kaise improve karu",
+            "improvement kaise karu"
+        ],
+        "responses": [
+            "Review incorrect quiz answers, revisit the related notes, and retry the quiz after some practice.",
+            "Focus on weak topics rather than repeatedly practising concepts you already know."
+        ]
+    },
+    {
+        "patterns": [
+            "give study plan",
+            "study plan do",
+            "study plan bana do"
+        ],
+        "responses": [
+            "Sure! Tell me your target topic and available study time, and I'll suggest a practical sequence.",
+            "For Data Engineering, a common sequence is SQL → Python → ETL → Spark → Cloud → Databricks → System Design."
+        ]
+    },
+    {
+        "patterns": [
+            "one hour study plan",
+            "1 hour study plan",
+            "ek ghante ka plan"
+        ],
+        "responses": [
+            "Try 20 minutes concept learning, 20 minutes coding/practice, and 20 minutes quiz or interview questions.",
+            "A focused hour can be split into Learn → Practise → Test."
+        ]
+    },
+    {
+        "patterns": [
+            "30 minute study plan",
+            "30 min study plan",
+            "aadhe ghante ka plan"
+        ],
+        "responses": [
+            "Try 10 minutes revision, 10 minutes practice, and 10 minutes quiz.",
+            "Use the 30 minutes for one focused topic rather than many unrelated topics."
+        ]
+    },
+    {
+        "patterns": [
+            "what is interview prep",
+            "interview preparation kya hai"
+        ],
+        "responses": [
+            "Interview preparation combines concept revision, coding practice, scenario-based questions, system design, and communication.",
+            "StudyNotes can help you practise technical interview topics and questions."
+        ]
+    },
+    {
+        "patterns": [
+            "give data engineering roadmap",
+            "data engineering roadmap do",
+            "de roadmap"
+        ],
+        "responses": [
+            "A practical roadmap is SQL → Python → Linux/Git → ETL/ELT → Data Modelling → Spark/PySpark → Cloud → Databricks → Streaming → System Design.",
+            "Build fundamentals first, then add distributed processing, cloud, orchestration, and architecture."
+        ]
+    },
+    {
+        "patterns": [
+            "what should data engineer know",
+            "data engineer ko kya aana chahiye"
+        ],
+        "responses": [
+            "Core areas include SQL, Python, data modelling, ETL/ELT, databases, Spark, cloud, orchestration, version control, monitoring, and system design.",
+            "Real-world Data Engineers also need debugging, performance optimisation, data quality, and communication skills."
+        ]
+    },
+    {
+        "patterns": [
+            "what is github",
+            "github kya hai"
+        ],
+        "responses": [
+            "GitHub is a platform for hosting Git repositories and collaborating on software projects.",
+            "It is commonly used for source control, collaboration, pull requests, issues, and CI/CD workflows."
+        ]
+    },
+    {
+        "patterns": [
+            "what is git",
+            "git kya hai"
+        ],
+        "responses": [
+            "Git is a distributed version control system used to track changes in files and collaborate on software projects.",
+            "Git helps developers manage versions, branches, merges, and project history."
+        ]
+    },
+    {
+        "patterns": [
+            "what is api",
+            "api kya hai"
+        ],
+        "responses": [
+            "An API is an interface that allows software systems to communicate with each other.",
+            "APIs define how one application can request or exchange data with another system."
+        ]
+    },
+    {
+        "patterns": [
+            "what is json",
+            "json kya hai"
+        ],
+        "responses": [
+            "JSON is a lightweight text format commonly used to represent structured data.",
+            "It is frequently used for configuration files, APIs, and data exchange."
+        ]
+    },
+    {
+        "patterns": [
+            "what is csv",
+            "csv kya hai"
+        ],
+        "responses": [
+            "CSV stands for Comma-Separated Values and represents tabular data in a text-based format.",
+            "CSV files are commonly used for data exchange and simple datasets."
+        ]
+    },
+    {
+        "patterns": [
+            "what is rest api",
+            "rest api kya hai"
+        ],
+        "responses": [
+            "A REST API is an API style commonly built around HTTP resources and operations.",
+            "Typical HTTP methods include GET, POST, PUT, PATCH, and DELETE."
+        ]
+    },
+    {
+        "patterns": [
+            "what is cloud",
+            "cloud computing kya hai"
+        ],
+        "responses": [
+            "Cloud computing provides computing resources such as storage, compute, databases, and networking over the internet.",
+            "Cloud platforms allow organisations to provision and scale infrastructure and managed services."
+        ]
+    },
+    {
+        "patterns": [
+            "explain this topic",
+            "explain this",
+            "isko samjhao",
+            "ye samjhao"
+        ],
+        "responses": [
+            "Sure! I'll use the current StudyNotes topic to explain it.",
+            "Absolutely. I'll explain the current topic in a simple and practical way."
+        ]
+    },
+    {
+        "patterns": [
+            "summarize this",
+            "summary do",
+            "summary batao",
+            "short summary"
+        ],
+        "responses": [
+            "Sure! I'll summarize the current StudyNotes content into the key points.",
+            "I'll give you the important points without unnecessary detail."
+        ]
+    },
+    {
+        "patterns": [
+            "key points",
+            "important points",
+            "important kya hai",
+            "main points"
+        ],
+        "responses": [
+            "Sure! I'll focus on the most important concepts and interview-relevant points.",
+            "Let's extract the key takeaways."
+        ]
+    },
+    {
+        "patterns": [
+            "interview tip",
+            "interview tips",
+            "interview tip do"
+        ],
+        "responses": [
+            "Focus on explaining not just what a technology does, but why you would choose it and what trade-offs it has.",
+            "For technical interviews, combine definitions with practical examples and real-world scenarios."
+        ]
+    },
+    {
+        "patterns": [
+            "exam preparation",
+            "exam prep",
+            "exam ke liye prepare karna hai"
+        ],
+        "responses": [
+            "For exam preparation, combine topic revision with timed quizzes and review of incorrect answers.",
+            "Start with the syllabus, build topic-wise notes, then practise increasingly difficult questions."
+        ]
+    },
+    {
+        "patterns": [
+            "competitive exam",
+            "competitive exam preparation"
+        ],
+        "responses": [
+            "StudyNotes can organize competitive preparation through subjects, topics, notes, and quizzes.",
+            "A good approach is topic revision followed by timed practice."
+        ]
+    },
+    {
+        "patterns": [
+            "time management",
+            "time manage kaise kare"
+        ],
+        "responses": [
+            "Use focused study blocks and define one measurable target for each session.",
+            "Try Learn → Practise → Test rather than spending the entire session only reading."
+        ]
+    },
+    {
+        "patterns": [
+            "how to remember concepts",
+            "concept yaad kaise rakhe",
+            "yaad kaise kare"
+        ],
+        "responses": [
+            "Use active recall, spaced revision, examples, and practice questions.",
+            "After learning a concept, close your notes and explain it in your own words."
+        ]
+    },
+    {
+        "patterns": [
+            "what is active recall",
+            "active recall kya hai"
+        ],
+        "responses": [
+            "Active recall means trying to retrieve information from memory instead of simply rereading it.",
+            "Quizzes and self-questioning are practical forms of active recall."
+        ]
+    },
+    {
+        "patterns": [
+            "what is spaced repetition",
+            "spaced repetition kya hai"
+        ],
+        "responses": [
+            "Spaced repetition means reviewing information at increasing intervals to strengthen long-term memory.",
+            "Combine spaced revision with quizzes for better retention."
+        ]
+    },
+    {
+        "patterns": [
+            "good job",
+            "well done",
+            "nice work",
+            "mast"
+        ],
+        "responses": [
+            "Thank you! 😄 Let's keep the learning going.",
+            "Glad you liked it! Ready for the next topic?"
+        ]
+    },
+    {
+        "patterns": [
+            "mast hai",
+            "zabardast",
+            "ek number",
+            "badiya",
+            "badhiya"
+        ],
+        "responses": [
+            "😄 Awesome! Let's continue.",
+            "Glad you liked it! 🔥 What should we explore next?"
+        ]
+    },
+    {
+        "patterns": [
+            "bro",
+            "brother",
+            "bhai",
+            "bhaiya",
+            "yaar",
+            "dost"
+        ],
+        "responses": [
+            "Haan bro! 😄 Batao, kya seekhna hai?",
+            "Yes bro! 🔥 Topic batao.",
+            "Bilkul yaar! Kya help chahiye?"
+        ]
+    },
+    {
+        "patterns": [
+            "bhai sql bata",
+            "bro sql bata",
+            "yaar sql samjha"
+        ],
+        "responses": [
+            "Bilkul bro! SQL ko simple way mein samjhte hain.",
+            "Haan bhai! SQL ka concept step by step dekhte hain."
+        ]
+    },
+    {
+        "patterns": [
+            "kya karu",
+            "ab kya karu",
+            "mujhe kya karna chahiye"
+        ],
+        "responses": [
+            "Agar learning continue karni hai, ek topic choose karo aur uska study material padho, phir quiz attempt karo.",
+            "Start with one focused topic, practise it, then test yourself."
+        ]
+    },
+    {
+        "patterns": [
+            "bore ho raha hai",
+            "boring lag raha hai",
+            "i am bored"
+        ],
+        "responses": [
+            "Let's make it interesting! 🔥 Try a quick quiz on a topic you know.",
+            "How about a 5-minute challenge? Pick SQL, Python, or PySpark."
+        ]
+    },
+    {
+        "patterns": [
+            "challenge me",
+            "mujhe challenge karo",
+            "challenge kar"
+        ],
+        "responses": [
+            "🔥 Challenge mode activated! Pick a topic and difficulty.",
+            "Let's see what you've got! Choose an advanced quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "surprise me",
+            "surprise quiz",
+            "surprise karo"
+        ],
+        "responses": [
+            "🎯 Surprise mode! I'll pick a suitable technical challenge.",
+            "Let's make it interesting! A random topic quiz is a good way to test your breadth."
+        ]
+    },
+    {
+        "patterns": [
+            "random quiz",
+            "random test",
+            "random question"
+        ],
+        "responses": [
+            "🎲 Random challenge coming up! Choose your preferred difficulty or let the quiz decide.",
+            "Let's test your overall technical knowledge."
+        ]
+    },
+    {
+        "patterns": [
+            "5 questions",
+            "5 question quiz",
+            "five questions"
+        ],
+        "responses": [
+            "Sure! I can look for a short 5-question quiz if one is available.",
+            "Let's do a quick 5-question challenge."
+        ]
+    },
+    {
+        "patterns": [
+            "10 questions",
+            "10 question quiz",
+            "ten questions"
+        ],
+        "responses": [
+            "Sure! Let's do a 10-question practice session.",
+            "10 questions coming up! 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "20 questions",
+            "20 question quiz",
+            "twenty questions"
+        ],
+        "responses": [
+            "Perfect! A 20-question quiz is great for focused practice.",
+            "Let's do a full 20-question practice session."
+        ]
+    },
+    {
+        "patterns": [
+            "50 questions",
+            "50 question quiz",
+            "fifty questions"
+        ],
+        "responses": [
+            "🔥 50 questions is a serious practice session!",
+            "Let's go for a larger practice set."
+        ]
+    },
+    {
+        "patterns": [
+            "100 questions",
+            "100 question quiz",
+            "hundred questions"
+        ],
+        "responses": [
+            "🔥 That's a big practice session. Make sure you have enough time.",
+            "100 questions can provide broad topic coverage. Let's find a suitable quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "i want to learn sql",
+            "sql seekhna hai",
+            "mujhe sql seekhna hai"
+        ],
+        "responses": [
+            "Great choice! Start with SQL basics, filtering, grouping, joins, subqueries, CTEs, and window functions.",
+            "Let's build your SQL skills step by step."
+        ]
+    },
+    {
+        "patterns": [
+            "i want to learn python",
+            "python seekhna hai",
+            "mujhe python seekhna hai"
+        ],
+        "responses": [
+            "Great! Start with Python fundamentals, collections, functions, exceptions, OOP, and Data Engineering use cases.",
+            "Let's build your Python skills step by step."
+        ]
+    },
+    {
+        "patterns": [
+            "i want to learn pyspark",
+            "pyspark seekhna hai"
+        ],
+        "responses": [
+            "Start with DataFrames, transformations, actions, lazy evaluation, joins, partitions, and Spark optimisation.",
+            "Let's build your PySpark knowledge from fundamentals to practical scenarios."
+        ]
+    },
+    {
+        "patterns": [
+            "i want to learn databricks",
+            "databricks seekhna hai"
+        ],
+        "responses": [
+            "Start with Spark fundamentals, Delta Lake, Medallion Architecture, Workflows, optimisation, and governance.",
+            "Let's build your Databricks knowledge step by step."
+        ]
+    },
+    {
+        "patterns": [
+            "i want to learn azure",
+            "azure seekhna hai"
+        ],
+        "responses": [
+            "Start with Azure fundamentals, ADLS, ADF, Synapse, Event Hubs, Databricks, security, and architecture.",
+            "Let's build your Azure Data Engineering knowledge."
+        ]
+    },
+    {
+        "patterns": [
+            "i want data engineering job",
+            "data engineering job preparation",
+            "data engineer job ke liye prepare karna hai"
+        ],
+        "responses": [
+            "Focus on SQL, Python, Spark, cloud, ETL, system design, and explaining your project experience clearly.",
+            "Build strong fundamentals and practise real-world scenarios along with coding questions."
+        ]
+    },
+    {
+        "patterns": [
+            "how to crack interview",
+            "interview crack kaise kare"
+        ],
+        "responses": [
+            "Prepare fundamentals, practise coding, understand your projects deeply, and rehearse real-world scenarios.",
+            "Strong interview preparation combines technical depth, problem solving, and clear communication."
+        ]
+    },
+    {
+        "patterns": [
+            "resume tips",
+            "resume tip do",
+            "resume kaise improve kare"
+        ],
+        "responses": [
+            "Use concise achievement-focused bullets, relevant technologies, measurable impact, and keywords matching the target role.",
+            "Keep your resume focused on outcomes rather than only listing responsibilities."
+        ]
+    },
+    {
+        "patterns": [
+            "salary negotiation",
+            "salary negotiate kaise kare"
+        ],
+        "responses": [
+            "Research the role and market, understand your experience level, and communicate your expectations clearly.",
+            "Focus discussions on role scope, relevant experience, skills, and the overall compensation structure."
+        ]
+    },
+    {
+        "patterns": [
+            "thank you bro",
+            "thanks bro",
+            "thank u bro"
+        ],
+        "responses": [
+            "Anytime bro! 😄",
+            "Always happy to help, bro! 🚀",
+            "No worries yaar!"
+        ]
+    },
+    {
+        "patterns": [
+            "good one",
+            "nice explanation",
+            "good explanation"
+        ],
+        "responses": [
+            "Glad it helped! 😊",
+            "Awesome! Let's continue with the next concept."
+        ]
+    },
+    {
+        "patterns": [
+            "keep going",
+            "continue",
+            "continue karo",
+            "aage batao"
+        ],
+        "responses": [
+            "Absolutely! Let's continue.",
+            "Sure! Moving to the next part."
+        ]
+    },
+    {
+        "patterns": [
+            "stop",
+            "stop it",
+            "bas",
+            "bas karo"
+        ],
+        "responses": [
+            "Sure. I'll stop here. 😊",
+            "No problem. We can continue whenever you're ready."
+        ]
+    },
+    {
+        "patterns": [
+            "wait",
+            "ruko",
+            "ek minute"
+        ],
+        "responses": [
+            "Sure, take your time.",
+            "No problem. I'll be here when you're ready."
+        ]
+    },
+    {
+        "patterns": [
+            "are you real",
+            "tum real ho",
+            "is this real"
+        ],
+        "responses": [
+            "I'm a virtual learning assistant built into StudyNotes. 🤖",
+            "I'm software designed to help you learn and practise."
+        ]
+    },
+    {
+        "patterns": [
+            "are you ai",
+            "tum ai ho",
+            "is ask ashu ai"
+        ],
+        "responses": [
+            "Yes! I'm Ask Ashu, the AI-style learning assistant inside StudyNotes.",
+            "I'm designed to provide StudyNotes-aware learning assistance."
+        ]
+    },
+    {
+        "patterns": [
+            "can you understand hindi",
+            "hindi samajhte ho",
+            "hindi aati hai"
+        ],
+        "responses": [
+            "Haan! 😊 You can ask in Hindi, English, or Hinglish.",
+            "Bilkul! Hindi, English aur Hinglish mein pooch sakte ho."
+        ]
+    },
+    {
+        "patterns": [
+            "can you understand hinglish",
+            "hinglish samajhte ho",
+            "hinglish aati hai"
+        ],
+        "responses": [
+            "Haan bro! Hinglish bilkul samajh sakta hoon. 😄",
+            "Yes! Hindi + English mix mein freely ask karo."
+        ]
+    },
+    {
+        "patterns": [
+            "answer in hindi",
+            "hindi me answer do",
+            "hindi mein batao"
+        ],
+        "responses": [
+            "Bilkul! Main Hindi mein explain karunga.",
+            "Sure! Hindi mein simple explanation deta hoon."
+        ]
+    },
+    {
+        "patterns": [
+            "answer in english",
+            "english me answer do",
+            "english mein batao"
+        ],
+        "responses": [
+            "Sure! I'll answer in English.",
+            "Absolutely. I'll keep the explanation in English."
+        ]
+    },
+    {
+        "patterns": [
+            "mix hindi english",
+            "hinglish me batao",
+            "hinglish mein explain karo"
+        ],
+        "responses": [
+            "Bilkul! Hinglish mein simple explanation deta hoon.",
+            "Sure bro! Hindi + English mix mein explain karte hain."
+        ]
+    },
+    {
+        "patterns": [
+            "thanks a lot",
+            "thank you so much",
+            "bahut thanks"
+        ],
+        "responses": [
+            "You're very welcome! 😊",
+            "Anytime! Keep learning.",
+            "Khushi hui help karke! 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "good",
+            "very good",
+            "bahut accha",
+            "bahut acha",
+            "bhot acha"
+        ],
+        "responses": [
+            "Glad it helped! 😄",
+            "Awesome! Let's keep going.",
+            "Perfect! What next?"
+        ]
+    },
+    {
+        "patterns": [
+            "perfect",
+            "bilkul",
+            "sahi",
+            "correct",
+            "right"
+        ],
+        "responses": [
+            "Great! 🎯",
+            "Exactly. Let's move ahead.",
+            "Perfect! Ready for the next step?"
+        ]
+    },
+    {
+        "patterns": [
+            "wrong",
+            "galat",
+            "ye galat hai",
+            "not correct"
+        ],
+        "responses": [
+            "Let's check it carefully. Share the question or context and I'll review it.",
+            "Good catch. Let's verify the concept and reasoning."
+        ]
+    },
+    {
+        "patterns": [
+            "i made mistake",
+            "mistake ho gayi",
+            "galti ho gayi"
+        ],
+        "responses": [
+            "No worries! Mistakes are part of learning. 😊",
+            "That's okay. Review the explanation and try again."
+        ]
+    },
+    {
+        "patterns": [
+            "i failed",
+            "fail ho gaya",
+            "quiz fail"
+        ],
+        "responses": [
+            "Don't worry. A failed quiz is useful feedback. Review the incorrect answers and retry.",
+            "Use the result to identify weak areas, revise them, and try again. 💪"
+        ]
+    },
+    {
+        "patterns": [
+            "i passed",
+            "pass ho gaya",
+            "quiz pass"
+        ],
+        "responses": [
+            "🎉 Congratulations! Great job.",
+            "Nice work! Now review the incorrect answers and aim for an even stronger score."
+        ]
+    },
+    {
+        "patterns": [
+            "new topic",
+            "new topic start",
+            "naya topic"
+        ],
+        "responses": [
+            "Sure! Which topic would you like to explore?",
+            "Let's start something new. Pick a topic."
+        ]
+    },
+    {
+        "patterns": [
+            "random topic",
+            "koi bhi topic",
+            "anything"
+        ],
+        "responses": [
+            "How about SQL Window Functions, PySpark transformations, or Delta Lake?",
+            "Let's explore something useful for Data Engineering."
+        ]
+    },
+    {
+        "patterns": [
+            "surprise topic",
+            "surprise me with topic"
+        ],
+        "responses": [
+            "🎯 Surprise topic: SQL Window Functions. Great for both interviews and real-world analytics.",
+            "Today's surprise topic could be Delta Lake or PySpark optimisation."
+        ]
+    },
+    {
+        "patterns": [
+            "daily learning",
+            "daily study",
+            "aaj kya padhu"
+        ],
+        "responses": [
+            "Pick one focused topic today, study it, solve a few questions, and finish with a quiz.",
+            "Today's goal: Learn one concept deeply, practise it, and test yourself."
+        ]
+    },
+    {
+        "patterns": [
+            "daily quiz",
+            "aaj ka quiz",
+            "today quiz"
+        ],
+        "responses": [
+            "🔥 Ready for today's challenge? Pick a topic and I'll help you start a quiz.",
+            "Let's make today's practice session count."
+        ]
+    },
+    {
+        "patterns": [
+            "give me one question",
+            "ek question do",
+            "one question"
+        ],
+        "responses": [
+            "Sure! Ask me for a specific topic or I'll pick one for you.",
+            "Let's start with one question and build from there."
+        ]
+    },
+    {
+        "patterns": [
+            "give me sql question",
+            "sql ka ek question"
+        ],
+        "responses": [
+            "Sure! Let's test your SQL knowledge. 🔥",
+            "Ready? Here's an SQL challenge."
+        ]
+    },
+    {
+        "patterns": [
+            "give me python question",
+            "python ka ek question"
+        ],
+        "responses": [
+            "🐍 Let's test your Python knowledge!",
+            "Ready for a Python challenge?"
+        ]
+    },
+    {
+        "patterns": [
+            "give me pyspark question",
+            "pyspark ka ek question"
+        ],
+        "responses": [
+            "⚡ Let's test your PySpark knowledge!",
+            "Ready for a Spark challenge?"
+        ]
+    },
+    {
+        "patterns": [
+            "give me scenario",
+            "scenario question",
+            "real world question"
+        ],
+        "responses": [
+            "Great! Scenario-based questions are excellent for Data Engineering interviews.",
+            "Let's test how you would solve a real-world engineering problem."
+        ]
+    },
+    {
+        "patterns": [
+            "real world sql question",
+            "sql scenario question"
+        ],
+        "responses": [
+            "Sure! I'll focus on practical SQL scenarios rather than only definitions.",
+            "Let's practise an SQL problem similar to a real project situation."
+        ]
+    },
+    {
+        "patterns": [
+            "explain in interview way",
+            "interview style explanation",
+            "interview mein kaise explain kare"
+        ],
+        "responses": [
+            "I'll structure the answer as: definition → example → practical use → common mistakes → interview tip.",
+            "Sure. I'll explain it in a way that is easy to communicate during an interview."
+        ]
+    },
+    {
+        "patterns": [
+            "give interview answer",
+            "interview answer do"
+        ],
+        "responses": [
+            "Sure! I'll give you a concise interview-ready answer followed by deeper details.",
+            "Let's formulate an answer that is technically accurate and easy to explain."
+        ]
+    },
+    {
+        "patterns": [
+            "cheat sheet",
+            "cheat sheet do",
+            "cheatsheet"
+        ],
+        "responses": [
+            "Sure! Search the StudyNotes Resources section for available cheat sheets.",
+            "Tell me the topic and I'll help you find a relevant cheat sheet."
+        ]
+    },
+    {
+        "patterns": [
+            "sql cheat sheet",
+            "sql cheatsheet"
+        ],
+        "responses": [
+            "I'll help you find the SQL cheat sheet and related notes.",
+            "SQL cheat sheet is useful for quick revision of commands, joins, functions, and concepts."
+        ]
+    },
+    {
+        "patterns": [
+            "python cheat sheet",
+            "python cheatsheet"
+        ],
+        "responses": [
+            "I'll help you find the Python cheat sheet and related material.",
+            "Python cheat sheets are useful for quick syntax and concept revision."
+        ]
+    },
+    {
+        "patterns": [
+            "what did i learn",
+            "maine kya padha",
+            "what was i studying"
+        ],
+        "responses": [
+            "I can use the current StudyNotes page context to understand what you're studying now.",
+            "Tell me the topic or stay on the current article and ask me to summarize it."
+        ]
+    },
+    {
+        "patterns": [
+            "explain current page",
+            "current page explain",
+            "current article explain"
+        ],
+        "responses": [
+            "Sure! I'll use the current StudyNotes page as context and explain its main concepts.",
+            "Absolutely. I'll explain the current article step by step."
+        ]
+    },
+    {
+        "patterns": [
+            "quiz on current topic",
+            "current topic quiz",
+            "is topic ka quiz"
+        ],
+        "responses": [
+            "Sure! I'll look for a quiz related to the current StudyNotes topic.",
+            "Let's test what you just learned."
+        ]
+    },
+    {
+        "patterns": [
+            "notes on current topic",
+            "current topic notes"
+        ],
+        "responses": [
+            "You're already on the current topic. I can summarize it or help you find related notes.",
+            "I can also find related study material and quizzes."
+        ]
+    },
+    {
+        "patterns": [
+            "related quiz",
+            "related quiz start",
+            "related quiz dikhao"
+        ],
+        "responses": [
+            "I'll find the quiz related to the current topic.",
+            "Sure! Let's find the most relevant quiz."
+        ]
+    },
+    {
+        "patterns": [
+            "related notes",
+            "related notes dikhao"
+        ],
+        "responses": [
+            "I'll find related StudyNotes articles for this topic.",
+            "Sure! Let's explore related notes."
+        ]
+    },
+    {
+        "patterns": [
+            "download notes",
+            "notes download",
+            "notes download karo"
+        ],
+        "responses": [
+            "Use the Export Notes to PDF option on the Study Note page.",
+            "You can export the current Study Note into a print-ready PDF."
+        ]
+    },
+    {
+        "patterns": [
+            "export quiz result",
+            "quiz result pdf",
+            "quiz result download"
+        ],
+        "responses": [
+            "After submitting the quiz, use Export Quiz Result to create your answer sheet.",
+            "The quiz result PDF can include your answers, correct answers, explanations, score, and result summary."
+        ]
+    },
+    {
+        "patterns": [
+            "export notes pdf",
+            "notes pdf banao",
+            "study notes pdf"
+        ],
+        "responses": [
+            "Open the Study Note and use Export Notes to PDF.",
+            "The PDF is designed to contain the article content, key takeaways, and relevant study information."
+        ]
+    },
+    {
+        "patterns": [
+            "what is my weak topic",
+            "weak topic",
+            "weak area"
+        ],
+        "responses": [
+            "Review your quiz results and identify topics with the highest number of incorrect answers.",
+            "Your weak areas should be based on your actual quiz performance."
+        ]
+    },
+    {
+        "patterns": [
+            "how to score better",
+            "score improve kaise kare",
+            "marks kaise badhaye"
+        ],
+        "responses": [
+            "Review every incorrect answer, understand why it was wrong, revisit the related note, and retry later.",
+            "Focus on accuracy first, then improve speed."
+        ]
+    },
+    {
+        "patterns": [
+            "how to improve sql",
+            "sql improve kaise kare"
+        ],
+        "responses": [
+            "Write SQL regularly. Focus on joins, aggregation, CTEs, window functions, subqueries, and optimisation.",
+            "Solve progressively harder SQL problems instead of only reading syntax."
+        ]
+    },
+    {
+        "patterns": [
+            "how to improve python",
+            "python improve kaise kare"
+        ],
+        "responses": [
+            "Practise small programs, data structures, functions, OOP, exception handling, and real Data Engineering scenarios.",
+            "Build small utilities and solve coding problems regularly."
+        ]
+    },
+    {
+        "patterns": [
+            "how to improve pyspark",
+            "pyspark improve kaise kare"
+        ],
+        "responses": [
+            "Practise DataFrame operations, joins, partitions, caching, shuffles, Spark UI concepts, and optimisation.",
+            "Focus on understanding why Spark behaves differently from local Python processing."
+        ]
+    },
+    {
+        "patterns": [
+            "what is best way to learn",
+            "best way to learn"
+        ],
+        "responses": [
+            "Learn a concept, apply it, test yourself, review mistakes, and repeat.",
+            "Active practice usually provides more value than passive reading alone."
+        ]
+    },
+    {
+        "patterns": [
+            "i need motivation",
+            "motivate me bro",
+            "motivation chahiye"
+        ],
+        "responses": [
+            "🔥 Keep going bro. One concept today is better than zero concepts tomorrow.",
+            "Consistency wins. Learn → Practise → Review → Repeat.",
+            "You don't need to know everything at once. Build one strong concept at a time."
+        ]
+    },
+    {
+        "patterns": [
+            "lets start",
+            "let's start",
+            "chalo start",
+            "chalo shuru kare"
+        ],
+        "responses": [
+            "🔥 Let's go!",
+            "Perfect! Choose a topic and we'll start.",
+            "Chalo bro! 🚀 What are we learning today?"
+        ]
+    },
+    {
+        "patterns": [
+            "lets learn",
+            "let's learn",
+            "chalo padhte hai",
+            "chalo seekhte hai"
+        ],
+        "responses": [
+            "🔥 Let's learn!",
+            "Chalo! Pick a topic.",
+            "Absolutely. Learn → Practise → Improve."
+        ]
+    },
+    {
+        "patterns": [
+            "lets practice",
+            "let's practice",
+            "practice karte hai",
+            "chalo practice kare"
+        ],
+        "responses": [
+            "🔥 Practice mode activated!",
+            "Let's practise. Pick a topic.",
+            "Chalo! Quiz ya coding question se start karte hain."
+        ]
+    },
+    {
+        "patterns": [
+            "lets revise",
+            "let's revise",
+            "revision karte hai"
+        ],
+        "responses": [
+            "🔥 Revision mode activated!",
+            "Let's revise one topic at a time.",
+            "Chalo! Topic batao."
+        ]
+    },
+    {
+        "patterns": [
+            "ready",
+            "i am ready",
+            "ready bro"
+        ],
+        "responses": [
+            "🔥 Great! Let's begin.",
+            "Perfect! Topic batao.",
+            "Let's do it!"
+        ]
+    },
+    {
+        "patterns": [
+            "not ready",
+            "i am not ready",
+            "abhi ready nahi"
+        ],
+        "responses": [
+            "No problem. Take your time.",
+            "That's okay. Come back whenever you're ready."
+        ]
+    },
+    {
+        "patterns": [
+            "bye ashu",
+            "goodbye ashu",
+            "see you ashu"
+        ],
+        "responses": [
+            "See you! 👋 Keep learning.",
+            "Bye bro! Keep practising. 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "love this",
+            "i like this",
+            "bahut mast"
+        ],
+        "responses": [
+            "Glad you're enjoying it! 😄",
+            "Awesome! Let's keep going."
+        ]
+    },
+    {
+        "patterns": [
+            "you are helpful",
+            "helpful ho",
+            "bahut helpful"
+        ],
+        "responses": [
+            "Thank you! 😊 That's exactly what I'm here for.",
+            "Glad I could help!"
+        ]
+    },
+    {
+        "patterns": [
+            "you are awesome",
+            "ashu awesome hai",
+            "ashu mast hai"
+        ],
+        "responses": [
+            "😄 Thank you! Let's keep learning.",
+            "You're making Ask Ashu happy! 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "good bot",
+            "nice bot",
+            "smart bot"
+        ],
+        "responses": [
+            "Thank you! 🤖",
+            "I'll keep improving the study experience."
+        ]
+    },
+    {
+        "patterns": [
+            "are you smart",
+            "tum smart ho"
+        ],
+        "responses": [
+            "I'm designed to help you find and understand StudyNotes content.",
+            "My goal isn't to show off—it's to help you learn effectively. 😄"
+        ]
+    },
+    {
+        "patterns": [
+            "do you know sql",
+            "sql aata hai"
+        ],
+        "responses": [
+            "I can help with SQL concepts and search the StudyNotes SQL content.",
+            "Yes! Ask me about joins, CTEs, window functions, optimisation, or any SQL topic available in StudyNotes."
+        ]
+    },
+    {
+        "patterns": [
+            "do you know python",
+            "python aata hai"
+        ],
+        "responses": [
+            "I can help with Python concepts and StudyNotes Python material.",
+            "Ask me about Python fundamentals, coding, OOP, or Data Engineering."
+        ]
+    },
+    {
+        "patterns": [
+            "do you know data engineering",
+            "data engineering aata hai"
+        ],
+        "responses": [
+            "Yes! I can help you explore the Data Engineering content available in StudyNotes.",
+            "Ask about ETL, Spark, cloud, Databricks, databases, pipelines, or system design."
+        ]
+    },
+    {
+        "patterns": [
+            "what is your favorite topic",
+            "favorite topic kya hai"
+        ],
+        "responses": [
+            "SQL is always a fun one because there's so much to practise. 😄",
+            "Anything that helps you learn and practise is a good topic!"
+        ]
+    },
+    {
+        "patterns": [
+            "which topic is important",
+            "important topic kya hai"
+        ],
+        "responses": [
+            "Importance depends on your goal. For Data Engineering interviews, SQL, Python, Spark, cloud, and system design are commonly useful areas.",
+            "Start with the fundamentals and then align your preparation with your target role."
+        ]
+    },
+    {
+        "patterns": [
+            "what should i learn first sql or python",
+            "sql or python first",
+            "sql ya python"
+        ],
+        "responses": [
+            "For many Data Engineering paths, SQL is a strong starting point, followed by Python.",
+            "A practical sequence is SQL fundamentals → Python → ETL → Spark → Cloud."
+        ]
+    },
+    {
+        "patterns": [
+            "sql difficult",
+            "sql hard hai",
+            "sql tough hai"
+        ],
+        "responses": [
+            "SQL becomes easier with practice. Start with simple SELECT queries and gradually move to joins, aggregations, CTEs, and window functions.",
+            "Don't worry. Break complex queries into smaller logical steps."
+        ]
+    },
+    {
+        "patterns": [
+            "python difficult",
+            "python hard hai",
+            "python tough hai"
+        ],
+        "responses": [
+            "Python becomes easier with regular practice. Start with variables, collections, functions, and small coding problems.",
+            "Focus on writing code rather than only reading examples."
+        ]
+    },
+    {
+        "patterns": [
+            "i have exam tomorrow",
+            "exam tomorrow",
+            "kal exam hai"
+        ],
+        "responses": [
+            "Focus on high-value revision, practice questions, and weak areas rather than trying to learn everything from scratch.",
+            "Use quick revision → timed quiz → review incorrect answers."
+        ]
+    },
+    {
+        "patterns": [
+            "exam today",
+            "aaj exam hai"
+        ],
+        "responses": [
+            "Stay focused. Review key concepts and avoid trying to learn too many new topics at the last moment.",
+            "Use short revision sessions and practise the most important question types."
+        ]
+    },
+    {
+        "patterns": [
+            "interview tomorrow",
+            "kal interview hai",
+            "interview today"
+        ],
+        "responses": [
+            "Focus on your core technologies, SQL, project explanation, common scenarios, and concise answers.",
+            "Revise your projects deeply and practise explaining design decisions."
+        ]
+    },
+    {
+        "patterns": [
+            "i have interview",
+            "interview hai",
+            "mera interview hai"
+        ],
+        "responses": [
+            "Good luck! 🚀 Tell me the role or technology and I'll help you prepare.",
+            "Let's prepare. Start with SQL, Python, system design, or project scenarios."
+        ]
+    },
+    {
+        "patterns": [
+            "wish me luck",
+            "good luck bolo",
+            "mujhe luck wish karo"
+        ],
+        "responses": [
+            "All the best! 🍀 You've got this.",
+            "Best wishes! Stay calm, think clearly, and explain your reasoning."
+        ]
+    },
+    {
+        "patterns": [
+            "i am nervous",
+            "nervous hu",
+            "interview se dar lag raha"
+        ],
+        "responses": [
+            "It's normal to feel nervous. Focus on one question at a time and explain your thinking clearly.",
+            "Take a breath, review your fundamentals, and trust your preparation."
+        ]
+    },
+    {
+        "patterns": [
+            "thanks for help",
+            "help ke liye thanks",
+            "madad ke liye thanks"
+        ],
+        "responses": [
+            "Anytime! 😊",
+            "Khushi hui help karke!",
+            "Always happy to help. 🚀"
+        ]
+    },
+    {
+        "patterns": [
+            "what next after sql",
+            "sql ke baad kya"
+        ],
+        "responses": [
+            "After SQL, a practical Data Engineering path is Python → ETL → PySpark → Cloud → Databricks → System Design.",
+            "Build Python and data pipeline skills after becoming comfortable with SQL."
+        ]
+    },
+    {
+        "patterns": [
+            "what next after python",
+            "python ke baad kya"
+        ],
+        "responses": [
+            "After Python, focus on ETL, databases, APIs, Spark/PySpark, and cloud data services.",
+            "For Data Engineering, PySpark and cloud are natural next steps."
+        ]
+    },
+    {
+        "patterns": [
+            "what next after pyspark",
+            "pyspark ke baad kya"
+        ],
+        "responses": [
+            "After PySpark, deepen your knowledge of optimisation, Databricks, Delta Lake, cloud platforms, orchestration, and system design.",
+            "Move from Spark syntax toward performance, architecture, and production scenarios."
+        ]
+    },
+    {
+        "patterns": [
+            "what next after databricks",
+            "databricks ke baad kya"
+        ],
+        "responses": [
+            "Next areas can include cloud architecture, governance, streaming, orchestration, performance optimisation, and system design.",
+            "Focus on production architecture and real-world data platform scenarios."
+        ]
+    },
+    {
+        "patterns": [
+            "bye bro",
+            "good night bro",
+            "gn bro"
+        ],
+        "responses": [
+            "Bye bro! 👋 Keep learning.",
+            "Good night bro! 🌙",
+            "See you bro! 🚀"
+        ]
+    }
+]
