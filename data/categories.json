@@ -1,0 +1,5 @@
+[
+  {"id":"data-engineering","name":"Data Engineering","description":"Build strong foundations across data platforms, pipelines and cloud systems.","topics":11,"quizzes":18,"accent":"teal"},
+  {"id":"interview-prep","name":"Interview Preparation","description":"Sharpen the answers, patterns and trade-offs that technical interviews reward.","topics":5,"quizzes":12,"accent":"coral"},
+  {"id":"competitive-prep","name":"Competitive Preparation","description":"Practice aptitude, reasoning and computer science fundamentals at your pace.","topics":7,"quizzes":14,"accent":"gold"}
+]

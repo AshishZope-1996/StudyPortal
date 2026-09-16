@@ -1,0 +1,5 @@
+[
+  {"id":"sql-interview-guide","title":"SQL Interview Guide","category":"SQL","pages":25,"fileSize":"2.4 MB","type":"PDF","access":"Free","file":"assets/pdfs/sql-interview-guide.pdf","description":"A compact revision guide for joins, windows, indexes and query design."},
+  {"id":"python-cheat-sheet","title":"Python Data Engineering Cheat Sheet","category":"Python","pages":8,"fileSize":"680 KB","type":"PDF","access":"Free","file":"assets/pdfs/python-cheat-sheet.pdf","description":"Useful Python patterns for files, APIs, collections and pipeline code."},
+  {"id":"azure-patterns","title":"Azure Data Factory Patterns","category":"Azure","pages":18,"fileSize":"1.8 MB","type":"PDF","access":"Free","file":"assets/pdfs/azure-patterns.pdf","description":"Practical orchestration patterns for dependable ADF pipelines."}
+]

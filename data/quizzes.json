@@ -1,0 +1,30 @@
+[
+  {"id":"sql-fundamentals","title":"SQL Fundamentals","category":"SQL","topic":"SQL Basics","difficulty":"Beginner","questions":5,"timeLimit":300,"passingScore":60,"attempts":1245,"questionsData":[
+    {"id":1,"question":"Which SQL command retrieves rows from a table?","options":["SELECT","INSERT","UPDATE","DELETE"],"answer":0,"explanation":"SELECT reads data from one or more tables."},
+    {"id":2,"question":"Which clause filters rows before grouping?","options":["ORDER BY","WHERE","HAVING","LIMIT"],"answer":1,"explanation":"WHERE filters individual rows before GROUP BY is applied."},
+    {"id":3,"question":"Which keyword removes duplicate results?","options":["UNIQUE","DISTINCT","SINGLE","ONLY"],"answer":1,"explanation":"DISTINCT removes duplicate rows from a result set."},
+    {"id":4,"question":"Which aggregate returns the number of rows?","options":["SUM","COUNT","TOTAL","ROWS"],"answer":1,"explanation":"COUNT returns the number of rows or non-null values, depending on its expression."},
+    {"id":5,"question":"Which command changes existing data?","options":["ALTER","UPDATE","MODIFY TABLE","REPLACE"],"answer":1,"explanation":"UPDATE changes values in existing rows."}
+  ]},
+  {"id":"sql-joins-quiz","title":"SQL Joins","category":"SQL","topic":"SQL Joins","difficulty":"Intermediate","questions":5,"timeLimit":0,"passingScore":60,"attempts":987,"questionsData":[
+    {"id":1,"question":"Which join returns only matching rows from both tables?","options":["INNER JOIN","LEFT JOIN","FULL JOIN","CROSS JOIN"],"answer":0,"explanation":"INNER JOIN keeps rows that match on the join condition."},
+    {"id":2,"question":"Which join preserves every row from its left table?","options":["RIGHT JOIN","LEFT JOIN","INNER JOIN","SELF JOIN"],"answer":1,"explanation":"LEFT JOIN keeps all left-side rows and fills unmatched right-side columns with NULL."},
+    {"id":3,"question":"What does a CROSS JOIN produce?","options":["Only duplicates","A Cartesian product","Sorted rows","Aggregates"],"answer":1,"explanation":"CROSS JOIN pairs every row from the first table with every row from the second."},
+    {"id":4,"question":"Which SQL keyword gives a table a short alias?","options":["AS","LIKE","NAME","LABEL"],"answer":0,"explanation":"AS introduces a column or table alias."},
+    {"id":5,"question":"A join condition is commonly written with which operator?","options":["=","IN","IS","BETWEEN"],"answer":0,"explanation":"Equality joins commonly match key columns with the equals operator."}
+  ]},
+  {"id":"postgresql-basics","title":"PostgreSQL Basics","category":"PostgreSQL","topic":"PostgreSQL","difficulty":"Beginner","questions":5,"timeLimit":300,"passingScore":60,"attempts":842,"questionsData":[
+    {"id":1,"question":"Which PostgreSQL type stores arbitrary text?","options":["text","varchar only","string","chartext"],"answer":0,"explanation":"text stores strings without a declared maximum length."},
+    {"id":2,"question":"Which command lists databases in psql?","options":["\\dt","\\l","\\db","SHOW DATABASES"],"answer":1,"explanation":"\\l or \\list displays databases in the psql client."},
+    {"id":3,"question":"Which index type is the default in PostgreSQL?","options":["Hash","B-tree","GiST","GIN"],"answer":1,"explanation":"B-tree is PostgreSQL's default index method and suits many equality and range queries."},
+    {"id":4,"question":"Which feature creates an automatically increasing integer?","options":["serial","counter","autonumber","identity-only"],"answer":0,"explanation":"serial is a convenient pseudo-type backed by a sequence."},
+    {"id":5,"question":"Which command creates a table?","options":["BUILD TABLE","MAKE TABLE","CREATE TABLE","NEW TABLE"],"answer":2,"explanation":"CREATE TABLE defines a new relational table."}
+  ]},
+  {"id":"python-data-engineers","title":"Python for Data Engineers","category":"Python","topic":"Python for Data Engineers","difficulty":"Intermediate","questions":5,"timeLimit":300,"passingScore":60,"attempts":765,"questionsData":[
+    {"id":1,"question":"Which Python type is ordered and mutable?","options":["tuple","list","set","frozenset"],"answer":1,"explanation":"Lists preserve order and can be changed after creation."},
+    {"id":2,"question":"Which module is commonly used to work with CSV files?","options":["csv","rows","tableio","delimited"],"answer":0,"explanation":"The standard library csv module reads and writes delimited files."},
+    {"id":3,"question":"What does a generator yield?","options":["All values at once","Values lazily","Only strings","A database row"],"answer":1,"explanation":"Generators produce values lazily, which can reduce memory usage."},
+    {"id":4,"question":"Which keyword handles an exception?","options":["catch","except","rescue","handle"],"answer":1,"explanation":"Python uses try and except blocks for exception handling."},
+    {"id":5,"question":"Which structure maps keys to values?","options":["dict","list","set","range"],"answer":0,"explanation":"Dictionaries store key-value pairs."}
+  ]}
+]

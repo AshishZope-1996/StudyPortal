@@ -1,0 +1,5 @@
+<p>Joins are the quiet connective tissue of relational work. They let you answer questions that span more than one table without flattening your data model.</p><h2>INNER JOIN</h2><p>An inner join returns rows where the join condition matches on both sides.</p><pre><code>SELECT o.order_id, c.name
+FROM orders AS o
+INNER JOIN customers AS c ON c.id = o.customer_id;</code></pre><h2>LEFT JOIN</h2><p>A left join keeps every row from the left table. When there is no matching right-side row, the right-side columns are <code>NULL</code>.</p><pre><code>SELECT c.name, o.order_id
+FROM customers AS c
+LEFT JOIN orders AS o ON o.customer_id = c.id;</code></pre><h2>Key takeaways</h2><ul><li>Choose the preserved side deliberately.</li><li>Check key uniqueness before joining.</li><li>Filter joined data with care: a WHERE condition can remove the NULL rows you intended to preserve.</li></ul><aside class="tip-box"><strong>Interview tip:</strong> Explain both the result shape and the business meaning of the join. That is usually more valuable than reciting syntax.</aside>

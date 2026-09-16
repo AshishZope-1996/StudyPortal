@@ -1,0 +1,10 @@
+[
+  {"id":"sql-basics","category":"data-engineering","name":"SQL Basics","description":"The everyday building blocks of querying relational data.","notes":4,"quizzes":3,"difficulty":"Beginner"},
+  {"id":"sql-joins","category":"data-engineering","name":"SQL Joins","description":"Combine related tables with confidence and clarity.","notes":3,"quizzes":2,"difficulty":"Intermediate"},
+  {"id":"postgresql","category":"data-engineering","name":"PostgreSQL","description":"Indexes, performance and practical PostgreSQL patterns.","notes":3,"quizzes":2,"difficulty":"Intermediate"},
+  {"id":"python-data","category":"data-engineering","name":"Python for Data Engineers","description":"Write maintainable Python for real data workflows.","notes":3,"quizzes":3,"difficulty":"Intermediate"},
+  {"id":"pyspark","category":"data-engineering","name":"PySpark","description":"Understand transformations, actions and distributed execution.","notes":2,"quizzes":2,"difficulty":"Advanced"},
+  {"id":"azure-data-factory","category":"data-engineering","name":"Azure Data Factory","description":"Orchestrate dependable cloud data movement and transformation.","notes":2,"quizzes":2,"difficulty":"Intermediate"},
+  {"id":"system-design","category":"interview-prep","name":"Data Engineering System Design","description":"Reason about reliable, scalable data platforms.","notes":2,"quizzes":2,"difficulty":"Advanced"},
+  {"id":"aptitude","category":"competitive-prep","name":"Aptitude","description":"Build speed and accuracy with focused practice.","notes":0,"quizzes":2,"difficulty":"Beginner"}
+]
