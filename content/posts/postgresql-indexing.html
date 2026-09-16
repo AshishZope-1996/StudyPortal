@@ -1,2 +1,16 @@
-<p>An index is a separate data structure that helps PostgreSQL find rows without scanning a whole table. It is a performance tool with a write and storage cost.</p><h2>Start with the query</h2><p>Index the columns used by frequent filters, joins and ordering. Validate the change with <code>EXPLAIN (ANALYZE, BUFFERS)</code>, not intuition alone.</p><pre><code>CREATE INDEX idx_orders_customer_id
-ON orders (customer_id);</code></pre><h2>Trade-offs</h2><p>Indexes speed reads but add work to inserts, updates and vacuuming. A small, selective index is often more useful than a wide index added “just in case.”</p><h2>Key takeaways</h2><ul><li>Measure before and after.</li><li>Keep statistics fresh.</li><li>Prefer the smallest index that supports the access pattern.</li></ul>
+<p>An index is a separate data structure that helps PostgreSQL find rows without scanning a whole table. It is a
+    performance tool with a write and storage cost.</p>
+<h2>Start with the query</h2>
+<p>Index the columns used by frequent filters, joins and ordering. Validate the change with
+    <code>EXPLAIN (ANALYZE, BUFFERS)</code>, not intuition alone.</p>
+<pre><code>CREATE INDEX idx_orders_customer_id
+ON orders (customer_id);</code></pre>
+<h2>Trade-offs</h2>
+<p>Indexes speed reads but add work to inserts, updates and vacuuming. A small, selective index is often more useful
+    than a wide index added “just in case.”</p>
+<h2>Key takeaways</h2>
+<ul>
+    <li>Measure before and after.</li>
+    <li>Keep statistics fresh.</li>
+    <li>Prefer the smallest index that supports the access pattern.</li>
+</ul>

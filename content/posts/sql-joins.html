@@ -1,5 +1,51 @@
-<p>Joins are the quiet connective tissue of relational work. They let you answer questions that span more than one table without flattening your data model.</p><h2>INNER JOIN</h2><p>An inner join returns rows where the join condition matches on both sides.</p><pre><code>SELECT o.order_id, c.name
+<p>Joins are the quiet connective tissue of relational work. They let you answer questions that span more than one table
+    without flattening your data model.</p>
+<h2>INNER JOIN</h2>
+<p>An inner join returns rows where the join condition matches on both sides.</p>
+<pre><code>SELECT o.order_id, c.name
 FROM orders AS o
-INNER JOIN customers AS c ON c.id = o.customer_id;</code></pre><h2>LEFT JOIN</h2><p>A left join keeps every row from the left table. When there is no matching right-side row, the right-side columns are <code>NULL</code>.</p><pre><code>SELECT c.name, o.order_id
+INNER JOIN customers AS c ON c.id = o.customer_id;</code></pre>
+<h2>LEFT JOIN</h2>
+<p>A left join keeps every row from the left table. When there is no matching right-side row, the right-side columns are
+    <code>NULL</code>.</p>
+<pre><code>SELECT c.name, o.order_id
 FROM customers AS c
-LEFT JOIN orders AS o ON o.customer_id = c.id;</code></pre><h2>Key takeaways</h2><ul><li>Choose the preserved side deliberately.</li><li>Check key uniqueness before joining.</li><li>Filter joined data with care: a WHERE condition can remove the NULL rows you intended to preserve.</li></ul><aside class="tip-box"><strong>Interview tip:</strong> Explain both the result shape and the business meaning of the join. That is usually more valuable than reciting syntax.</aside>
+LEFT JOIN orders AS o ON o.customer_id = c.id;</code></pre>
+<p>This is one of the most common joins in analytics and data pipelines. It helps answer questions like "show every customer,
+    along with any orders they have placed." If a customer has never placed an order, the query still returns that customer
+    with a <code>NULL</code> order value instead of dropping them from the result set.</p>
+<h2>RIGHT JOIN</h2>
+<p>A right join preserves every row from the right table. It is less common than a left join, but it is useful when the
+    right table is the one that should remain complete in the result.</p>
+<pre><code>SELECT c.name, o.order_id
+FROM customers AS c
+RIGHT JOIN orders AS o ON o.customer_id = c.id;</code></pre>
+<p>In practice, many teams rewrite right joins as left joins by swapping table order, because left joins are easier to read
+    and reason about.</p>
+<h2>FULL OUTER JOIN</h2>
+<p>A full outer join returns all rows from both tables. Rows with matches appear together, while unmatched rows from either
+    side remain with <code>NULL</code> values in the columns from the other side.</p>
+<pre><code>SELECT c.name, o.order_id
+FROM customers AS c
+FULL OUTER JOIN orders AS o ON o.customer_id = c.id;</code></pre>
+<p>This is useful when you want a complete picture of both datasets, such as comparing customers with orders or identifying
+    missing records on either side. It is especially helpful in data quality checks and reconciliation tasks.</p>
+<h2>When to use which join</h2>
+<ul>
+    <li><strong>INNER JOIN:</strong> Use when you want only matching rows.</li>
+    <li><strong>LEFT JOIN:</strong> Use when the left table is the source of truth and you want to keep every row from it.</li>
+    <li><strong>RIGHT JOIN:</strong> Use when the right table is the one you need to preserve.</li>
+    <li><strong>FULL OUTER JOIN:</strong> Use when you need to see both matching and non-matching records from both tables.</li>
+</ul>
+<p>One subtle but important point: the join condition determines which rows match. If your keys are duplicated in one or both
+    tables, the result can multiply rows, which may be correct or may reveal a data problem. Always validate row counts and
+    key uniqueness before drawing conclusions from a join.</p>
+<h2>Key takeaways</h2>
+<ul>
+    <li>Choose the preserved side deliberately.</li>
+    <li>Check key uniqueness before joining.</li>
+    <li>Filter joined data with care: a WHERE condition can remove the NULL rows you intended to preserve.</li>
+    <li>Match the join type to the business question. Different joins answer different data questions even when the tables are the same.</li>
+</ul>
+<aside class="tip-box"><strong>Interview tip:</strong> Explain both the result shape and the business meaning of the
+    join. That is usually more valuable than reciting syntax.</aside>

@@ -1,5 +1,13 @@
-<p>Python is often the glue between APIs, files, warehouses and orchestration systems. The best pipeline code makes state, failure and data shape visible.</p><h2>Useful habits</h2><p>Keep transformations small and testable. Pass data explicitly, validate inputs at boundaries and log enough context to explain a failed partition.</p><pre><code>def normalize_customer(row):
+<p>Python is often the glue between APIs, files, warehouses and orchestration systems. The best pipeline code makes
+    state, failure and data shape visible.</p>
+<h2>Useful habits</h2>
+<p>Keep transformations small and testable. Pass data explicitly, validate inputs at boundaries and log enough context
+    to explain a failed partition.</p>
+<pre><code>def normalize_customer(row):
     return {
         "id": int(row["id"]),
         "email": row["email"].strip().lower(),
-    }</code></pre><h2>Design for reruns</h2><p>Idempotent steps and clear checkpoints make recovery much less dramatic. A rerun should converge on the same result rather than duplicate it.</p>
+    }</code></pre>
+<h2>Design for reruns</h2>
+<p>Idempotent steps and clear checkpoints make recovery much less dramatic. A rerun should converge on the same result
+    rather than duplicate it.</p>
