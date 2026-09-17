@@ -1,1 +1,43 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create account | StudyNotes</title><link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/auth.css"></head><body data-page="auth"><main class="page-shell"><section class="page-intro"><div class="eyebrow">StudyNotes account</div><h1>Make your progress portable.</h1><p class="lede">Create an account to save your study trail across devices.</p></section><form id="signup-form" class="auth-form"><div class="card"><label>Full name<input name="fullName" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Password<input name="password" type="password" minlength="8" autocomplete="new-password" required></label><label>Confirm password<input name="confirmPassword" type="password" minlength="8" autocomplete="new-password" required></label><label><span><input name="terms" type="checkbox" required> I agree to the terms and privacy policy.</span></label><button class="button button-primary" type="submit">Create account</button><div id="auth-message" class="auth-message" hidden></div></div></form><p class="auth-footer">Already have an account? <a class="text-link" href="./signin.html">Sign in</a></p></main><script type="module" src="assets/js/auth-pages.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create account | StudyNotes</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body data-page="auth">
+  <main class="page-shell auth-page-shell">
+    <section class="page-intro auth-intro">
+      <div class="brand auth-brand" aria-label="StudyNotes"><span class="brand-mark">SN</span><span>StudyNotes</span></div>
+      <div class="eyebrow">Create your account</div>
+      <h1>Make your progress portable.</h1>
+      <p class="lede">Save your learning trail across devices in a few seconds.</p>
+    </section>
+    <form id="signup-form" class="auth-form" novalidate>
+      <div class="card">
+        <label>Full name<input name="fullName" autocomplete="name" placeholder="Ashish Zope" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></label>
+        <label>Password
+          <div class="password-toggle">
+            <input name="password" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required>
+            <button type="button" class="password-visibility" aria-label="Show password">Show</button>
+          </div>
+        </label>
+        <label>Confirm password
+          <div class="password-toggle">
+            <input name="confirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Repeat your password" required>
+            <button type="button" class="password-visibility" aria-label="Show confirm password">Show</button>
+          </div>
+        </label>
+        <label class="inline-row"><input name="terms" type="checkbox" required><span>I agree to the terms and privacy policy.</span></label>
+        <button class="button button-primary" type="submit">Create account</button>
+        <div id="auth-message" class="auth-message" hidden></div>
+      </div>
+    </form>
+    <p class="auth-footer">Already have an account? <a class="text-link" href="./signin.html">Sign in</a></p>
+  </main>
+  <script type="module" src="assets/js/auth-pages.js"></script>
+</body>
+</html>
