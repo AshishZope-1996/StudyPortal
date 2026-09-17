@@ -3,7 +3,7 @@ import { getCurrentUser, supabase } from './supabase.js';
 const localHistoryKey = 'studyNotesArticleHistory';
 const localProgressKey = 'studyNotesArticleProgress';
 const readLocal = key => { try { return JSON.parse(localStorage.getItem(key) || '{}'); } catch { return {}; } };
-const writeLocal = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+const writeLocal = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* Continue without local persistence. */ } };
 
 export async function trackArticleOpen(articleId, technology, topic) {
   const local = readLocal(localHistoryKey);

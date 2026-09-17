@@ -2,6 +2,7 @@ import { initAuthShell, requireAuth } from './auth.js';
 import { supabase } from './supabase.js';
 import { initTheme } from './theme.js';
 import { setupNavigation } from './navigation.js';
+import { getQuizHistory } from './storage.js';
 
 const app = document.querySelector('#account-app');
 const page = document.body.dataset.page || 'profile';
@@ -62,6 +63,7 @@ function renderShell() {
     ['study-notes.html', 'Study Notes', 'posts'],
     ['quizzes.html', 'Quizzes', 'quizzes'],
     ['categories.html', 'Categories', 'categories'],
+    ['roadmap.html', 'Roadmap', 'roadmap'],
     ['resources.html', 'Resources', 'resources'],
     ['about.html', 'About', 'about']
   ];
@@ -107,7 +109,7 @@ function renderShell() {
   `;
   document.body.appendChild(footer);
 
-  document.body.insertAdjacentHTML('beforeend', `<nav class="mobile-bottom-nav" aria-label="Mobile navigation"><a class="${page === 'home' ? 'active' : ''}" href="index.html"><span aria-hidden="true">⌂</span><span>Home</span></a><a class="${['posts','post','topic','category'].includes(page) ? 'active' : ''}" href="study-notes.html"><span aria-hidden="true">▤</span><span>Study</span></a><a class="${['quizzes','quiz','result'].includes(page) ? 'active' : ''}" href="quizzes.html"><span aria-hidden="true">▣</span><span>Quiz</span></a><button id="mobile-more" type="button" aria-expanded="false"><span aria-hidden="true">☰</span><span>More</span></button></nav><div id="mobile-more-sheet" class="more-sheet" hidden><section class="more-panel" role="dialog" aria-modal="true" aria-labelledby="more-title"><button type="button" class="icon-button more-close" data-close-more aria-label="Close more menu">×</button><h2 id="more-title">More StudyNotes</h2><div class="more-links"><a href="categories.html">Categories</a><a href="resources.html">Resources</a><a href="search.html?q=Interview%20Questions">Interview Questions</a><a href="search.html?q=Competitive%20Exams">Competitive Exams</a><a href="search.html">Search</a><a href="about.html">About</a></div></section></div>`);
+  document.body.insertAdjacentHTML('beforeend', `<nav class="mobile-bottom-nav" aria-label="Mobile navigation"><a class="${page === 'home' ? 'active' : ''}" href="index.html"><span aria-hidden="true">⌂</span><span>Home</span></a><a class="${['posts','post','topic','category'].includes(page) ? 'active' : ''}" href="study-notes.html"><span aria-hidden="true">▤</span><span>Study</span></a><a class="${['quizzes','quiz','result'].includes(page) ? 'active' : ''}" href="quizzes.html"><span aria-hidden="true">▣</span><span>Quiz</span></a><button id="mobile-more" type="button" aria-expanded="false"><span aria-hidden="true">☰</span><span>More</span></button></nav><div id="mobile-more-sheet" class="more-sheet" hidden><section class="more-panel" role="dialog" aria-modal="true" aria-labelledby="more-title"><button type="button" class="icon-button more-close" data-close-more aria-label="Close more menu">×</button><h2 id="more-title">More StudyNotes</h2><div class="more-links"><a href="categories.html">Categories</a><a href="roadmap.html">Roadmap</a><a href="resources.html">Resources</a><a href="search.html?q=Interview%20Questions">Interview Questions</a><a href="search.html?q=Competitive%20Exams">Competitive Exams</a><a href="search.html">Search</a><a href="about.html">About</a></div></section></div>`);
 
   const more = document.querySelector('#mobile-more');
   const sheet = document.querySelector('#mobile-more-sheet');
@@ -132,7 +134,17 @@ async function load(user) {
     supabase.from('quiz_attempts').select('*').eq('user_id', user.id).order('completed_at', { ascending: false }),
     supabase.from('bookmarks').select('*').eq('user_id', user.id).order('created_at', { ascending: false })
   ]);
-  const data = { profile: profile.data || {}, progress: progress.data || [], history: history.data || [], attempts: attempts.data || [], bookmarks: bookmarks.data || [] };
+  const localHistory = (() => { try { return Object.values(JSON.parse(localStorage.getItem('studyNotesArticleHistory') || '{}')); } catch { return []; } })();
+  const localProgress = (() => { try { return Object.values(JSON.parse(localStorage.getItem('studyNotesArticleProgress') || '{}')); } catch { return []; } })();
+  const localBookmarks = (() => { try { return JSON.parse(localStorage.getItem('studyNotesBookmarks') || '[]'); } catch { return []; } })();
+  const localAttempts = getQuizHistory().map(item => ({ ...item, quiz_id: item.quizId, completed_at: new Date(item.completedAt || Date.now()).toISOString(), percentage: item.percentage ?? Math.round(item.correct / item.total * 100), correct_answers: item.correct, wrong_answers: item.total - item.correct - (item.skipped || 0), question_count: item.total }));
+  const data = {
+    profile: profile.data || {},
+    progress: progress.data?.length ? progress.data : localProgress.map(item => ({ article_id: item.articleId, progress_percent: item.progressPercent, last_read_at: item.lastReadAt, completed: item.completed })),
+    history: history.data?.length ? history.data : localHistory.map(item => ({ article_id: item.articleId, technology: item.technology, topic: item.topic, opened_at: item.openedAt })),
+    attempts: attempts.data?.length ? attempts.data : localAttempts,
+    bookmarks: bookmarks.data?.length ? bookmarks.data : localBookmarks.map(id => ({ content_id: id, title: id, url: `post.html?id=${encodeURIComponent(id)}`, content_type: 'article' }))
+  };
   if (page === 'profile') renderProfile(user, data); else if (page === 'reading-history') renderReadingHistory(data); else if (page === 'my-learning') renderMyLearning(user, data); else if (page === 'quiz-history') renderQuizHistory(data); else if (page === 'bookmarks') renderBookmarks(data); else renderSettings(user, data);
 }
 
