@@ -1,3 +1,5 @@
+.auth-slot { display: flex; align-items: center; gap: 8px; font: 800 .76rem Arial, sans-serif; }.auth-link { color: var(--teal); }.auth-cta { padding: 9px 12px; }.auth-account { display: inline-flex; align-items: center; gap: 7px; color: var(--ink); }.auth-avatar { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: white; }.auth-signout { padding: 0; border: 0; background: transparent; color: var(--muted); cursor: pointer; font: inherit; }
+@media (max-width: 767px) { .auth-slot .auth-account span:last-child, .auth-signout { display: none; }.auth-cta { display: none; } }
 :root {
   --paper: #f7f5ef;
   --surface: #fffdf8;
