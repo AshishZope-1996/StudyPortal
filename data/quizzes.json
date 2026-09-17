@@ -13,36 +13,61 @@
       {
         "id": 1,
         "question": "Which SQL command retrieves rows from a table?",
-        "options": ["SELECT", "INSERT", "UPDATE", "DELETE"],
-        "answer": 0,
+        "options": [
+          "UPDATE",
+          "DELETE",
+          "INSERT",
+          "SELECT"
+        ],
+        "answer": 3,
         "explanation": "SELECT is used to retrieve data from one or more tables."
       },
       {
         "id": 2,
         "question": "Which clause filters rows before grouping?",
-        "options": ["ORDER BY", "WHERE", "HAVING", "LIMIT"],
-        "answer": 1,
+        "options": [
+          "ORDER BY",
+          "LIMIT",
+          "HAVING",
+          "WHERE"
+        ],
+        "answer": 3,
         "explanation": "WHERE filters individual rows before GROUP BY is applied."
       },
       {
         "id": 3,
         "question": "Which keyword removes duplicate results?",
-        "options": ["UNIQUE", "DISTINCT", "SINGLE", "ONLY"],
-        "answer": 1,
+        "options": [
+          "UNIQUE",
+          "ONLY",
+          "DISTINCT",
+          "SINGLE"
+        ],
+        "answer": 2,
         "explanation": "DISTINCT removes duplicate rows from a result set."
       },
       {
         "id": 4,
         "question": "Which aggregate function returns the number of rows?",
-        "options": ["SUM", "COUNT", "TOTAL", "ROWS"],
-        "answer": 1,
+        "options": [
+          "COUNT",
+          "TOTAL",
+          "ROWS",
+          "SUM"
+        ],
+        "answer": 0,
         "explanation": "COUNT returns the number of rows or non-null values depending on the expression."
       },
       {
         "id": 5,
         "question": "Which command changes existing data?",
-        "options": ["ALTER", "UPDATE", "MODIFY TABLE", "REPLACE"],
-        "answer": 1,
+        "options": [
+          "UPDATE",
+          "MODIFY TABLE",
+          "REPLACE",
+          "ALTER"
+        ],
+        "answer": 0,
         "explanation": "UPDATE changes values in existing rows."
       }
     ]
@@ -61,36 +86,61 @@
       {
         "id": 1,
         "question": "Which join returns only matching rows from both tables?",
-        "options": ["INNER JOIN", "LEFT JOIN", "FULL JOIN", "CROSS JOIN"],
+        "options": [
+          "INNER JOIN",
+          "FULL JOIN",
+          "LEFT JOIN",
+          "CROSS JOIN"
+        ],
         "answer": 0,
         "explanation": "INNER JOIN returns rows where the join condition matches in both tables."
       },
       {
         "id": 2,
         "question": "Which join preserves every row from the left table?",
-        "options": ["RIGHT JOIN", "LEFT JOIN", "INNER JOIN", "CROSS JOIN"],
-        "answer": 1,
+        "options": [
+          "LEFT JOIN",
+          "INNER JOIN",
+          "CROSS JOIN",
+          "RIGHT JOIN"
+        ],
+        "answer": 0,
         "explanation": "LEFT JOIN keeps all rows from the left table."
       },
       {
         "id": 3,
         "question": "What does a CROSS JOIN produce?",
-        "options": ["Only duplicates", "A Cartesian product", "Sorted rows", "Aggregates"],
-        "answer": 1,
+        "options": [
+          "Only duplicates",
+          "Aggregates",
+          "Sorted rows",
+          "A Cartesian product"
+        ],
+        "answer": 3,
         "explanation": "CROSS JOIN pairs every row from one table with every row from another."
       },
       {
         "id": 4,
         "question": "Which keyword creates a table alias?",
-        "options": ["AS", "LIKE", "NAME", "LABEL"],
-        "answer": 0,
+        "options": [
+          "LABEL",
+          "NAME",
+          "LIKE",
+          "AS"
+        ],
+        "answer": 3,
         "explanation": "AS is commonly used to assign an alias to a table or column."
       },
       {
         "id": 5,
         "question": "Which operator is commonly used for an equality join?",
-        "options": ["=", "IN", "IS", "BETWEEN"],
-        "answer": 0,
+        "options": [
+          "BETWEEN",
+          "=",
+          "IN",
+          "IS"
+        ],
+        "answer": 1,
         "explanation": "The equals operator is commonly used to match related key columns."
       }
     ]
@@ -109,36 +159,61 @@
       {
         "id": 1,
         "question": "Which SQL feature calculates values across related rows without collapsing them?",
-        "options": ["Window function", "GROUP BY", "UNION", "DISTINCT"],
-        "answer": 0,
+        "options": [
+          "DISTINCT",
+          "GROUP BY",
+          "Window function",
+          "UNION"
+        ],
+        "answer": 2,
         "explanation": "Window functions calculate values across a set of related rows while retaining individual rows."
       },
       {
         "id": 2,
         "question": "Which function assigns a sequential number to rows?",
-        "options": ["ROW_NUMBER()", "SEQUENCE()", "RANK_ID()", "INDEX()"],
-        "answer": 0,
+        "options": [
+          "RANK_ID()",
+          "ROW_NUMBER()",
+          "SEQUENCE()",
+          "INDEX()"
+        ],
+        "answer": 1,
         "explanation": "ROW_NUMBER() assigns a unique sequential number within a window."
       },
       {
         "id": 3,
         "question": "Which clause filters aggregated results?",
-        "options": ["WHERE", "HAVING", "FILTER", "GROUP"],
-        "answer": 1,
+        "options": [
+          "HAVING",
+          "WHERE",
+          "FILTER",
+          "GROUP"
+        ],
+        "answer": 0,
         "explanation": "HAVING filters groups after aggregation."
       },
       {
         "id": 4,
         "question": "What is a CTE?",
-        "options": ["Common Table Expression", "Column Table Engine", "Central Table Entity", "Common Transaction Entry"],
+        "options": [
+          "Common Table Expression",
+          "Common Transaction Entry",
+          "Column Table Engine",
+          "Central Table Entity"
+        ],
         "answer": 0,
         "explanation": "A Common Table Expression provides a temporary named result set within a query."
       },
       {
         "id": 5,
         "question": "Which operator combines the results of two compatible SELECT statements and removes duplicates?",
-        "options": ["UNION", "JOIN", "MERGE", "CONNECT"],
-        "answer": 0,
+        "options": [
+          "CONNECT",
+          "JOIN",
+          "MERGE",
+          "UNION"
+        ],
+        "answer": 3,
         "explanation": "UNION combines result sets and removes duplicate rows."
       }
     ]
@@ -157,36 +232,61 @@
       {
         "id": 1,
         "question": "Which PostgreSQL type stores arbitrary-length text?",
-        "options": ["text", "string", "varchar-only", "chartext"],
-        "answer": 0,
+        "options": [
+          "varchar-only",
+          "text",
+          "string",
+          "chartext"
+        ],
+        "answer": 1,
         "explanation": "The text type stores strings without requiring a maximum length."
       },
       {
         "id": 2,
         "question": "Which PostgreSQL index type is the default?",
-        "options": ["Hash", "B-tree", "GiST", "GIN"],
-        "answer": 1,
+        "options": [
+          "Hash",
+          "GIN",
+          "B-tree",
+          "GiST"
+        ],
+        "answer": 2,
         "explanation": "B-tree is PostgreSQL's default index method."
       },
       {
         "id": 3,
         "question": "Which command creates a table?",
-        "options": ["BUILD TABLE", "MAKE TABLE", "CREATE TABLE", "NEW TABLE"],
+        "options": [
+          "BUILD TABLE",
+          "NEW TABLE",
+          "CREATE TABLE",
+          "MAKE TABLE"
+        ],
         "answer": 2,
         "explanation": "CREATE TABLE creates a new table."
       },
       {
         "id": 4,
         "question": "Which PostgreSQL type is commonly used to store JSON data in binary form?",
-        "options": ["JSONB", "BJSON", "JSONX", "TEXTJSON"],
-        "answer": 0,
+        "options": [
+          "TEXTJSON",
+          "BJSON",
+          "JSONX",
+          "JSONB"
+        ],
+        "answer": 3,
         "explanation": "JSONB stores JSON data in a decomposed binary format and supports indexing."
       },
       {
         "id": 5,
         "question": "Which command adds a new column to an existing table?",
-        "options": ["UPDATE TABLE", "ALTER TABLE", "MODIFY COLUMN", "CHANGE TABLE"],
-        "answer": 1,
+        "options": [
+          "MODIFY COLUMN",
+          "UPDATE TABLE",
+          "CHANGE TABLE",
+          "ALTER TABLE"
+        ],
+        "answer": 3,
         "explanation": "ALTER TABLE can be used to add, modify, or drop table columns."
       }
     ]
@@ -205,36 +305,61 @@
       {
         "id": 1,
         "question": "Which command is commonly used to inspect a PostgreSQL query execution plan?",
-        "options": ["EXPLAIN", "PLAN", "QUERY PLAN", "PROFILE"],
-        "answer": 0,
+        "options": [
+          "QUERY PLAN",
+          "EXPLAIN",
+          "PROFILE",
+          "PLAN"
+        ],
+        "answer": 1,
         "explanation": "EXPLAIN displays the execution plan selected by PostgreSQL."
       },
       {
         "id": 2,
         "question": "What is the primary purpose of an index?",
-        "options": ["Store backups", "Speed up data access", "Encrypt data", "Compress tables"],
-        "answer": 1,
+        "options": [
+          "Speed up data access",
+          "Store backups",
+          "Encrypt data",
+          "Compress tables"
+        ],
+        "answer": 0,
         "explanation": "Indexes can reduce the amount of data PostgreSQL must scan for suitable queries."
       },
       {
         "id": 3,
         "question": "Which operation removes dead tuples and helps maintain PostgreSQL tables?",
-        "options": ["VACUUM", "CLEAN", "PURGE", "REFRESH"],
-        "answer": 0,
+        "options": [
+          "CLEAN",
+          "PURGE",
+          "REFRESH",
+          "VACUUM"
+        ],
+        "answer": 3,
         "explanation": "VACUUM reclaims storage occupied by dead tuples and supports transaction ID maintenance."
       },
       {
         "id": 4,
         "question": "What can a sequential scan indicate during query tuning?",
-        "options": ["The database is always broken", "The planner chose to scan the table directly", "The query failed", "The table is encrypted"],
+        "options": [
+          "The table is encrypted",
+          "The planner chose to scan the table directly",
+          "The query failed",
+          "The database is always broken"
+        ],
         "answer": 1,
         "explanation": "A sequential scan reads table pages directly and may be appropriate for large result sets."
       },
       {
         "id": 5,
         "question": "Which PostgreSQL feature helps automatically update table statistics?",
-        "options": ["Autovacuum", "Autoindex", "Autoquery", "Autoscan"],
-        "answer": 0,
+        "options": [
+          "Autoscan",
+          "Autoquery",
+          "Autoindex",
+          "Autovacuum"
+        ],
+        "answer": 3,
         "explanation": "Autovacuum handles vacuuming and analyzes tables to maintain statistics."
       }
     ]
@@ -253,36 +378,61 @@
       {
         "id": 1,
         "question": "Which Python type is ordered and mutable?",
-        "options": ["tuple", "list", "set", "frozenset"],
-        "answer": 1,
+        "options": [
+          "set",
+          "tuple",
+          "list",
+          "frozenset"
+        ],
+        "answer": 2,
         "explanation": "Lists maintain order and can be modified after creation."
       },
       {
         "id": 2,
         "question": "Which module is commonly used to work with CSV files?",
-        "options": ["csv", "rows", "tableio", "delimited"],
+        "options": [
+          "csv",
+          "tableio",
+          "rows",
+          "delimited"
+        ],
         "answer": 0,
         "explanation": "Python's standard csv module reads and writes CSV files."
       },
       {
         "id": 3,
         "question": "What does a generator provide?",
-        "options": ["All values immediately", "Values lazily", "Only strings", "Only database rows"],
-        "answer": 1,
+        "options": [
+          "Only strings",
+          "All values immediately",
+          "Values lazily",
+          "Only database rows"
+        ],
+        "answer": 2,
         "explanation": "Generators produce values lazily, helping reduce memory usage."
       },
       {
         "id": 4,
         "question": "Which keyword handles an exception?",
-        "options": ["catch", "except", "rescue", "handle"],
-        "answer": 1,
+        "options": [
+          "catch",
+          "handle",
+          "rescue",
+          "except"
+        ],
+        "answer": 3,
         "explanation": "Python uses try and except blocks for exception handling."
       },
       {
         "id": 5,
         "question": "Which structure stores key-value pairs?",
-        "options": ["dict", "list", "set", "range"],
-        "answer": 0,
+        "options": [
+          "list",
+          "dict",
+          "set",
+          "range"
+        ],
+        "answer": 1,
         "explanation": "A dictionary stores data as key-value pairs."
       }
     ]
@@ -301,35 +451,60 @@
       {
         "id": 1,
         "question": "What does a Python decorator modify?",
-        "options": ["Function or class behavior", "Only variables", "Only strings", "Database schemas"],
-        "answer": 0,
+        "options": [
+          "Only variables",
+          "Database schemas",
+          "Function or class behavior",
+          "Only strings"
+        ],
+        "answer": 2,
         "explanation": "Decorators wrap functions or classes to extend or modify their behavior."
       },
       {
         "id": 2,
         "question": "What does list comprehension create?",
-        "options": ["A list", "A tuple only", "A database", "A generator only"],
-        "answer": 0,
+        "options": [
+          "A tuple only",
+          "A list",
+          "A database",
+          "A generator only"
+        ],
+        "answer": 1,
         "explanation": "List comprehensions provide a concise way to create lists."
       },
       {
         "id": 3,
         "question": "Which keyword is used to create a generator function?",
-        "options": ["yield", "generate", "returning", "produce"],
-        "answer": 0,
+        "options": [
+          "generate",
+          "yield",
+          "returning",
+          "produce"
+        ],
+        "answer": 1,
         "explanation": "The yield keyword turns a function into a generator."
       },
       {
         "id": 4,
         "question": "What is the purpose of a virtual environment?",
-        "options": ["Isolate Python dependencies", "Increase CPU speed", "Store SQL data", "Encrypt Python code"],
-        "answer": 0,
+        "options": [
+          "Encrypt Python code",
+          "Increase CPU speed",
+          "Isolate Python dependencies",
+          "Store SQL data"
+        ],
+        "answer": 2,
         "explanation": "Virtual environments isolate project-specific Python packages and versions."
       },
       {
         "id": 5,
         "question": "Which library is commonly used for tabular data processing in Python?",
-        "options": ["Pandas", "Requests", "Flask", "Tkinter"],
+        "options": [
+          "Pandas",
+          "Flask",
+          "Tkinter",
+          "Requests"
+        ],
         "answer": 0,
         "explanation": "Pandas provides DataFrame and Series structures for tabular data analysis."
       }
@@ -349,36 +524,61 @@
       {
         "id": 1,
         "question": "Which object is the main entry point for Spark applications?",
-        "options": ["SparkSession", "SparkContextOnly", "SparkApp", "SparkEngine"],
-        "answer": 0,
+        "options": [
+          "SparkApp",
+          "SparkEngine",
+          "SparkSession",
+          "SparkContextOnly"
+        ],
+        "answer": 2,
         "explanation": "SparkSession is the main entry point for modern Spark applications."
       },
       {
         "id": 2,
         "question": "Which operation transforms an existing DataFrame into another DataFrame?",
-        "options": ["Transformation", "Action", "Commit", "Trigger"],
-        "answer": 0,
+        "options": [
+          "Action",
+          "Transformation",
+          "Commit",
+          "Trigger"
+        ],
+        "answer": 1,
         "explanation": "Transformations create a new logical DataFrame from an existing one."
       },
       {
         "id": 3,
         "question": "Which operation triggers Spark computation?",
-        "options": ["Action", "Transformation", "Schema", "Partition"],
-        "answer": 0,
+        "options": [
+          "Partition",
+          "Transformation",
+          "Schema",
+          "Action"
+        ],
+        "answer": 3,
         "explanation": "Actions such as count and collect trigger execution of the Spark job."
       },
       {
         "id": 4,
         "question": "Which DataFrame function removes duplicate rows?",
-        "options": ["dropDuplicates", "removeDuplicates", "uniqueRows", "distinctRowsOnly"],
+        "options": [
+          "dropDuplicates",
+          "distinctRowsOnly",
+          "removeDuplicates",
+          "uniqueRows"
+        ],
         "answer": 0,
         "explanation": "dropDuplicates removes duplicate records from a DataFrame."
       },
       {
         "id": 5,
         "question": "What is lazy evaluation in Spark?",
-        "options": ["Transformations execute immediately", "Transformations are planned until an action runs", "Spark never executes transformations", "Data is always cached"],
-        "answer": 1,
+        "options": [
+          "Data is always cached",
+          "Spark never executes transformations",
+          "Transformations execute immediately",
+          "Transformations are planned until an action runs"
+        ],
+        "answer": 3,
         "explanation": "Spark delays execution of transformations until an action requires a result."
       }
     ]
@@ -397,35 +597,60 @@
       {
         "id": 1,
         "question": "What does Spark partitioning control?",
-        "options": ["How data is distributed", "Column names", "File extensions", "SQL syntax"],
-        "answer": 0,
+        "options": [
+          "Column names",
+          "File extensions",
+          "SQL syntax",
+          "How data is distributed"
+        ],
+        "answer": 3,
         "explanation": "Partitions divide distributed data into units that can be processed in parallel."
       },
       {
         "id": 2,
         "question": "Which join can avoid a large shuffle when one dataset is small enough?",
-        "options": ["Broadcast join", "Cross join", "Cartesian join", "Full join"],
-        "answer": 0,
+        "options": [
+          "Cross join",
+          "Cartesian join",
+          "Full join",
+          "Broadcast join"
+        ],
+        "answer": 3,
         "explanation": "A broadcast join sends the small dataset to executors, reducing shuffle of the large dataset."
       },
       {
         "id": 3,
         "question": "What causes a shuffle in Spark?",
-        "options": ["Redistribution of data across partitions", "Renaming a column", "Reading a variable", "Printing schema"],
-        "answer": 0,
+        "options": [
+          "Printing schema",
+          "Renaming a column",
+          "Reading a variable",
+          "Redistribution of data across partitions"
+        ],
+        "answer": 3,
         "explanation": "Operations such as joins and aggregations can require data redistribution between partitions."
       },
       {
         "id": 4,
         "question": "Which method can persist a DataFrame for reuse?",
-        "options": ["cache", "store", "persistOnly", "memory"],
-        "answer": 0,
+        "options": [
+          "store",
+          "memory",
+          "cache",
+          "persistOnly"
+        ],
+        "answer": 2,
         "explanation": "cache() persists a DataFrame using Spark's default persistence level."
       },
       {
         "id": 5,
         "question": "Which issue occurs when one partition contains significantly more data than others?",
-        "options": ["Data skew", "Schema drift", "Null inflation", "Column collision"],
+        "options": [
+          "Data skew",
+          "Column collision",
+          "Null inflation",
+          "Schema drift"
+        ],
         "answer": 0,
         "explanation": "Data skew occurs when data is unevenly distributed across partitions."
       }
@@ -445,36 +670,61 @@
       {
         "id": 1,
         "question": "What is the main purpose of Azure Data Factory?",
-        "options": ["Data integration and orchestration", "Database administration only", "Web hosting", "Identity management only"],
-        "answer": 0,
+        "options": [
+          "Identity management only",
+          "Web hosting",
+          "Data integration and orchestration",
+          "Database administration only"
+        ],
+        "answer": 2,
         "explanation": "ADF is a cloud data integration and orchestration service."
       },
       {
         "id": 2,
         "question": "What defines the movement and transformation workflow in ADF?",
-        "options": ["Pipeline", "Workspace", "Cluster", "Notebook only"],
+        "options": [
+          "Pipeline",
+          "Cluster",
+          "Workspace",
+          "Notebook only"
+        ],
         "answer": 0,
         "explanation": "ADF pipelines organize activities into data workflows."
       },
       {
         "id": 3,
         "question": "What does a linked service define?",
-        "options": ["Connection information", "Only table schemas", "Dashboard layout", "User passwords"],
-        "answer": 0,
+        "options": [
+          "Only table schemas",
+          "Connection information",
+          "Dashboard layout",
+          "User passwords"
+        ],
+        "answer": 1,
         "explanation": "Linked services define connection information for external resources."
       },
       {
         "id": 4,
         "question": "Which ADF activity is commonly used to copy data?",
-        "options": ["Copy Activity", "Move Activity", "Transfer Activity", "Clone Activity"],
-        "answer": 0,
+        "options": [
+          "Transfer Activity",
+          "Copy Activity",
+          "Clone Activity",
+          "Move Activity"
+        ],
+        "answer": 1,
         "explanation": "Copy Activity is designed to move data between supported sources and destinations."
       },
       {
         "id": 5,
         "question": "Which ADF feature starts pipelines based on a schedule?",
-        "options": ["Trigger", "Dataset", "Linked Service", "Integration Runtime"],
-        "answer": 0,
+        "options": [
+          "Linked Service",
+          "Dataset",
+          "Integration Runtime",
+          "Trigger"
+        ],
+        "answer": 3,
         "explanation": "Triggers define when pipelines should execute."
       }
     ]
@@ -493,36 +743,61 @@
       {
         "id": 1,
         "question": "What is Databricks primarily used for?",
-        "options": ["Data engineering and analytics", "Email hosting", "Domain registration", "Web browser management"],
-        "answer": 0,
+        "options": [
+          "Email hosting",
+          "Domain registration",
+          "Web browser management",
+          "Data engineering and analytics"
+        ],
+        "answer": 3,
         "explanation": "Databricks provides a platform for data engineering, analytics, machine learning, and related workloads."
       },
       {
         "id": 2,
         "question": "Which technology powers distributed processing in Databricks?",
-        "options": ["Apache Spark", "Apache HTTP", "Nginx", "Redis only"],
-        "answer": 0,
+        "options": [
+          "Redis only",
+          "Apache HTTP",
+          "Apache Spark",
+          "Nginx"
+        ],
+        "answer": 2,
         "explanation": "Databricks uses Apache Spark as a core distributed processing engine."
       },
       {
         "id": 3,
         "question": "What is a Databricks notebook commonly used for?",
-        "options": ["Interactive data processing", "DNS management", "Email delivery", "Operating system installation"],
-        "answer": 0,
+        "options": [
+          "Email delivery",
+          "DNS management",
+          "Interactive data processing",
+          "Operating system installation"
+        ],
+        "answer": 2,
         "explanation": "Notebooks provide an interactive environment for code, SQL, visualization, and documentation."
       },
       {
         "id": 4,
         "question": "Which languages can commonly be used in Databricks notebooks?",
-        "options": ["Python and SQL", "Only JavaScript", "Only HTML", "Only Bash"],
-        "answer": 0,
+        "options": [
+          "Only JavaScript",
+          "Only HTML",
+          "Python and SQL",
+          "Only Bash"
+        ],
+        "answer": 2,
         "explanation": "Databricks supports multiple languages including Python, SQL, Scala, and R."
       },
       {
         "id": 5,
         "question": "What is a cluster used for?",
-        "options": ["Running distributed workloads", "Storing browser cookies", "Managing DNS records", "Creating email accounts"],
-        "answer": 0,
+        "options": [
+          "Creating email accounts",
+          "Running distributed workloads",
+          "Storing browser cookies",
+          "Managing DNS records"
+        ],
+        "answer": 1,
         "explanation": "Databricks clusters provide compute resources for executing workloads."
       }
     ]
@@ -541,36 +816,61 @@
       {
         "id": 1,
         "question": "What is a major feature of Delta Lake?",
-        "options": ["ACID transactions", "Email delivery", "DNS routing", "Web hosting"],
-        "answer": 0,
+        "options": [
+          "DNS routing",
+          "ACID transactions",
+          "Web hosting",
+          "Email delivery"
+        ],
+        "answer": 1,
         "explanation": "Delta Lake provides ACID transaction capabilities on data lake storage."
       },
       {
         "id": 2,
         "question": "What does Delta Lake use to track table changes?",
-        "options": ["Transaction log", "DNS log", "Application cache", "Browser history"],
-        "answer": 0,
+        "options": [
+          "DNS log",
+          "Transaction log",
+          "Browser history",
+          "Application cache"
+        ],
+        "answer": 1,
         "explanation": "Delta tables maintain a transaction log containing metadata about table changes."
       },
       {
         "id": 3,
         "question": "Which feature allows querying previous versions of a Delta table?",
-        "options": ["Time travel", "Historical scan", "Version search", "Rollback query"],
-        "answer": 0,
+        "options": [
+          "Rollback query",
+          "Time travel",
+          "Historical scan",
+          "Version search"
+        ],
+        "answer": 1,
         "explanation": "Delta Lake time travel allows access to previous table versions."
       },
       {
         "id": 4,
         "question": "Which operation combines insert and update logic in Delta Lake?",
-        "options": ["MERGE", "UNION", "APPEND", "JOIN"],
-        "answer": 0,
+        "options": [
+          "JOIN",
+          "UNION",
+          "APPEND",
+          "MERGE"
+        ],
+        "answer": 3,
         "explanation": "MERGE supports conditional inserts, updates, and deletes."
       },
       {
         "id": 5,
         "question": "What does schema enforcement help prevent?",
-        "options": ["Invalid schema writes", "Network failures", "CPU overheating", "Password expiration"],
-        "answer": 0,
+        "options": [
+          "Password expiration",
+          "Invalid schema writes",
+          "Network failures",
+          "CPU overheating"
+        ],
+        "answer": 1,
         "explanation": "Schema enforcement helps ensure incoming data matches the expected table schema."
       }
     ]
@@ -589,36 +889,61 @@
       {
         "id": 1,
         "question": "What does ADLS stand for?",
-        "options": ["Azure Data Lake Storage", "Azure Database Loading Service", "Advanced Data Logging System", "Azure Distributed Linux Service"],
+        "options": [
+          "Azure Data Lake Storage",
+          "Azure Distributed Linux Service",
+          "Azure Database Loading Service",
+          "Advanced Data Logging System"
+        ],
         "answer": 0,
         "explanation": "ADLS stands for Azure Data Lake Storage."
       },
       {
         "id": 2,
         "question": "Which feature provides hierarchical directory access in ADLS Gen2?",
-        "options": ["Hierarchical namespace", "Virtual tables", "Folder engine", "Directory cache"],
-        "answer": 0,
+        "options": [
+          "Directory cache",
+          "Folder engine",
+          "Virtual tables",
+          "Hierarchical namespace"
+        ],
+        "answer": 3,
         "explanation": "Hierarchical namespace enables directory and file-system-like organization."
       },
       {
         "id": 3,
         "question": "What is commonly stored in a data lake?",
-        "options": ["Structured and unstructured data", "Only relational tables", "Only images", "Only JSON"],
+        "options": [
+          "Structured and unstructured data",
+          "Only images",
+          "Only relational tables",
+          "Only JSON"
+        ],
         "answer": 0,
         "explanation": "Data lakes can store structured, semi-structured, and unstructured data."
       },
       {
         "id": 4,
         "question": "Which permission model can be used with ADLS Gen2?",
-        "options": ["ACLs", "Only database roles", "Only HTTP headers", "Only application passwords"],
-        "answer": 0,
+        "options": [
+          "Only HTTP headers",
+          "Only database roles",
+          "ACLs",
+          "Only application passwords"
+        ],
+        "answer": 2,
         "explanation": "ADLS Gen2 supports POSIX-style access control lists along with Azure RBAC."
       },
       {
         "id": 5,
         "question": "Which format is commonly used for analytics data in a data lake?",
-        "options": ["Parquet", "TXT only", "BMP", "EXE"],
-        "answer": 0,
+        "options": [
+          "TXT only",
+          "BMP",
+          "Parquet",
+          "EXE"
+        ],
+        "answer": 2,
         "explanation": "Parquet is a columnar storage format widely used in analytical data platforms."
       }
     ]
@@ -637,36 +962,61 @@
       {
         "id": 1,
         "question": "What is Azure Synapse Analytics designed for?",
-        "options": ["Analytics and data warehousing", "Email hosting", "Mobile development only", "DNS management"],
-        "answer": 0,
+        "options": [
+          "Mobile development only",
+          "Analytics and data warehousing",
+          "DNS management",
+          "Email hosting"
+        ],
+        "answer": 1,
         "explanation": "Synapse combines data warehousing, big data analytics, integration, and related capabilities."
       },
       {
         "id": 2,
         "question": "Which SQL pool is designed for large-scale analytical workloads?",
-        "options": ["Dedicated SQL pool", "Local SQL pool", "Browser SQL pool", "Client SQL pool"],
+        "options": [
+          "Dedicated SQL pool",
+          "Client SQL pool",
+          "Local SQL pool",
+          "Browser SQL pool"
+        ],
         "answer": 0,
         "explanation": "Dedicated SQL pools provide distributed analytical data warehouse compute."
       },
       {
         "id": 3,
         "question": "What is a common distribution strategy in Synapse dedicated SQL pools?",
-        "options": ["Hash distribution", "Browser distribution", "Random file distribution", "DNS distribution"],
-        "answer": 0,
+        "options": [
+          "Random file distribution",
+          "Hash distribution",
+          "Browser distribution",
+          "DNS distribution"
+        ],
+        "answer": 1,
         "explanation": "Hash distribution distributes rows based on a selected distribution column."
       },
       {
         "id": 4,
         "question": "Why is distribution important in a distributed warehouse?",
-        "options": ["It affects data movement and query performance", "It changes passwords", "It creates users", "It controls DNS"],
-        "answer": 0,
+        "options": [
+          "It controls DNS",
+          "It creates users",
+          "It affects data movement and query performance",
+          "It changes passwords"
+        ],
+        "answer": 2,
         "explanation": "Choosing an appropriate distribution can reduce data movement and improve query performance."
       },
       {
         "id": 5,
         "question": "Which format is commonly used for external analytical data?",
-        "options": ["Parquet", "EXE", "DLL", "BMP"],
-        "answer": 0,
+        "options": [
+          "DLL",
+          "BMP",
+          "Parquet",
+          "EXE"
+        ],
+        "answer": 2,
         "explanation": "Parquet is widely used for efficient analytical storage."
       }
     ]
@@ -685,36 +1035,61 @@
       {
         "id": 1,
         "question": "What is Apache Kafka primarily used for?",
-        "options": ["Distributed event streaming", "Database backup only", "Web page styling", "File compression"],
-        "answer": 0,
+        "options": [
+          "File compression",
+          "Database backup only",
+          "Web page styling",
+          "Distributed event streaming"
+        ],
+        "answer": 3,
         "explanation": "Kafka is a distributed event streaming platform."
       },
       {
         "id": 2,
         "question": "Where are Kafka records written?",
-        "options": ["Topics", "Schemas only", "Tables", "Buckets only"],
-        "answer": 0,
+        "options": [
+          "Tables",
+          "Buckets only",
+          "Schemas only",
+          "Topics"
+        ],
+        "answer": 3,
         "explanation": "Producers write records to Kafka topics."
       },
       {
         "id": 3,
         "question": "What is a Kafka partition?",
-        "options": ["Ordered log within a topic", "Database table", "Consumer password", "Network port"],
-        "answer": 0,
+        "options": [
+          "Database table",
+          "Consumer password",
+          "Network port",
+          "Ordered log within a topic"
+        ],
+        "answer": 3,
         "explanation": "A partition is an ordered append-only log that forms part of a Kafka topic."
       },
       {
         "id": 4,
         "question": "What consumes records from Kafka?",
-        "options": ["Consumers", "Producers", "Schemas", "Brokers only"],
+        "options": [
+          "Consumers",
+          "Schemas",
+          "Brokers only",
+          "Producers"
+        ],
         "answer": 0,
         "explanation": "Consumers read records from Kafka topics."
       },
       {
         "id": 5,
         "question": "What is a consumer group?",
-        "options": ["Consumers cooperating to process topic partitions", "A database cluster", "A topic alias", "A producer configuration"],
-        "answer": 0,
+        "options": [
+          "A topic alias",
+          "A producer configuration",
+          "A database cluster",
+          "Consumers cooperating to process topic partitions"
+        ],
+        "answer": 3,
         "explanation": "Consumers in the same group coordinate partition assignment to process records."
       }
     ]
@@ -733,36 +1108,61 @@
       {
         "id": 1,
         "question": "What does ETL stand for?",
-        "options": ["Extract Transform Load", "Execute Transfer Load", "Extract Transfer Link", "Encode Transform Load"],
+        "options": [
+          "Extract Transform Load",
+          "Encode Transform Load",
+          "Execute Transfer Load",
+          "Extract Transfer Link"
+        ],
         "answer": 0,
         "explanation": "ETL stands for Extract, Transform, Load."
       },
       {
         "id": 2,
         "question": "In traditional ETL, where does transformation generally occur?",
-        "options": ["Before loading into the target", "Only after reporting", "Only in the source application", "Never"],
-        "answer": 0,
+        "options": [
+          "Only in the source application",
+          "Before loading into the target",
+          "Only after reporting",
+          "Never"
+        ],
+        "answer": 1,
         "explanation": "ETL transforms data before loading it into the target system."
       },
       {
         "id": 3,
         "question": "What does ELT stand for?",
-        "options": ["Extract Load Transform", "Execute Load Transfer", "Extract Link Transform", "Encode Load Table"],
+        "options": [
+          "Extract Load Transform",
+          "Encode Load Table",
+          "Execute Load Transfer",
+          "Extract Link Transform"
+        ],
         "answer": 0,
         "explanation": "ELT stands for Extract, Load, Transform."
       },
       {
         "id": 4,
         "question": "Which approach commonly uses the target platform's compute for transformation?",
-        "options": ["ELT", "FTP", "OLTP", "DNS"],
-        "answer": 0,
+        "options": [
+          "OLTP",
+          "DNS",
+          "FTP",
+          "ELT"
+        ],
+        "answer": 3,
         "explanation": "ELT loads data first and performs transformations using the target platform."
       },
       {
         "id": 5,
         "question": "What is data validation used for?",
-        "options": ["Checking data quality and correctness", "Increasing screen resolution", "Managing DNS", "Creating passwords"],
-        "answer": 0,
+        "options": [
+          "Creating passwords",
+          "Checking data quality and correctness",
+          "Increasing screen resolution",
+          "Managing DNS"
+        ],
+        "answer": 1,
         "explanation": "Validation checks whether data meets expected quality and business rules."
       }
     ]
@@ -781,35 +1181,60 @@
       {
         "id": 1,
         "question": "What is a fact table primarily used to store?",
-        "options": ["Business measurements", "Only metadata", "User passwords", "Application code"],
-        "answer": 0,
+        "options": [
+          "Application code",
+          "Only metadata",
+          "User passwords",
+          "Business measurements"
+        ],
+        "answer": 3,
         "explanation": "Fact tables generally contain measurable business events or metrics."
       },
       {
         "id": 2,
         "question": "What does a dimension table typically contain?",
-        "options": ["Descriptive attributes", "Only transaction amounts", "Only indexes", "System logs"],
-        "answer": 0,
+        "options": [
+          "Only transaction amounts",
+          "Only indexes",
+          "System logs",
+          "Descriptive attributes"
+        ],
+        "answer": 3,
         "explanation": "Dimension tables contain descriptive attributes used to analyze facts."
       },
       {
         "id": 3,
         "question": "What is a star schema?",
-        "options": ["Fact table surrounded by dimension tables", "Only one database table", "A graph database", "A file format"],
-        "answer": 0,
+        "options": [
+          "A file format",
+          "Only one database table",
+          "A graph database",
+          "Fact table surrounded by dimension tables"
+        ],
+        "answer": 3,
         "explanation": "A star schema has a central fact table connected to dimension tables."
       },
       {
         "id": 4,
         "question": "What is normalization primarily intended to reduce?",
-        "options": ["Data redundancy", "Query syntax", "Network bandwidth", "File extensions"],
-        "answer": 0,
+        "options": [
+          "Query syntax",
+          "File extensions",
+          "Network bandwidth",
+          "Data redundancy"
+        ],
+        "answer": 3,
         "explanation": "Normalization organizes relational data to reduce redundancy and update anomalies."
       },
       {
         "id": 5,
         "question": "What is a surrogate key?",
-        "options": ["Artificial key generated for an entity", "Natural business description", "Database password", "File path"],
+        "options": [
+          "Artificial key generated for an entity",
+          "File path",
+          "Database password",
+          "Natural business description"
+        ],
         "answer": 0,
         "explanation": "A surrogate key is an artificial identifier, often generated independently of business data."
       }
@@ -829,36 +1254,61 @@
       {
         "id": 1,
         "question": "Which command creates a local copy of a Git repository?",
-        "options": ["git clone", "git copy", "git download", "git fetch-all"],
+        "options": [
+          "git clone",
+          "git copy",
+          "git fetch-all",
+          "git download"
+        ],
         "answer": 0,
         "explanation": "git clone copies a remote repository to a local environment."
       },
       {
         "id": 2,
         "question": "Which command records staged changes in Git history?",
-        "options": ["git commit", "git save", "git record", "git push"],
-        "answer": 0,
+        "options": [
+          "git push",
+          "git record",
+          "git save",
+          "git commit"
+        ],
+        "answer": 3,
         "explanation": "git commit creates a new commit from staged changes."
       },
       {
         "id": 3,
         "question": "Which command uploads local commits to a remote repository?",
-        "options": ["git push", "git upload", "git send", "git publish"],
+        "options": [
+          "git push",
+          "git publish",
+          "git upload",
+          "git send"
+        ],
         "answer": 0,
         "explanation": "git push sends local commits to a configured remote repository."
       },
       {
         "id": 4,
         "question": "Which command creates a new branch?",
-        "options": ["git branch", "git new", "git fork-local", "git create"],
-        "answer": 0,
+        "options": [
+          "git new",
+          "git fork-local",
+          "git create",
+          "git branch"
+        ],
+        "answer": 3,
         "explanation": "git branch can create a new branch."
       },
       {
         "id": 5,
         "question": "What is a pull request primarily used for?",
-        "options": ["Reviewing and merging proposed changes", "Creating a database", "Running SQL", "Deploying a server only"],
-        "answer": 0,
+        "options": [
+          "Creating a database",
+          "Reviewing and merging proposed changes",
+          "Deploying a server only",
+          "Running SQL"
+        ],
+        "answer": 1,
         "explanation": "Pull requests facilitate code review and integration of changes."
       }
     ]
@@ -877,35 +1327,60 @@
       {
         "id": 1,
         "question": "Which command lists files in a Linux directory?",
-        "options": ["ls", "dirlist", "show", "files"],
-        "answer": 0,
+        "options": [
+          "show",
+          "dirlist",
+          "files",
+          "ls"
+        ],
+        "answer": 3,
         "explanation": "ls lists files and directories."
       },
       {
         "id": 2,
         "question": "Which command displays the current working directory?",
-        "options": ["pwd", "cwd", "where", "location"],
-        "answer": 0,
+        "options": [
+          "where",
+          "pwd",
+          "cwd",
+          "location"
+        ],
+        "answer": 1,
         "explanation": "pwd prints the current working directory."
       },
       {
         "id": 3,
         "question": "Which command is commonly used to search text within files?",
-        "options": ["grep", "findtext", "search", "scan"],
-        "answer": 0,
+        "options": [
+          "scan",
+          "search",
+          "grep",
+          "findtext"
+        ],
+        "answer": 2,
         "explanation": "grep searches for matching text patterns."
       },
       {
         "id": 4,
         "question": "Which command changes file permissions?",
-        "options": ["chmod", "chperm", "permission", "access"],
-        "answer": 0,
+        "options": [
+          "access",
+          "chperm",
+          "permission",
+          "chmod"
+        ],
+        "answer": 3,
         "explanation": "chmod modifies file and directory permissions."
       },
       {
         "id": 5,
         "question": "Which command displays running processes?",
-        "options": ["ps", "processes", "jobs-only", "runlist"],
+        "options": [
+          "ps",
+          "jobs-only",
+          "processes",
+          "runlist"
+        ],
         "answer": 0,
         "explanation": "ps displays information about active processes."
       }
@@ -925,36 +1400,61 @@
       {
         "id": 1,
         "question": "What is Apache Airflow primarily used for?",
-        "options": ["Workflow orchestration", "Database storage", "Web styling", "File compression"],
-        "answer": 0,
+        "options": [
+          "Database storage",
+          "Web styling",
+          "File compression",
+          "Workflow orchestration"
+        ],
+        "answer": 3,
         "explanation": "Airflow is a platform for developing, scheduling, and monitoring workflows."
       },
       {
         "id": 2,
         "question": "What does DAG stand for?",
-        "options": ["Directed Acyclic Graph", "Data Access Gateway", "Distributed Application Group", "Dynamic Analytics Graph"],
-        "answer": 0,
+        "options": [
+          "Dynamic Analytics Graph",
+          "Distributed Application Group",
+          "Directed Acyclic Graph",
+          "Data Access Gateway"
+        ],
+        "answer": 2,
         "explanation": "DAG stands for Directed Acyclic Graph."
       },
       {
         "id": 3,
         "question": "What does an Airflow task represent?",
-        "options": ["A unit of work", "A database", "A user account", "A server"],
+        "options": [
+          "A unit of work",
+          "A database",
+          "A server",
+          "A user account"
+        ],
         "answer": 0,
         "explanation": "A task represents an individual unit of work within a DAG."
       },
       {
         "id": 4,
         "question": "What is an Airflow operator?",
-        "options": ["A template for a task", "A database table", "A file format", "A network protocol"],
-        "answer": 0,
+        "options": [
+          "A file format",
+          "A database table",
+          "A template for a task",
+          "A network protocol"
+        ],
+        "answer": 2,
         "explanation": "Operators define what a task should do."
       },
       {
         "id": 5,
         "question": "What is scheduling used for in Airflow?",
-        "options": ["Determining when workflows run", "Creating databases", "Encrypting files", "Changing schemas"],
-        "answer": 0,
+        "options": [
+          "Creating databases",
+          "Changing schemas",
+          "Determining when workflows run",
+          "Encrypting files"
+        ],
+        "answer": 2,
         "explanation": "Airflow scheduling determines when DAG runs should be created."
       }
     ]
@@ -973,36 +1473,61 @@
       {
         "id": 1,
         "question": "Which dimension checks whether required data is present?",
-        "options": ["Completeness", "Uniqueness", "Freshness", "Accuracy"],
-        "answer": 0,
+        "options": [
+          "Freshness",
+          "Completeness",
+          "Accuracy",
+          "Uniqueness"
+        ],
+        "answer": 1,
         "explanation": "Completeness measures whether required values are present."
       },
       {
         "id": 2,
         "question": "Which dimension checks duplicate records?",
-        "options": ["Uniqueness", "Freshness", "Completeness", "Latency"],
-        "answer": 0,
+        "options": [
+          "Latency",
+          "Completeness",
+          "Freshness",
+          "Uniqueness"
+        ],
+        "answer": 3,
         "explanation": "Uniqueness checks whether records or key values are duplicated when they should not be."
       },
       {
         "id": 3,
         "question": "What does data freshness measure?",
-        "options": ["How recent the data is", "Number of columns", "File size", "Database password age"],
-        "answer": 0,
+        "options": [
+          "Number of columns",
+          "Database password age",
+          "How recent the data is",
+          "File size"
+        ],
+        "answer": 2,
         "explanation": "Freshness measures how up-to-date the data is."
       },
       {
         "id": 4,
         "question": "What is schema drift?",
-        "options": ["Unexpected changes in data structure", "Slow network speed", "Duplicate files", "Database backup"],
-        "answer": 0,
+        "options": [
+          "Slow network speed",
+          "Duplicate files",
+          "Unexpected changes in data structure",
+          "Database backup"
+        ],
+        "answer": 2,
         "explanation": "Schema drift occurs when the structure of incoming data changes unexpectedly."
       },
       {
         "id": 5,
         "question": "Which practice helps detect invalid records before loading?",
-        "options": ["Data validation", "Data deletion", "Index removal", "Compression"],
-        "answer": 0,
+        "options": [
+          "Data deletion",
+          "Data validation",
+          "Compression",
+          "Index removal"
+        ],
+        "answer": 1,
         "explanation": "Validation checks incoming records against expected rules and constraints."
       }
     ]
@@ -1021,36 +1546,61 @@
       {
         "id": 1,
         "question": "What is the purpose of a data ingestion layer?",
-        "options": ["Bring data into the platform", "Only visualize data", "Delete old data", "Create user passwords"],
+        "options": [
+          "Bring data into the platform",
+          "Create user passwords",
+          "Only visualize data",
+          "Delete old data"
+        ],
         "answer": 0,
         "explanation": "The ingestion layer receives data from source systems into the data platform."
       },
       {
         "id": 2,
         "question": "Which architecture separates raw data from curated data?",
-        "options": ["Layered data architecture", "Single-table architecture", "Flat-file architecture", "Browser architecture"],
-        "answer": 0,
+        "options": [
+          "Single-table architecture",
+          "Flat-file architecture",
+          "Browser architecture",
+          "Layered data architecture"
+        ],
+        "answer": 3,
         "explanation": "Layered architectures commonly separate raw, refined, and curated datasets."
       },
       {
         "id": 3,
         "question": "What is idempotency in a data pipeline?",
-        "options": ["Repeating an operation produces the same intended result", "Running only once", "Deleting duplicates manually", "Increasing memory"],
-        "answer": 0,
+        "options": [
+          "Deleting duplicates manually",
+          "Running only once",
+          "Repeating an operation produces the same intended result",
+          "Increasing memory"
+        ],
+        "answer": 2,
         "explanation": "An idempotent pipeline can safely retry processing without creating unintended duplicate effects."
       },
       {
         "id": 4,
         "question": "What is a dead-letter queue commonly used for?",
-        "options": ["Capturing records that cannot be processed", "Storing passwords", "Running SQL", "Caching dashboards"],
-        "answer": 0,
+        "options": [
+          "Storing passwords",
+          "Caching dashboards",
+          "Running SQL",
+          "Capturing records that cannot be processed"
+        ],
+        "answer": 3,
         "explanation": "Dead-letter queues isolate messages or records that repeatedly fail processing."
       },
       {
         "id": 5,
         "question": "What is the purpose of monitoring a data pipeline?",
-        "options": ["Detect failures and performance issues", "Change SQL syntax", "Create tables automatically only", "Replace source systems"],
-        "answer": 0,
+        "options": [
+          "Change SQL syntax",
+          "Create tables automatically only",
+          "Detect failures and performance issues",
+          "Replace source systems"
+        ],
+        "answer": 2,
         "explanation": "Monitoring helps detect failures, delays, quality problems, and resource issues."
       }
     ]
@@ -1069,36 +1619,61 @@
       {
         "id": 1,
         "question": "What is Microsoft Azure?",
-        "options": ["Cloud computing platform", "Programming language", "Database engine only", "Operating system"],
-        "answer": 0,
+        "options": [
+          "Database engine only",
+          "Operating system",
+          "Programming language",
+          "Cloud computing platform"
+        ],
+        "answer": 3,
         "explanation": "Azure is Microsoft's cloud computing platform."
       },
       {
         "id": 2,
         "question": "What is an Azure Resource Group?",
-        "options": ["Logical container for Azure resources", "Database table", "Virtual machine only", "Network cable"],
+        "options": [
+          "Logical container for Azure resources",
+          "Network cable",
+          "Database table",
+          "Virtual machine only"
+        ],
         "answer": 0,
         "explanation": "A resource group is a logical container for related Azure resources."
       },
       {
         "id": 3,
         "question": "What does RBAC stand for?",
-        "options": ["Role-Based Access Control", "Resource Backup Access Control", "Remote Binary Access Configuration", "Role-Based Application Cache"],
+        "options": [
+          "Role-Based Access Control",
+          "Remote Binary Access Configuration",
+          "Resource Backup Access Control",
+          "Role-Based Application Cache"
+        ],
         "answer": 0,
         "explanation": "RBAC manages access to Azure resources through assigned roles."
       },
       {
         "id": 4,
         "question": "What is Azure Key Vault commonly used for?",
-        "options": ["Secrets and keys management", "Data visualization", "Running Spark only", "Creating Git branches"],
-        "answer": 0,
+        "options": [
+          "Running Spark only",
+          "Creating Git branches",
+          "Data visualization",
+          "Secrets and keys management"
+        ],
+        "answer": 3,
         "explanation": "Key Vault securely stores and manages secrets, keys, and certificates."
       },
       {
         "id": 5,
         "question": "What is Azure Monitor used for?",
-        "options": ["Monitoring applications and resources", "Writing SQL queries only", "Creating tables", "Managing Git commits"],
-        "answer": 0,
+        "options": [
+          "Creating tables",
+          "Monitoring applications and resources",
+          "Writing SQL queries only",
+          "Managing Git commits"
+        ],
+        "answer": 1,
         "explanation": "Azure Monitor collects and analyzes telemetry from Azure resources and applications."
       }
     ]
@@ -1117,37 +1692,2141 @@
       {
         "id": 1,
         "question": "Which approach is most important when designing a retryable data pipeline?",
-        "options": ["Idempotent processing", "Ignoring failures", "Deleting source data", "Running everything manually"],
-        "answer": 0,
+        "options": [
+          "Ignoring failures",
+          "Running everything manually",
+          "Deleting source data",
+          "Idempotent processing"
+        ],
+        "answer": 3,
         "explanation": "Idempotent processing allows failed steps to be retried without creating unintended duplicate effects."
       },
       {
         "id": 2,
         "question": "What should be considered when processing billions of rows?",
-        "options": ["Partitioning and parallelism", "Only column names", "Only UI design", "Only file naming"],
-        "answer": 0,
+        "options": [
+          "Only UI design",
+          "Only column names",
+          "Partitioning and parallelism",
+          "Only file naming"
+        ],
+        "answer": 2,
         "explanation": "Large-scale processing requires appropriate partitioning, parallelism, storage formats, and resource management."
       },
       {
         "id": 3,
         "question": "What is the main purpose of incremental data loading?",
-        "options": ["Process only new or changed data", "Reload everything every time", "Delete historical data", "Avoid validation"],
-        "answer": 0,
+        "options": [
+          "Reload everything every time",
+          "Process only new or changed data",
+          "Avoid validation",
+          "Delete historical data"
+        ],
+        "answer": 1,
         "explanation": "Incremental loading reduces processing by handling only newly added or changed records."
       },
       {
         "id": 4,
         "question": "Which strategy can help handle late-arriving data?",
-        "options": ["Watermarks and reprocessing windows", "Deleting old records", "Ignoring timestamps", "Removing partitions"],
-        "answer": 0,
+        "options": [
+          "Deleting old records",
+          "Ignoring timestamps",
+          "Removing partitions",
+          "Watermarks and reprocessing windows"
+        ],
+        "answer": 3,
         "explanation": "Watermarks and controlled reprocessing windows can accommodate records arriving after their expected processing time."
       },
       {
         "id": 5,
         "question": "What should a production data pipeline generally include?",
-        "options": ["Monitoring, logging, validation, retries, and alerting", "Only transformation code", "Only SQL", "Only storage"],
+        "options": [
+          "Monitoring, logging, validation, retries, and alerting",
+          "Only transformation code",
+          "Only storage",
+          "Only SQL"
+        ],
         "answer": 0,
         "explanation": "Production pipelines need operational controls such as monitoring, logging, validation, retries, and alerting."
+      }
+    ]
+  },
+  {
+    "id": "data-engineering-mixed-20",
+    "title": "Data Engineering Quick Quiz",
+    "category": "Data Engineering",
+    "topic": "Mixed Data Engineering",
+    "difficulty": "Mixed",
+    "questions": 20,
+    "timeLimit": 1200,
+    "passingScore": 60,
+    "attempts": 0,
+    "questionsData": [
+      {
+        "id": 1,
+        "question": "What is Azure Monitor used for?",
+        "options": [
+          "Managing Git commits",
+          "Writing SQL queries only",
+          "Monitoring applications and resources",
+          "Creating tables"
+        ],
+        "answer": 2,
+        "explanation": "Azure Monitor collects and analyzes telemetry from Azure resources and applications."
+      },
+      {
+        "id": 2,
+        "question": "Which keyword handles an exception?",
+        "options": [
+          "catch",
+          "handle",
+          "rescue",
+          "except"
+        ],
+        "answer": 3,
+        "explanation": "Python uses try and except blocks for exception handling."
+      },
+      {
+        "id": 3,
+        "question": "Which command records staged changes in Git history?",
+        "options": [
+          "git save",
+          "git record",
+          "git commit",
+          "git push"
+        ],
+        "answer": 2,
+        "explanation": "git commit creates a new commit from staged changes."
+      },
+      {
+        "id": 4,
+        "question": "What is Microsoft Azure?",
+        "options": [
+          "Database engine only",
+          "Operating system",
+          "Cloud computing platform",
+          "Programming language"
+        ],
+        "answer": 2,
+        "explanation": "Azure is Microsoft's cloud computing platform."
+      },
+      {
+        "id": 5,
+        "question": "Why is distribution important in a distributed warehouse?",
+        "options": [
+          "It affects data movement and query performance",
+          "It creates users",
+          "It changes passwords",
+          "It controls DNS"
+        ],
+        "answer": 0,
+        "explanation": "Choosing an appropriate distribution can reduce data movement and improve query performance."
+      },
+      {
+        "id": 6,
+        "question": "Which keyword is used to create a generator function?",
+        "options": [
+          "yield",
+          "returning",
+          "generate",
+          "produce"
+        ],
+        "answer": 0,
+        "explanation": "The yield keyword turns a function into a generator."
+      },
+      {
+        "id": 7,
+        "question": "Which operation removes dead tuples and helps maintain PostgreSQL tables?",
+        "options": [
+          "CLEAN",
+          "PURGE",
+          "REFRESH",
+          "VACUUM"
+        ],
+        "answer": 3,
+        "explanation": "VACUUM reclaims storage occupied by dead tuples and supports transaction ID maintenance."
+      },
+      {
+        "id": 8,
+        "question": "What is commonly stored in a data lake?",
+        "options": [
+          "Only images",
+          "Structured and unstructured data",
+          "Only JSON",
+          "Only relational tables"
+        ],
+        "answer": 1,
+        "explanation": "Data lakes can store structured, semi-structured, and unstructured data."
+      },
+      {
+        "id": 9,
+        "question": "What can a sequential scan indicate during query tuning?",
+        "options": [
+          "The table is encrypted",
+          "The database is always broken",
+          "The planner chose to scan the table directly",
+          "The query failed"
+        ],
+        "answer": 2,
+        "explanation": "A sequential scan reads table pages directly and may be appropriate for large result sets."
+      },
+      {
+        "id": 10,
+        "question": "What is a dead-letter queue commonly used for?",
+        "options": [
+          "Storing passwords",
+          "Caching dashboards",
+          "Capturing records that cannot be processed",
+          "Running SQL"
+        ],
+        "answer": 2,
+        "explanation": "Dead-letter queues isolate messages or records that repeatedly fail processing."
+      },
+      {
+        "id": 11,
+        "question": "What is a consumer group?",
+        "options": [
+          "Consumers cooperating to process topic partitions",
+          "A producer configuration",
+          "A topic alias",
+          "A database cluster"
+        ],
+        "answer": 0,
+        "explanation": "Consumers in the same group coordinate partition assignment to process records."
+      },
+      {
+        "id": 12,
+        "question": "Which command uploads local commits to a remote repository?",
+        "options": [
+          "git upload",
+          "git push",
+          "git publish",
+          "git send"
+        ],
+        "answer": 1,
+        "explanation": "git push sends local commits to a configured remote repository."
+      },
+      {
+        "id": 13,
+        "question": "What is an Azure Resource Group?",
+        "options": [
+          "Virtual machine only",
+          "Network cable",
+          "Database table",
+          "Logical container for Azure resources"
+        ],
+        "answer": 3,
+        "explanation": "A resource group is a logical container for related Azure resources."
+      },
+      {
+        "id": 14,
+        "question": "What is Apache Kafka primarily used for?",
+        "options": [
+          "File compression",
+          "Database backup only",
+          "Distributed event streaming",
+          "Web page styling"
+        ],
+        "answer": 2,
+        "explanation": "Kafka is a distributed event streaming platform."
+      },
+      {
+        "id": 15,
+        "question": "Which command is commonly used to search text within files?",
+        "options": [
+          "search",
+          "scan",
+          "grep",
+          "findtext"
+        ],
+        "answer": 2,
+        "explanation": "grep searches for matching text patterns."
+      },
+      {
+        "id": 16,
+        "question": "What does ADLS stand for?",
+        "options": [
+          "Azure Database Loading Service",
+          "Azure Data Lake Storage",
+          "Advanced Data Logging System",
+          "Azure Distributed Linux Service"
+        ],
+        "answer": 1,
+        "explanation": "ADLS stands for Azure Data Lake Storage."
+      },
+      {
+        "id": 17,
+        "question": "Which SQL pool is designed for large-scale analytical workloads?",
+        "options": [
+          "Dedicated SQL pool",
+          "Browser SQL pool",
+          "Client SQL pool",
+          "Local SQL pool"
+        ],
+        "answer": 0,
+        "explanation": "Dedicated SQL pools provide distributed analytical data warehouse compute."
+      },
+      {
+        "id": 18,
+        "question": "Which architecture separates raw data from curated data?",
+        "options": [
+          "Layered data architecture",
+          "Flat-file architecture",
+          "Browser architecture",
+          "Single-table architecture"
+        ],
+        "answer": 0,
+        "explanation": "Layered architectures commonly separate raw, refined, and curated datasets."
+      },
+      {
+        "id": 19,
+        "question": "What should be considered when processing billions of rows?",
+        "options": [
+          "Only column names",
+          "Only file naming",
+          "Only UI design",
+          "Partitioning and parallelism"
+        ],
+        "answer": 3,
+        "explanation": "Large-scale processing requires appropriate partitioning, parallelism, storage formats, and resource management."
+      },
+      {
+        "id": 20,
+        "question": "Which module is commonly used to work with CSV files?",
+        "options": [
+          "csv",
+          "tableio",
+          "delimited",
+          "rows"
+        ],
+        "answer": 0,
+        "explanation": "Python's standard csv module reads and writes CSV files."
+      }
+    ]
+  },
+  {
+    "id": "data-engineering-mixed-50",
+    "title": "Data Engineering Practice Quiz",
+    "category": "Data Engineering",
+    "topic": "Mixed Data Engineering",
+    "difficulty": "Mixed",
+    "questions": 50,
+    "timeLimit": 3000,
+    "passingScore": 60,
+    "attempts": 0,
+    "questionsData": [
+      {
+        "id": 1,
+        "question": "What does a linked service define?",
+        "options": [
+          "Dashboard layout",
+          "User passwords",
+          "Only table schemas",
+          "Connection information"
+        ],
+        "answer": 3,
+        "explanation": "Linked services define connection information for external resources."
+      },
+      {
+        "id": 2,
+        "question": "What does ETL stand for?",
+        "options": [
+          "Extract Transfer Link",
+          "Extract Transform Load",
+          "Encode Transform Load",
+          "Execute Transfer Load"
+        ],
+        "answer": 1,
+        "explanation": "ETL stands for Extract, Transform, Load."
+      },
+      {
+        "id": 3,
+        "question": "What is a surrogate key?",
+        "options": [
+          "Natural business description",
+          "Database password",
+          "Artificial key generated for an entity",
+          "File path"
+        ],
+        "answer": 2,
+        "explanation": "A surrogate key is an artificial identifier, often generated independently of business data."
+      },
+      {
+        "id": 4,
+        "question": "What is a major feature of Delta Lake?",
+        "options": [
+          "Web hosting",
+          "ACID transactions",
+          "DNS routing",
+          "Email delivery"
+        ],
+        "answer": 1,
+        "explanation": "Delta Lake provides ACID transaction capabilities on data lake storage."
+      },
+      {
+        "id": 5,
+        "question": "What can a sequential scan indicate during query tuning?",
+        "options": [
+          "The database is always broken",
+          "The table is encrypted",
+          "The query failed",
+          "The planner chose to scan the table directly"
+        ],
+        "answer": 3,
+        "explanation": "A sequential scan reads table pages directly and may be appropriate for large result sets."
+      },
+      {
+        "id": 6,
+        "question": "Which strategy can help handle late-arriving data?",
+        "options": [
+          "Deleting old records",
+          "Ignoring timestamps",
+          "Removing partitions",
+          "Watermarks and reprocessing windows"
+        ],
+        "answer": 3,
+        "explanation": "Watermarks and controlled reprocessing windows can accommodate records arriving after their expected processing time."
+      },
+      {
+        "id": 7,
+        "question": "Which library is commonly used for tabular data processing in Python?",
+        "options": [
+          "Requests",
+          "Tkinter",
+          "Flask",
+          "Pandas"
+        ],
+        "answer": 3,
+        "explanation": "Pandas provides DataFrame and Series structures for tabular data analysis."
+      },
+      {
+        "id": 8,
+        "question": "Which module is commonly used to work with CSV files?",
+        "options": [
+          "rows",
+          "csv",
+          "tableio",
+          "delimited"
+        ],
+        "answer": 1,
+        "explanation": "Python's standard csv module reads and writes CSV files."
+      },
+      {
+        "id": 9,
+        "question": "What does Spark partitioning control?",
+        "options": [
+          "File extensions",
+          "How data is distributed",
+          "SQL syntax",
+          "Column names"
+        ],
+        "answer": 1,
+        "explanation": "Partitions divide distributed data into units that can be processed in parallel."
+      },
+      {
+        "id": 10,
+        "question": "What does DAG stand for?",
+        "options": [
+          "Data Access Gateway",
+          "Dynamic Analytics Graph",
+          "Distributed Application Group",
+          "Directed Acyclic Graph"
+        ],
+        "answer": 3,
+        "explanation": "DAG stands for Directed Acyclic Graph."
+      },
+      {
+        "id": 11,
+        "question": "Which ADF feature starts pipelines based on a schedule?",
+        "options": [
+          "Dataset",
+          "Integration Runtime",
+          "Linked Service",
+          "Trigger"
+        ],
+        "answer": 3,
+        "explanation": "Triggers define when pipelines should execute."
+      },
+      {
+        "id": 12,
+        "question": "What is a Databricks notebook commonly used for?",
+        "options": [
+          "Operating system installation",
+          "DNS management",
+          "Email delivery",
+          "Interactive data processing"
+        ],
+        "answer": 3,
+        "explanation": "Notebooks provide an interactive environment for code, SQL, visualization, and documentation."
+      },
+      {
+        "id": 13,
+        "question": "Which practice helps detect invalid records before loading?",
+        "options": [
+          "Data validation",
+          "Data deletion",
+          "Compression",
+          "Index removal"
+        ],
+        "answer": 0,
+        "explanation": "Validation checks incoming records against expected rules and constraints."
+      },
+      {
+        "id": 14,
+        "question": "Which approach is most important when designing a retryable data pipeline?",
+        "options": [
+          "Ignoring failures",
+          "Deleting source data",
+          "Running everything manually",
+          "Idempotent processing"
+        ],
+        "answer": 3,
+        "explanation": "Idempotent processing allows failed steps to be retried without creating unintended duplicate effects."
+      },
+      {
+        "id": 15,
+        "question": "In traditional ETL, where does transformation generally occur?",
+        "options": [
+          "Only after reporting",
+          "Before loading into the target",
+          "Only in the source application",
+          "Never"
+        ],
+        "answer": 1,
+        "explanation": "ETL transforms data before loading it into the target system."
+      },
+      {
+        "id": 16,
+        "question": "Which command displays the current working directory?",
+        "options": [
+          "cwd",
+          "pwd",
+          "location",
+          "where"
+        ],
+        "answer": 1,
+        "explanation": "pwd prints the current working directory."
+      },
+      {
+        "id": 17,
+        "question": "Which PostgreSQL type stores arbitrary-length text?",
+        "options": [
+          "chartext",
+          "string",
+          "varchar-only",
+          "text"
+        ],
+        "answer": 3,
+        "explanation": "The text type stores strings without requiring a maximum length."
+      },
+      {
+        "id": 18,
+        "question": "Which feature provides hierarchical directory access in ADLS Gen2?",
+        "options": [
+          "Directory cache",
+          "Folder engine",
+          "Virtual tables",
+          "Hierarchical namespace"
+        ],
+        "answer": 3,
+        "explanation": "Hierarchical namespace enables directory and file-system-like organization."
+      },
+      {
+        "id": 19,
+        "question": "Which issue occurs when one partition contains significantly more data than others?",
+        "options": [
+          "Column collision",
+          "Schema drift",
+          "Null inflation",
+          "Data skew"
+        ],
+        "answer": 3,
+        "explanation": "Data skew occurs when data is unevenly distributed across partitions."
+      },
+      {
+        "id": 20,
+        "question": "Which format is commonly used for analytics data in a data lake?",
+        "options": [
+          "BMP",
+          "Parquet",
+          "TXT only",
+          "EXE"
+        ],
+        "answer": 1,
+        "explanation": "Parquet is a columnar storage format widely used in analytical data platforms."
+      },
+      {
+        "id": 21,
+        "question": "Which operation triggers Spark computation?",
+        "options": [
+          "Schema",
+          "Partition",
+          "Transformation",
+          "Action"
+        ],
+        "answer": 3,
+        "explanation": "Actions such as count and collect trigger execution of the Spark job."
+      },
+      {
+        "id": 22,
+        "question": "What is data validation used for?",
+        "options": [
+          "Increasing screen resolution",
+          "Checking data quality and correctness",
+          "Managing DNS",
+          "Creating passwords"
+        ],
+        "answer": 1,
+        "explanation": "Validation checks whether data meets expected quality and business rules."
+      },
+      {
+        "id": 23,
+        "question": "Which keyword handles an exception?",
+        "options": [
+          "except",
+          "catch",
+          "handle",
+          "rescue"
+        ],
+        "answer": 0,
+        "explanation": "Python uses try and except blocks for exception handling."
+      },
+      {
+        "id": 24,
+        "question": "What does RBAC stand for?",
+        "options": [
+          "Remote Binary Access Configuration",
+          "Role-Based Access Control",
+          "Role-Based Application Cache",
+          "Resource Backup Access Control"
+        ],
+        "answer": 1,
+        "explanation": "RBAC manages access to Azure resources through assigned roles."
+      },
+      {
+        "id": 25,
+        "question": "Which command records staged changes in Git history?",
+        "options": [
+          "git save",
+          "git record",
+          "git commit",
+          "git push"
+        ],
+        "answer": 2,
+        "explanation": "git commit creates a new commit from staged changes."
+      },
+      {
+        "id": 26,
+        "question": "Which dimension checks duplicate records?",
+        "options": [
+          "Uniqueness",
+          "Freshness",
+          "Latency",
+          "Completeness"
+        ],
+        "answer": 0,
+        "explanation": "Uniqueness checks whether records or key values are duplicated when they should not be."
+      },
+      {
+        "id": 27,
+        "question": "What is a Kafka partition?",
+        "options": [
+          "Database table",
+          "Ordered log within a topic",
+          "Consumer password",
+          "Network port"
+        ],
+        "answer": 1,
+        "explanation": "A partition is an ordered append-only log that forms part of a Kafka topic."
+      },
+      {
+        "id": 28,
+        "question": "Which SQL pool is designed for large-scale analytical workloads?",
+        "options": [
+          "Dedicated SQL pool",
+          "Client SQL pool",
+          "Browser SQL pool",
+          "Local SQL pool"
+        ],
+        "answer": 0,
+        "explanation": "Dedicated SQL pools provide distributed analytical data warehouse compute."
+      },
+      {
+        "id": 29,
+        "question": "What is Azure Monitor used for?",
+        "options": [
+          "Managing Git commits",
+          "Writing SQL queries only",
+          "Monitoring applications and resources",
+          "Creating tables"
+        ],
+        "answer": 2,
+        "explanation": "Azure Monitor collects and analyzes telemetry from Azure resources and applications."
+      },
+      {
+        "id": 30,
+        "question": "What is Apache Kafka primarily used for?",
+        "options": [
+          "Distributed event streaming",
+          "File compression",
+          "Web page styling",
+          "Database backup only"
+        ],
+        "answer": 0,
+        "explanation": "Kafka is a distributed event streaming platform."
+      },
+      {
+        "id": 31,
+        "question": "Which SQL feature calculates values across related rows without collapsing them?",
+        "options": [
+          "UNION",
+          "DISTINCT",
+          "GROUP BY",
+          "Window function"
+        ],
+        "answer": 3,
+        "explanation": "Window functions calculate values across a set of related rows while retaining individual rows."
+      },
+      {
+        "id": 32,
+        "question": "Which join can avoid a large shuffle when one dataset is small enough?",
+        "options": [
+          "Cartesian join",
+          "Full join",
+          "Broadcast join",
+          "Cross join"
+        ],
+        "answer": 2,
+        "explanation": "A broadcast join sends the small dataset to executors, reducing shuffle of the large dataset."
+      },
+      {
+        "id": 33,
+        "question": "What is the main purpose of Azure Data Factory?",
+        "options": [
+          "Identity management only",
+          "Data integration and orchestration",
+          "Web hosting",
+          "Database administration only"
+        ],
+        "answer": 1,
+        "explanation": "ADF is a cloud data integration and orchestration service."
+      },
+      {
+        "id": 34,
+        "question": "Which command creates a local copy of a Git repository?",
+        "options": [
+          "git fetch-all",
+          "git clone",
+          "git copy",
+          "git download"
+        ],
+        "answer": 1,
+        "explanation": "git clone copies a remote repository to a local environment."
+      },
+      {
+        "id": 35,
+        "question": "What is Azure Key Vault commonly used for?",
+        "options": [
+          "Running Spark only",
+          "Secrets and keys management",
+          "Data visualization",
+          "Creating Git branches"
+        ],
+        "answer": 1,
+        "explanation": "Key Vault securely stores and manages secrets, keys, and certificates."
+      },
+      {
+        "id": 36,
+        "question": "Which architecture separates raw data from curated data?",
+        "options": [
+          "Layered data architecture",
+          "Single-table architecture",
+          "Flat-file architecture",
+          "Browser architecture"
+        ],
+        "answer": 0,
+        "explanation": "Layered architectures commonly separate raw, refined, and curated datasets."
+      },
+      {
+        "id": 37,
+        "question": "What does Delta Lake use to track table changes?",
+        "options": [
+          "Browser history",
+          "DNS log",
+          "Transaction log",
+          "Application cache"
+        ],
+        "answer": 2,
+        "explanation": "Delta tables maintain a transaction log containing metadata about table changes."
+      },
+      {
+        "id": 38,
+        "question": "What is a consumer group?",
+        "options": [
+          "A topic alias",
+          "A producer configuration",
+          "A database cluster",
+          "Consumers cooperating to process topic partitions"
+        ],
+        "answer": 3,
+        "explanation": "Consumers in the same group coordinate partition assignment to process records."
+      },
+      {
+        "id": 39,
+        "question": "What does a generator provide?",
+        "options": [
+          "Only database rows",
+          "All values immediately",
+          "Values lazily",
+          "Only strings"
+        ],
+        "answer": 2,
+        "explanation": "Generators produce values lazily, helping reduce memory usage."
+      },
+      {
+        "id": 40,
+        "question": "What is an Airflow operator?",
+        "options": [
+          "A file format",
+          "A database table",
+          "A network protocol",
+          "A template for a task"
+        ],
+        "answer": 3,
+        "explanation": "Operators define what a task should do."
+      },
+      {
+        "id": 41,
+        "question": "What is the primary purpose of an index?",
+        "options": [
+          "Encrypt data",
+          "Speed up data access",
+          "Store backups",
+          "Compress tables"
+        ],
+        "answer": 1,
+        "explanation": "Indexes can reduce the amount of data PostgreSQL must scan for suitable queries."
+      },
+      {
+        "id": 42,
+        "question": "Which command creates a new branch?",
+        "options": [
+          "git create",
+          "git branch",
+          "git fork-local",
+          "git new"
+        ],
+        "answer": 1,
+        "explanation": "git branch can create a new branch."
+      },
+      {
+        "id": 43,
+        "question": "Which clause filters aggregated results?",
+        "options": [
+          "WHERE",
+          "FILTER",
+          "GROUP",
+          "HAVING"
+        ],
+        "answer": 3,
+        "explanation": "HAVING filters groups after aggregation."
+      },
+      {
+        "id": 44,
+        "question": "Which operation removes dead tuples and helps maintain PostgreSQL tables?",
+        "options": [
+          "VACUUM",
+          "PURGE",
+          "CLEAN",
+          "REFRESH"
+        ],
+        "answer": 0,
+        "explanation": "VACUUM reclaims storage occupied by dead tuples and supports transaction ID maintenance."
+      },
+      {
+        "id": 45,
+        "question": "Which command changes existing data?",
+        "options": [
+          "REPLACE",
+          "ALTER",
+          "UPDATE",
+          "MODIFY TABLE"
+        ],
+        "answer": 2,
+        "explanation": "UPDATE changes values in existing rows."
+      },
+      {
+        "id": 46,
+        "question": "Which structure stores key-value pairs?",
+        "options": [
+          "list",
+          "range",
+          "dict",
+          "set"
+        ],
+        "answer": 2,
+        "explanation": "A dictionary stores data as key-value pairs."
+      },
+      {
+        "id": 47,
+        "question": "What does ADLS stand for?",
+        "options": [
+          "Azure Distributed Linux Service",
+          "Advanced Data Logging System",
+          "Azure Database Loading Service",
+          "Azure Data Lake Storage"
+        ],
+        "answer": 3,
+        "explanation": "ADLS stands for Azure Data Lake Storage."
+      },
+      {
+        "id": 48,
+        "question": "What does list comprehension create?",
+        "options": [
+          "A generator only",
+          "A database",
+          "A list",
+          "A tuple only"
+        ],
+        "answer": 2,
+        "explanation": "List comprehensions provide a concise way to create lists."
+      },
+      {
+        "id": 49,
+        "question": "What is the purpose of a data ingestion layer?",
+        "options": [
+          "Bring data into the platform",
+          "Only visualize data",
+          "Create user passwords",
+          "Delete old data"
+        ],
+        "answer": 0,
+        "explanation": "The ingestion layer receives data from source systems into the data platform."
+      },
+      {
+        "id": 50,
+        "question": "Why is distribution important in a distributed warehouse?",
+        "options": [
+          "It creates users",
+          "It affects data movement and query performance",
+          "It changes passwords",
+          "It controls DNS"
+        ],
+        "answer": 1,
+        "explanation": "Choosing an appropriate distribution can reduce data movement and improve query performance."
+      }
+    ]
+  },
+  {
+    "id": "data-engineering-mixed-100",
+    "title": "Data Engineering Comprehensive Quiz",
+    "category": "Data Engineering",
+    "topic": "Mixed Data Engineering",
+    "difficulty": "Mixed",
+    "questions": 100,
+    "timeLimit": 6000,
+    "passingScore": 60,
+    "attempts": 0,
+    "questionsData": [
+      {
+        "id": 1,
+        "question": "What is Apache Kafka primarily used for?",
+        "options": [
+          "Database backup only",
+          "Distributed event streaming",
+          "Web page styling",
+          "File compression"
+        ],
+        "answer": 1,
+        "explanation": "Kafka is a distributed event streaming platform."
+      },
+      {
+        "id": 2,
+        "question": "Which operation removes dead tuples and helps maintain PostgreSQL tables?",
+        "options": [
+          "VACUUM",
+          "PURGE",
+          "REFRESH",
+          "CLEAN"
+        ],
+        "answer": 0,
+        "explanation": "VACUUM reclaims storage occupied by dead tuples and supports transaction ID maintenance."
+      },
+      {
+        "id": 3,
+        "question": "What is a consumer group?",
+        "options": [
+          "A producer configuration",
+          "A topic alias",
+          "A database cluster",
+          "Consumers cooperating to process topic partitions"
+        ],
+        "answer": 3,
+        "explanation": "Consumers in the same group coordinate partition assignment to process records."
+      },
+      {
+        "id": 4,
+        "question": "What is a CTE?",
+        "options": [
+          "Column Table Engine",
+          "Common Transaction Entry",
+          "Common Table Expression",
+          "Central Table Entity"
+        ],
+        "answer": 2,
+        "explanation": "A Common Table Expression provides a temporary named result set within a query."
+      },
+      {
+        "id": 5,
+        "question": "What is the purpose of a virtual environment?",
+        "options": [
+          "Isolate Python dependencies",
+          "Store SQL data",
+          "Encrypt Python code",
+          "Increase CPU speed"
+        ],
+        "answer": 0,
+        "explanation": "Virtual environments isolate project-specific Python packages and versions."
+      },
+      {
+        "id": 6,
+        "question": "Which command displays running processes?",
+        "options": [
+          "processes",
+          "ps",
+          "jobs-only",
+          "runlist"
+        ],
+        "answer": 1,
+        "explanation": "ps displays information about active processes."
+      },
+      {
+        "id": 7,
+        "question": "Which practice helps detect invalid records before loading?",
+        "options": [
+          "Compression",
+          "Data validation",
+          "Index removal",
+          "Data deletion"
+        ],
+        "answer": 1,
+        "explanation": "Validation checks incoming records against expected rules and constraints."
+      },
+      {
+        "id": 8,
+        "question": "What is Azure Key Vault commonly used for?",
+        "options": [
+          "Data visualization",
+          "Running Spark only",
+          "Secrets and keys management",
+          "Creating Git branches"
+        ],
+        "answer": 2,
+        "explanation": "Key Vault securely stores and manages secrets, keys, and certificates."
+      },
+      {
+        "id": 9,
+        "question": "Which structure stores key-value pairs?",
+        "options": [
+          "set",
+          "dict",
+          "range",
+          "list"
+        ],
+        "answer": 1,
+        "explanation": "A dictionary stores data as key-value pairs."
+      },
+      {
+        "id": 10,
+        "question": "Which feature provides hierarchical directory access in ADLS Gen2?",
+        "options": [
+          "Hierarchical namespace",
+          "Virtual tables",
+          "Folder engine",
+          "Directory cache"
+        ],
+        "answer": 0,
+        "explanation": "Hierarchical namespace enables directory and file-system-like organization."
+      },
+      {
+        "id": 11,
+        "question": "What is Azure Monitor used for?",
+        "options": [
+          "Managing Git commits",
+          "Monitoring applications and resources",
+          "Creating tables",
+          "Writing SQL queries only"
+        ],
+        "answer": 1,
+        "explanation": "Azure Monitor collects and analyzes telemetry from Azure resources and applications."
+      },
+      {
+        "id": 12,
+        "question": "What is the purpose of monitoring a data pipeline?",
+        "options": [
+          "Replace source systems",
+          "Create tables automatically only",
+          "Detect failures and performance issues",
+          "Change SQL syntax"
+        ],
+        "answer": 2,
+        "explanation": "Monitoring helps detect failures, delays, quality problems, and resource issues."
+      },
+      {
+        "id": 13,
+        "question": "Which PostgreSQL index type is the default?",
+        "options": [
+          "B-tree",
+          "GiST",
+          "GIN",
+          "Hash"
+        ],
+        "answer": 0,
+        "explanation": "B-tree is PostgreSQL's default index method."
+      },
+      {
+        "id": 14,
+        "question": "Which function assigns a sequential number to rows?",
+        "options": [
+          "RANK_ID()",
+          "ROW_NUMBER()",
+          "INDEX()",
+          "SEQUENCE()"
+        ],
+        "answer": 1,
+        "explanation": "ROW_NUMBER() assigns a unique sequential number within a window."
+      },
+      {
+        "id": 15,
+        "question": "What is Azure Synapse Analytics designed for?",
+        "options": [
+          "Email hosting",
+          "Mobile development only",
+          "DNS management",
+          "Analytics and data warehousing"
+        ],
+        "answer": 3,
+        "explanation": "Synapse combines data warehousing, big data analytics, integration, and related capabilities."
+      },
+      {
+        "id": 16,
+        "question": "What is commonly stored in a data lake?",
+        "options": [
+          "Structured and unstructured data",
+          "Only images",
+          "Only relational tables",
+          "Only JSON"
+        ],
+        "answer": 0,
+        "explanation": "Data lakes can store structured, semi-structured, and unstructured data."
+      },
+      {
+        "id": 17,
+        "question": "Which PostgreSQL type is commonly used to store JSON data in binary form?",
+        "options": [
+          "JSONX",
+          "TEXTJSON",
+          "BJSON",
+          "JSONB"
+        ],
+        "answer": 3,
+        "explanation": "JSONB stores JSON data in a decomposed binary format and supports indexing."
+      },
+      {
+        "id": 18,
+        "question": "Which PostgreSQL feature helps automatically update table statistics?",
+        "options": [
+          "Autoscan",
+          "Autoquery",
+          "Autoindex",
+          "Autovacuum"
+        ],
+        "answer": 3,
+        "explanation": "Autovacuum handles vacuuming and analyzes tables to maintain statistics."
+      },
+      {
+        "id": 19,
+        "question": "What does a linked service define?",
+        "options": [
+          "Only table schemas",
+          "Connection information",
+          "Dashboard layout",
+          "User passwords"
+        ],
+        "answer": 1,
+        "explanation": "Linked services define connection information for external resources."
+      },
+      {
+        "id": 20,
+        "question": "Which keyword handles an exception?",
+        "options": [
+          "except",
+          "handle",
+          "catch",
+          "rescue"
+        ],
+        "answer": 0,
+        "explanation": "Python uses try and except blocks for exception handling."
+      },
+      {
+        "id": 21,
+        "question": "Which command changes existing data?",
+        "options": [
+          "MODIFY TABLE",
+          "UPDATE",
+          "REPLACE",
+          "ALTER"
+        ],
+        "answer": 1,
+        "explanation": "UPDATE changes values in existing rows."
+      },
+      {
+        "id": 22,
+        "question": "Which approach is most important when designing a retryable data pipeline?",
+        "options": [
+          "Ignoring failures",
+          "Running everything manually",
+          "Deleting source data",
+          "Idempotent processing"
+        ],
+        "answer": 3,
+        "explanation": "Idempotent processing allows failed steps to be retried without creating unintended duplicate effects."
+      },
+      {
+        "id": 23,
+        "question": "What defines the movement and transformation workflow in ADF?",
+        "options": [
+          "Pipeline",
+          "Notebook only",
+          "Cluster",
+          "Workspace"
+        ],
+        "answer": 0,
+        "explanation": "ADF pipelines organize activities into data workflows."
+      },
+      {
+        "id": 24,
+        "question": "What should be considered when processing billions of rows?",
+        "options": [
+          "Only column names",
+          "Partitioning and parallelism",
+          "Only UI design",
+          "Only file naming"
+        ],
+        "answer": 1,
+        "explanation": "Large-scale processing requires appropriate partitioning, parallelism, storage formats, and resource management."
+      },
+      {
+        "id": 25,
+        "question": "What is idempotency in a data pipeline?",
+        "options": [
+          "Increasing memory",
+          "Repeating an operation produces the same intended result",
+          "Running only once",
+          "Deleting duplicates manually"
+        ],
+        "answer": 1,
+        "explanation": "An idempotent pipeline can safely retry processing without creating unintended duplicate effects."
+      },
+      {
+        "id": 26,
+        "question": "Which DataFrame function removes duplicate rows?",
+        "options": [
+          "uniqueRows",
+          "dropDuplicates",
+          "removeDuplicates",
+          "distinctRowsOnly"
+        ],
+        "answer": 1,
+        "explanation": "dropDuplicates removes duplicate records from a DataFrame."
+      },
+      {
+        "id": 27,
+        "question": "Which dimension checks whether required data is present?",
+        "options": [
+          "Freshness",
+          "Completeness",
+          "Uniqueness",
+          "Accuracy"
+        ],
+        "answer": 1,
+        "explanation": "Completeness measures whether required values are present."
+      },
+      {
+        "id": 28,
+        "question": "Why is distribution important in a distributed warehouse?",
+        "options": [
+          "It controls DNS",
+          "It creates users",
+          "It affects data movement and query performance",
+          "It changes passwords"
+        ],
+        "answer": 2,
+        "explanation": "Choosing an appropriate distribution can reduce data movement and improve query performance."
+      },
+      {
+        "id": 29,
+        "question": "Which join preserves every row from the left table?",
+        "options": [
+          "INNER JOIN",
+          "RIGHT JOIN",
+          "LEFT JOIN",
+          "CROSS JOIN"
+        ],
+        "answer": 2,
+        "explanation": "LEFT JOIN keeps all rows from the left table."
+      },
+      {
+        "id": 30,
+        "question": "Which keyword removes duplicate results?",
+        "options": [
+          "SINGLE",
+          "UNIQUE",
+          "DISTINCT",
+          "ONLY"
+        ],
+        "answer": 2,
+        "explanation": "DISTINCT removes duplicate rows from a result set."
+      },
+      {
+        "id": 31,
+        "question": "Which command adds a new column to an existing table?",
+        "options": [
+          "ALTER TABLE",
+          "MODIFY COLUMN",
+          "UPDATE TABLE",
+          "CHANGE TABLE"
+        ],
+        "answer": 0,
+        "explanation": "ALTER TABLE can be used to add, modify, or drop table columns."
+      },
+      {
+        "id": 32,
+        "question": "What is Microsoft Azure?",
+        "options": [
+          "Database engine only",
+          "Operating system",
+          "Programming language",
+          "Cloud computing platform"
+        ],
+        "answer": 3,
+        "explanation": "Azure is Microsoft's cloud computing platform."
+      },
+      {
+        "id": 33,
+        "question": "What does list comprehension create?",
+        "options": [
+          "A database",
+          "A generator only",
+          "A tuple only",
+          "A list"
+        ],
+        "answer": 3,
+        "explanation": "List comprehensions provide a concise way to create lists."
+      },
+      {
+        "id": 34,
+        "question": "What does schema enforcement help prevent?",
+        "options": [
+          "Invalid schema writes",
+          "Password expiration",
+          "Network failures",
+          "CPU overheating"
+        ],
+        "answer": 0,
+        "explanation": "Schema enforcement helps ensure incoming data matches the expected table schema."
+      },
+      {
+        "id": 35,
+        "question": "What is a surrogate key?",
+        "options": [
+          "Artificial key generated for an entity",
+          "File path",
+          "Database password",
+          "Natural business description"
+        ],
+        "answer": 0,
+        "explanation": "A surrogate key is an artificial identifier, often generated independently of business data."
+      },
+      {
+        "id": 36,
+        "question": "What does a CROSS JOIN produce?",
+        "options": [
+          "A Cartesian product",
+          "Sorted rows",
+          "Only duplicates",
+          "Aggregates"
+        ],
+        "answer": 0,
+        "explanation": "CROSS JOIN pairs every row from one table with every row from another."
+      },
+      {
+        "id": 37,
+        "question": "Which command changes file permissions?",
+        "options": [
+          "permission",
+          "chmod",
+          "access",
+          "chperm"
+        ],
+        "answer": 1,
+        "explanation": "chmod modifies file and directory permissions."
+      },
+      {
+        "id": 38,
+        "question": "Which command creates a local copy of a Git repository?",
+        "options": [
+          "git copy",
+          "git clone",
+          "git fetch-all",
+          "git download"
+        ],
+        "answer": 1,
+        "explanation": "git clone copies a remote repository to a local environment."
+      },
+      {
+        "id": 39,
+        "question": "Which keyword is used to create a generator function?",
+        "options": [
+          "produce",
+          "yield",
+          "returning",
+          "generate"
+        ],
+        "answer": 1,
+        "explanation": "The yield keyword turns a function into a generator."
+      },
+      {
+        "id": 40,
+        "question": "Which Python type is ordered and mutable?",
+        "options": [
+          "frozenset",
+          "list",
+          "tuple",
+          "set"
+        ],
+        "answer": 1,
+        "explanation": "Lists maintain order and can be modified after creation."
+      },
+      {
+        "id": 41,
+        "question": "What does RBAC stand for?",
+        "options": [
+          "Role-Based Application Cache",
+          "Role-Based Access Control",
+          "Resource Backup Access Control",
+          "Remote Binary Access Configuration"
+        ],
+        "answer": 1,
+        "explanation": "RBAC manages access to Azure resources through assigned roles."
+      },
+      {
+        "id": 42,
+        "question": "Which issue occurs when one partition contains significantly more data than others?",
+        "options": [
+          "Schema drift",
+          "Data skew",
+          "Column collision",
+          "Null inflation"
+        ],
+        "answer": 1,
+        "explanation": "Data skew occurs when data is unevenly distributed across partitions."
+      },
+      {
+        "id": 43,
+        "question": "What is data validation used for?",
+        "options": [
+          "Creating passwords",
+          "Managing DNS",
+          "Checking data quality and correctness",
+          "Increasing screen resolution"
+        ],
+        "answer": 2,
+        "explanation": "Validation checks whether data meets expected quality and business rules."
+      },
+      {
+        "id": 44,
+        "question": "What does a dimension table typically contain?",
+        "options": [
+          "Descriptive attributes",
+          "Only transaction amounts",
+          "System logs",
+          "Only indexes"
+        ],
+        "answer": 0,
+        "explanation": "Dimension tables contain descriptive attributes used to analyze facts."
+      },
+      {
+        "id": 45,
+        "question": "What does data freshness measure?",
+        "options": [
+          "File size",
+          "Database password age",
+          "How recent the data is",
+          "Number of columns"
+        ],
+        "answer": 2,
+        "explanation": "Freshness measures how up-to-date the data is."
+      },
+      {
+        "id": 46,
+        "question": "What is a pull request primarily used for?",
+        "options": [
+          "Deploying a server only",
+          "Reviewing and merging proposed changes",
+          "Running SQL",
+          "Creating a database"
+        ],
+        "answer": 1,
+        "explanation": "Pull requests facilitate code review and integration of changes."
+      },
+      {
+        "id": 47,
+        "question": "In traditional ETL, where does transformation generally occur?",
+        "options": [
+          "Only after reporting",
+          "Only in the source application",
+          "Never",
+          "Before loading into the target"
+        ],
+        "answer": 3,
+        "explanation": "ETL transforms data before loading it into the target system."
+      },
+      {
+        "id": 48,
+        "question": "What should a production data pipeline generally include?",
+        "options": [
+          "Only SQL",
+          "Only transformation code",
+          "Monitoring, logging, validation, retries, and alerting",
+          "Only storage"
+        ],
+        "answer": 2,
+        "explanation": "Production pipelines need operational controls such as monitoring, logging, validation, retries, and alerting."
+      },
+      {
+        "id": 49,
+        "question": "Which technology powers distributed processing in Databricks?",
+        "options": [
+          "Apache Spark",
+          "Redis only",
+          "Nginx",
+          "Apache HTTP"
+        ],
+        "answer": 0,
+        "explanation": "Databricks uses Apache Spark as a core distributed processing engine."
+      },
+      {
+        "id": 50,
+        "question": "What does ADLS stand for?",
+        "options": [
+          "Azure Database Loading Service",
+          "Azure Distributed Linux Service",
+          "Azure Data Lake Storage",
+          "Advanced Data Logging System"
+        ],
+        "answer": 2,
+        "explanation": "ADLS stands for Azure Data Lake Storage."
+      },
+      {
+        "id": 51,
+        "question": "Which PostgreSQL type stores arbitrary-length text?",
+        "options": [
+          "text",
+          "varchar-only",
+          "chartext",
+          "string"
+        ],
+        "answer": 0,
+        "explanation": "The text type stores strings without requiring a maximum length."
+      },
+      {
+        "id": 52,
+        "question": "What does Spark partitioning control?",
+        "options": [
+          "Column names",
+          "File extensions",
+          "How data is distributed",
+          "SQL syntax"
+        ],
+        "answer": 2,
+        "explanation": "Partitions divide distributed data into units that can be processed in parallel."
+      },
+      {
+        "id": 53,
+        "question": "What is a Databricks notebook commonly used for?",
+        "options": [
+          "DNS management",
+          "Email delivery",
+          "Interactive data processing",
+          "Operating system installation"
+        ],
+        "answer": 2,
+        "explanation": "Notebooks provide an interactive environment for code, SQL, visualization, and documentation."
+      },
+      {
+        "id": 54,
+        "question": "Which feature allows querying previous versions of a Delta table?",
+        "options": [
+          "Historical scan",
+          "Version search",
+          "Time travel",
+          "Rollback query"
+        ],
+        "answer": 2,
+        "explanation": "Delta Lake time travel allows access to previous table versions."
+      },
+      {
+        "id": 55,
+        "question": "Where are Kafka records written?",
+        "options": [
+          "Topics",
+          "Tables",
+          "Buckets only",
+          "Schemas only"
+        ],
+        "answer": 0,
+        "explanation": "Producers write records to Kafka topics."
+      },
+      {
+        "id": 56,
+        "question": "What does DAG stand for?",
+        "options": [
+          "Dynamic Analytics Graph",
+          "Data Access Gateway",
+          "Distributed Application Group",
+          "Directed Acyclic Graph"
+        ],
+        "answer": 3,
+        "explanation": "DAG stands for Directed Acyclic Graph."
+      },
+      {
+        "id": 57,
+        "question": "Which command creates a table?",
+        "options": [
+          "CREATE TABLE",
+          "BUILD TABLE",
+          "MAKE TABLE",
+          "NEW TABLE"
+        ],
+        "answer": 0,
+        "explanation": "CREATE TABLE creates a new table."
+      },
+      {
+        "id": 58,
+        "question": "What is a star schema?",
+        "options": [
+          "Only one database table",
+          "Fact table surrounded by dimension tables",
+          "A file format",
+          "A graph database"
+        ],
+        "answer": 1,
+        "explanation": "A star schema has a central fact table connected to dimension tables."
+      },
+      {
+        "id": 59,
+        "question": "Which method can persist a DataFrame for reuse?",
+        "options": [
+          "store",
+          "cache",
+          "persistOnly",
+          "memory"
+        ],
+        "answer": 1,
+        "explanation": "cache() persists a DataFrame using Spark's default persistence level."
+      },
+      {
+        "id": 60,
+        "question": "What does Delta Lake use to track table changes?",
+        "options": [
+          "DNS log",
+          "Application cache",
+          "Transaction log",
+          "Browser history"
+        ],
+        "answer": 2,
+        "explanation": "Delta tables maintain a transaction log containing metadata about table changes."
+      },
+      {
+        "id": 61,
+        "question": "What is the primary purpose of an index?",
+        "options": [
+          "Store backups",
+          "Compress tables",
+          "Speed up data access",
+          "Encrypt data"
+        ],
+        "answer": 2,
+        "explanation": "Indexes can reduce the amount of data PostgreSQL must scan for suitable queries."
+      },
+      {
+        "id": 62,
+        "question": "What does a generator provide?",
+        "options": [
+          "All values immediately",
+          "Only strings",
+          "Only database rows",
+          "Values lazily"
+        ],
+        "answer": 3,
+        "explanation": "Generators produce values lazily, helping reduce memory usage."
+      },
+      {
+        "id": 63,
+        "question": "What is the main purpose of Azure Data Factory?",
+        "options": [
+          "Web hosting",
+          "Identity management only",
+          "Database administration only",
+          "Data integration and orchestration"
+        ],
+        "answer": 3,
+        "explanation": "ADF is a cloud data integration and orchestration service."
+      },
+      {
+        "id": 64,
+        "question": "What can a sequential scan indicate during query tuning?",
+        "options": [
+          "The planner chose to scan the table directly",
+          "The query failed",
+          "The database is always broken",
+          "The table is encrypted"
+        ],
+        "answer": 0,
+        "explanation": "A sequential scan reads table pages directly and may be appropriate for large result sets."
+      },
+      {
+        "id": 65,
+        "question": "What is normalization primarily intended to reduce?",
+        "options": [
+          "Query syntax",
+          "File extensions",
+          "Network bandwidth",
+          "Data redundancy"
+        ],
+        "answer": 3,
+        "explanation": "Normalization organizes relational data to reduce redundancy and update anomalies."
+      },
+      {
+        "id": 66,
+        "question": "Which library is commonly used for tabular data processing in Python?",
+        "options": [
+          "Tkinter",
+          "Requests",
+          "Pandas",
+          "Flask"
+        ],
+        "answer": 2,
+        "explanation": "Pandas provides DataFrame and Series structures for tabular data analysis."
+      },
+      {
+        "id": 67,
+        "question": "Which aggregate function returns the number of rows?",
+        "options": [
+          "TOTAL",
+          "SUM",
+          "COUNT",
+          "ROWS"
+        ],
+        "answer": 2,
+        "explanation": "COUNT returns the number of rows or non-null values depending on the expression."
+      },
+      {
+        "id": 68,
+        "question": "Which module is commonly used to work with CSV files?",
+        "options": [
+          "tableio",
+          "delimited",
+          "rows",
+          "csv"
+        ],
+        "answer": 3,
+        "explanation": "Python's standard csv module reads and writes CSV files."
+      },
+      {
+        "id": 69,
+        "question": "What is Apache Airflow primarily used for?",
+        "options": [
+          "Workflow orchestration",
+          "File compression",
+          "Database storage",
+          "Web styling"
+        ],
+        "answer": 0,
+        "explanation": "Airflow is a platform for developing, scheduling, and monitoring workflows."
+      },
+      {
+        "id": 70,
+        "question": "What does a Python decorator modify?",
+        "options": [
+          "Only strings",
+          "Database schemas",
+          "Only variables",
+          "Function or class behavior"
+        ],
+        "answer": 3,
+        "explanation": "Decorators wrap functions or classes to extend or modify their behavior."
+      },
+      {
+        "id": 71,
+        "question": "Which clause filters aggregated results?",
+        "options": [
+          "WHERE",
+          "FILTER",
+          "HAVING",
+          "GROUP"
+        ],
+        "answer": 2,
+        "explanation": "HAVING filters groups after aggregation."
+      },
+      {
+        "id": 72,
+        "question": "Which operation transforms an existing DataFrame into another DataFrame?",
+        "options": [
+          "Commit",
+          "Transformation",
+          "Trigger",
+          "Action"
+        ],
+        "answer": 1,
+        "explanation": "Transformations create a new logical DataFrame from an existing one."
+      },
+      {
+        "id": 73,
+        "question": "What causes a shuffle in Spark?",
+        "options": [
+          "Redistribution of data across partitions",
+          "Renaming a column",
+          "Reading a variable",
+          "Printing schema"
+        ],
+        "answer": 0,
+        "explanation": "Operations such as joins and aggregations can require data redistribution between partitions."
+      },
+      {
+        "id": 74,
+        "question": "Which operation combines insert and update logic in Delta Lake?",
+        "options": [
+          "JOIN",
+          "APPEND",
+          "UNION",
+          "MERGE"
+        ],
+        "answer": 3,
+        "explanation": "MERGE supports conditional inserts, updates, and deletes."
+      },
+      {
+        "id": 75,
+        "question": "Which SQL pool is designed for large-scale analytical workloads?",
+        "options": [
+          "Dedicated SQL pool",
+          "Browser SQL pool",
+          "Local SQL pool",
+          "Client SQL pool"
+        ],
+        "answer": 0,
+        "explanation": "Dedicated SQL pools provide distributed analytical data warehouse compute."
+      },
+      {
+        "id": 76,
+        "question": "Which strategy can help handle late-arriving data?",
+        "options": [
+          "Deleting old records",
+          "Watermarks and reprocessing windows",
+          "Removing partitions",
+          "Ignoring timestamps"
+        ],
+        "answer": 1,
+        "explanation": "Watermarks and controlled reprocessing windows can accommodate records arriving after their expected processing time."
+      },
+      {
+        "id": 77,
+        "question": "What is an Airflow operator?",
+        "options": [
+          "A file format",
+          "A database table",
+          "A template for a task",
+          "A network protocol"
+        ],
+        "answer": 2,
+        "explanation": "Operators define what a task should do."
+      },
+      {
+        "id": 78,
+        "question": "Which ADF feature starts pipelines based on a schedule?",
+        "options": [
+          "Dataset",
+          "Trigger",
+          "Linked Service",
+          "Integration Runtime"
+        ],
+        "answer": 1,
+        "explanation": "Triggers define when pipelines should execute."
+      },
+      {
+        "id": 79,
+        "question": "Which dimension checks duplicate records?",
+        "options": [
+          "Uniqueness",
+          "Latency",
+          "Freshness",
+          "Completeness"
+        ],
+        "answer": 0,
+        "explanation": "Uniqueness checks whether records or key values are duplicated when they should not be."
+      },
+      {
+        "id": 80,
+        "question": "What does an Airflow task represent?",
+        "options": [
+          "A unit of work",
+          "A user account",
+          "A database",
+          "A server"
+        ],
+        "answer": 0,
+        "explanation": "A task represents an individual unit of work within a DAG."
+      },
+      {
+        "id": 81,
+        "question": "What is Databricks primarily used for?",
+        "options": [
+          "Domain registration",
+          "Data engineering and analytics",
+          "Web browser management",
+          "Email hosting"
+        ],
+        "answer": 1,
+        "explanation": "Databricks provides a platform for data engineering, analytics, machine learning, and related workloads."
+      },
+      {
+        "id": 82,
+        "question": "Which command lists files in a Linux directory?",
+        "options": [
+          "files",
+          "ls",
+          "dirlist",
+          "show"
+        ],
+        "answer": 1,
+        "explanation": "ls lists files and directories."
+      },
+      {
+        "id": 83,
+        "question": "Which permission model can be used with ADLS Gen2?",
+        "options": [
+          "Only database roles",
+          "Only application passwords",
+          "Only HTTP headers",
+          "ACLs"
+        ],
+        "answer": 3,
+        "explanation": "ADLS Gen2 supports POSIX-style access control lists along with Azure RBAC."
+      },
+      {
+        "id": 84,
+        "question": "Which operator combines the results of two compatible SELECT statements and removes duplicates?",
+        "options": [
+          "MERGE",
+          "CONNECT",
+          "UNION",
+          "JOIN"
+        ],
+        "answer": 2,
+        "explanation": "UNION combines result sets and removes duplicate rows."
+      },
+      {
+        "id": 85,
+        "question": "Which command is commonly used to search text within files?",
+        "options": [
+          "grep",
+          "search",
+          "scan",
+          "findtext"
+        ],
+        "answer": 0,
+        "explanation": "grep searches for matching text patterns."
+      },
+      {
+        "id": 86,
+        "question": "Which join can avoid a large shuffle when one dataset is small enough?",
+        "options": [
+          "Cross join",
+          "Cartesian join",
+          "Full join",
+          "Broadcast join"
+        ],
+        "answer": 3,
+        "explanation": "A broadcast join sends the small dataset to executors, reducing shuffle of the large dataset."
+      },
+      {
+        "id": 87,
+        "question": "What is an Azure Resource Group?",
+        "options": [
+          "Virtual machine only",
+          "Network cable",
+          "Logical container for Azure resources",
+          "Database table"
+        ],
+        "answer": 2,
+        "explanation": "A resource group is a logical container for related Azure resources."
+      },
+      {
+        "id": 88,
+        "question": "Which ADF activity is commonly used to copy data?",
+        "options": [
+          "Copy Activity",
+          "Move Activity",
+          "Transfer Activity",
+          "Clone Activity"
+        ],
+        "answer": 0,
+        "explanation": "Copy Activity is designed to move data between supported sources and destinations."
+      },
+      {
+        "id": 89,
+        "question": "What is lazy evaluation in Spark?",
+        "options": [
+          "Transformations execute immediately",
+          "Transformations are planned until an action runs",
+          "Data is always cached",
+          "Spark never executes transformations"
+        ],
+        "answer": 1,
+        "explanation": "Spark delays execution of transformations until an action requires a result."
+      },
+      {
+        "id": 90,
+        "question": "Which operator is commonly used for an equality join?",
+        "options": [
+          "=",
+          "IN",
+          "IS",
+          "BETWEEN"
+        ],
+        "answer": 0,
+        "explanation": "The equals operator is commonly used to match related key columns."
+      },
+      {
+        "id": 91,
+        "question": "What is schema drift?",
+        "options": [
+          "Unexpected changes in data structure",
+          "Slow network speed",
+          "Database backup",
+          "Duplicate files"
+        ],
+        "answer": 0,
+        "explanation": "Schema drift occurs when the structure of incoming data changes unexpectedly."
+      },
+      {
+        "id": 92,
+        "question": "Which command uploads local commits to a remote repository?",
+        "options": [
+          "git push",
+          "git upload",
+          "git publish",
+          "git send"
+        ],
+        "answer": 0,
+        "explanation": "git push sends local commits to a configured remote repository."
+      },
+      {
+        "id": 93,
+        "question": "What is scheduling used for in Airflow?",
+        "options": [
+          "Changing schemas",
+          "Determining when workflows run",
+          "Encrypting files",
+          "Creating databases"
+        ],
+        "answer": 1,
+        "explanation": "Airflow scheduling determines when DAG runs should be created."
+      },
+      {
+        "id": 94,
+        "question": "Which object is the main entry point for Spark applications?",
+        "options": [
+          "SparkApp",
+          "SparkSession",
+          "SparkContextOnly",
+          "SparkEngine"
+        ],
+        "answer": 1,
+        "explanation": "SparkSession is the main entry point for modern Spark applications."
+      },
+      {
+        "id": 95,
+        "question": "What is a fact table primarily used to store?",
+        "options": [
+          "Business measurements",
+          "Application code",
+          "User passwords",
+          "Only metadata"
+        ],
+        "answer": 0,
+        "explanation": "Fact tables generally contain measurable business events or metrics."
+      },
+      {
+        "id": 96,
+        "question": "What consumes records from Kafka?",
+        "options": [
+          "Brokers only",
+          "Producers",
+          "Consumers",
+          "Schemas"
+        ],
+        "answer": 2,
+        "explanation": "Consumers read records from Kafka topics."
+      },
+      {
+        "id": 97,
+        "question": "What is a cluster used for?",
+        "options": [
+          "Creating email accounts",
+          "Managing DNS records",
+          "Running distributed workloads",
+          "Storing browser cookies"
+        ],
+        "answer": 2,
+        "explanation": "Databricks clusters provide compute resources for executing workloads."
+      },
+      {
+        "id": 98,
+        "question": "Which command records staged changes in Git history?",
+        "options": [
+          "git commit",
+          "git push",
+          "git save",
+          "git record"
+        ],
+        "answer": 0,
+        "explanation": "git commit creates a new commit from staged changes."
+      },
+      {
+        "id": 99,
+        "question": "What is a dead-letter queue commonly used for?",
+        "options": [
+          "Caching dashboards",
+          "Storing passwords",
+          "Capturing records that cannot be processed",
+          "Running SQL"
+        ],
+        "answer": 2,
+        "explanation": "Dead-letter queues isolate messages or records that repeatedly fail processing."
+      },
+      {
+        "id": 100,
+        "question": "Which command creates a new branch?",
+        "options": [
+          "git branch",
+          "git new",
+          "git fork-local",
+          "git create"
+        ],
+        "answer": 0,
+        "explanation": "git branch can create a new branch."
       }
     ]
   }
