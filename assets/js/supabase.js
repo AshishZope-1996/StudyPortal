@@ -11,10 +11,17 @@ export const supabase = supabaseConfigured
 
 export async function getCurrentUser() {
   if (!supabase) return null;
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { session } } = await supabase.auth.getSession();
+  const user = session?.user || null;
   return user || null;
 }
 
 export function getAuthRedirect() {
   return `${window.location.origin}${window.location.pathname}${window.location.search}`;
+}
+
+export function getPostAuthRedirect() {
+  const requested = new URLSearchParams(window.location.search).get('redirect');
+  if (requested && requested.startsWith(window.location.origin)) return requested;
+  return `${window.location.origin}${window.location.pathname.replace(/[^/]*$/, '')}profile.html`;
 }

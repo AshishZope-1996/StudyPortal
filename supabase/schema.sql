@@ -3,6 +3,7 @@ create extension if not exists pgcrypto;
 create table if not exists public.profiles (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null unique references auth.users(id) on delete cascade,
+  email text,
   full_name text,
   username text unique,
   avatar_url text,
@@ -11,6 +12,8 @@ create table if not exists public.profiles (
   updated_at timestamptz not null default now(),
   last_login_at timestamptz
 );
+alter table public.profiles add column if not exists provider text;
+alter table public.profiles add column if not exists email text;
 create table if not exists public.article_progress (
   id uuid primary key default gen_random_uuid(), user_id uuid not null references auth.users(id) on delete cascade,
   article_id text not null, progress_percent integer not null default 0 check (progress_percent between 0 and 100),
@@ -48,8 +51,21 @@ create index if not exists idx_bookmarks_user on public.bookmarks(user_id);
 
 create or replace function public.handle_new_user() returns trigger language plpgsql security definer set search_path = '' as $$
 begin
-  insert into public.profiles (user_id, full_name) values (new.id, new.raw_user_meta_data ->> 'full_name');
-  insert into public.user_preferences (user_id) values (new.id);
+  insert into public.profiles (user_id, email, full_name, avatar_url, provider)
+  values (
+    new.id,
+    new.email,
+    coalesce(new.raw_user_meta_data ->> 'full_name', new.raw_user_meta_data ->> 'name'),
+    coalesce(new.raw_user_meta_data ->> 'avatar_url', new.raw_user_meta_data ->> 'picture'),
+    coalesce(new.raw_app_meta_data ->> 'provider', new.raw_user_meta_data ->> 'provider', 'email')
+  )
+  on conflict (user_id) do update set
+    email = coalesce(public.profiles.email, excluded.email),
+    full_name = coalesce(public.profiles.full_name, excluded.full_name),
+    avatar_url = coalesce(public.profiles.avatar_url, excluded.avatar_url),
+    provider = coalesce(public.profiles.provider, excluded.provider),
+    updated_at = now();
+  insert into public.user_preferences (user_id) values (new.id) on conflict (user_id) do nothing;
   return new;
 end;
 $$;

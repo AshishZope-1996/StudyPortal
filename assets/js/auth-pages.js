@@ -1,5 +1,5 @@
-import { authError, requestPasswordReset, signInUser, signUpUser, updatePassword } from './auth.js';
-import { getCurrentUser } from './supabase.js';
+import { authError, requestPasswordReset, signInUser, signInWithGoogle, signUpUser, updatePassword } from './auth.js';
+import { getCurrentUser, getPostAuthRedirect, supabase } from './supabase.js';
 
 const form = document.querySelector('form');
 const message = document.querySelector('#auth-message');
@@ -37,6 +37,35 @@ const setupPasswordToggle = () => {
 };
 
 setupPasswordToggle();
+
+const oauthParams = new URLSearchParams(location.search);
+const oauthError = oauthParams.get('error_description') || oauthParams.get('error');
+if (oauthError) show(authError({ message: oauthError }), 'error');
+
+const continueAuthenticatedSession = session => {
+  if (location.pathname.endsWith('/signin.html') && session?.user && !oauthError) {
+    window.location.replace(getPostAuthRedirect());
+  }
+};
+if (supabase && location.pathname.endsWith('/signin.html')) {
+  supabase.auth.getSession().then(({ data }) => continueAuthenticatedSession(data.session)).catch(() => {});
+  supabase.auth.onAuthStateChange((_event, session) => continueAuthenticatedSession(session));
+}
+
+document.querySelector('#google-signin')?.addEventListener('click', async event => {
+  const button = event.currentTarget;
+  button.disabled = true;
+  button.dataset.label ||= button.textContent;
+  button.textContent = 'Connecting...';
+  try {
+    await signInWithGoogle();
+  } catch (error) {
+    console.warn('Google sign-in failed.', error);
+    show(authError(error), 'error');
+    button.disabled = false;
+    button.textContent = button.dataset.label;
+  }
+});
 
 if (location.pathname.endsWith('/signin.html')) {
   form.addEventListener('submit', async event => {
